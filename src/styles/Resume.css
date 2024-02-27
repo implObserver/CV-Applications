@@ -1,6 +1,6 @@
 .resume {
-    display: grid;
-    width: 100%;
-    height: 20%;
-    background-color: green;
+  display: grid;
+  height: 20%;
+  background-color: white;
+  border-radius: min(2vw, 2vh);
 }

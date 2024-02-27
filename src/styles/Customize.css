@@ -1,0 +1,5 @@
+.settings__icon {
+    display: grid;
+    width: min(8vw, 8vh);
+    height: min(8vw, 8vh);
+}

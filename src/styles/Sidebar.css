@@ -1,7 +1,32 @@
 .sidebar {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    background-color: blue;
+  display: grid;
+  background-color: white;
+  justify-content: center;
+  justify-items: center;
+  border-radius: min(2vw, 2vh);
+  padding: min(2vw, 2vh);
 }
 
+.svg__wrapper {
+  display: grid;
+  width: min-content;
+  border-radius: min(1vw, 1vh);
+  padding: min(1vw, 1vh);
+}
+
+.span__wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+@media screen and (min-aspect-ratio: 0.9/1) {
+  .sidebar {
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media screen and (max-aspect-ratio: 0.9/1) {
+  .sidebar {
+    grid-template-columns: 1fr 1fr;
+  }
+}

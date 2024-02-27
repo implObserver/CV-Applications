@@ -1,9 +1,9 @@
-import '../../styles/Resume.css'
+import '../../styles/Resume.css';
 
 export const Resume = () => {
-    return (
-        <>
-            <div className="resume"></div>
-        </>
-    )
-}
+  return (
+    <>
+      <div className='resume'></div>
+    </>
+  );
+};

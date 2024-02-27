@@ -1,19 +1,18 @@
 .settings {
-    display: grid;
-    width: 40vw;
-    max-width: 576px;
-    height: 20vh;
-    gap: 1vh;
+  display: grid;
+  max-width: 576px;
+  height: 20vh;
+  gap: 1vh;
 }
 
 @media screen and (min-aspect-ratio: 0.9/1) {
-    .settings {
-        grid-template-columns: 1fr 3fr;
-    }
+  .settings {
+    grid-template-columns: 1fr 3fr;
+  }
 }
 
 @media screen and (max-aspect-ratio: 0.9/1) {
-    .settings {
-        grid-template-rows: 1fr 3fr;
-    }
+  .settings {
+    grid-template-rows: 1fr 3fr;
+  }
 }
