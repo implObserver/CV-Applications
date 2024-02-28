@@ -1,0 +1,14 @@
+.clear__resume {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    align-items: center;
+    color: rgb(179, 0, 0);
+    font-weight: 500;
+}
+
+.trash__icon {
+    display: grid;
+    width: min(4vw, 4vh);
+    height: min(4vw, 4vh);
+}

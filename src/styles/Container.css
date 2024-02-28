@@ -1,6 +1,4 @@
 .container {
     display: grid;
-    height: 100%;
-    background-color: white;
-    border-radius: min(2vw, 2vh);
+    gap: 1vh;
 }

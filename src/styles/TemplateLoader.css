@@ -1,0 +1,21 @@
+.template__loader {
+    display: grid;
+    align-items: center;
+    border-radius: min(2vw, 2vh);
+    gap: min(1vw, 1vh);
+    background-color: white;
+    padding: min(1vw, 1vh);
+}
+
+
+@media screen and (min-aspect-ratio: 0.9/1) {
+    .template__loader {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-aspect-ratio: 0.9/1) {
+    .template__loader {
+        grid-template-rows: 1fr 1fr;
+    }
+}

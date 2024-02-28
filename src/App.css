@@ -25,3 +25,7 @@ body {
   margin: 1vh;
   font-size: min(2vw, 2vh);
 }
+
+.span__wrapper {
+  padding: min(1vw, 1vh);
+}

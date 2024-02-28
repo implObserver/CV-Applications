@@ -1,0 +1,9 @@
+.load__example {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(226, 226, 226);
+    border-radius: min(1vw, 1vh);
+    font-weight: 500;
+}
