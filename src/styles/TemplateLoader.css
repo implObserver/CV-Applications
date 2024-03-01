@@ -1,10 +1,11 @@
 .template__loader {
     display: grid;
     align-items: center;
-    border-radius: min(2vw, 2vh);
-    gap: min(1vw, 1vh);
-    background-color: white;
-    padding: min(1vw, 1vh);
+    border-radius: min(20px, 2vw);;
+    gap: min(10px, 1vw);
+    background-color: #ffffff;
+    padding: min(10px, 1vw);
+    font-size: min(12px, 2vw);
 }
 
 

@@ -3,15 +3,16 @@
   background-color: white;
   justify-content: center;
   justify-items: center;
-  border-radius: min(2vw, 2vh);
-  padding: min(1vw, 1vh);
+  border-radius: min(20px, 2vw);
+  padding: min(10px, 1vw);
+  font-size: min(16px, 2vw);
 }
 
 .svg__wrapper {
   display: grid;
   width: min-content;
-  border-radius: min(1vw, 1vh);
-  padding: min(1vw, 1vh);
+  border-radius: min(20px, 2vw);
+  padding: min(10px, 1vw);
 }
 
 .span__wrapper {

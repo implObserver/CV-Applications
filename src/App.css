@@ -11,7 +11,7 @@
 body {
   display: grid;
   justify-content: center;
-  background-color: rgb(231, 227, 227);
+  background-color: rgb(232, 242, 255);
 }
 
 #root {
@@ -21,11 +21,11 @@ body {
   max-width: 1440px;
   width: 100vw;
   height: min-content;
-  gap: 1vh;
-  margin: 1vh;
-  font-size: min(2vw, 2vh);
+  gap: min(10px, 1vw);
+  margin: min(10px, 1vw);;
+  font-size: 2vw;
 }
 
 .span__wrapper {
-  padding: min(1vw, 1vh);
+  padding: min(10px, 1vw);;
 }

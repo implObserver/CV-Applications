@@ -1,7 +1,7 @@
 .settings {
   display: grid;
   max-width: 576px;
-  gap: 1vh;
+  gap: min(10px, 1vw);
 }
 
 @media screen and (min-aspect-ratio: 0.9/1) {

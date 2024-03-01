@@ -9,6 +9,8 @@
 
 .trash__icon {
     display: grid;
-    width: min(4vw, 4vh);
-    height: min(4vw, 4vh);
+    width: min(60px, 4vw);
+    height: min(60px, 4vw);
+    min-width: 15px;
+    min-height: 15px;
 }

@@ -1,0 +1,6 @@
+.content__sections {
+    display: grid;
+    height: 2vw;
+    border-radius: min(20px, 2vw);
+    background-color: white;
+}

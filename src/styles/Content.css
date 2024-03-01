@@ -5,6 +5,8 @@
 
 .content__icon {
     display: grid;
-    width: min(6vw, 6vh);
-    height: min(6vw, 6vh);
+    width: min(60px, 4vw);
+    height: min(60px, 4vw);
+    min-width: 15px;
+    min-height: 15px;
 }

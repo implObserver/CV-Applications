@@ -1,5 +1,5 @@
 import '../../../styles/Container.css';
-import { PersonalForms } from './personalForms/PersonalForms';
+import { ContentSections } from './contentSections/ContentSections';
 import { TemplateLoader } from './templateLoader/TemplateLoader';
 
 export const Container = () => {
@@ -7,7 +7,7 @@ export const Container = () => {
     <>
       <div className='container'>
         <TemplateLoader></TemplateLoader>
-        <PersonalForms></PersonalForms>
+        <ContentSections></ContentSections>
       </div>
     </>
   );
