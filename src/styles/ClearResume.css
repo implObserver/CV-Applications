@@ -1,16 +1,16 @@
 .clear__resume {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    justify-content: center;
-    align-items: center;
-    color: rgb(179, 0, 0);
-    font-weight: 500;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: center;
+  align-items: center;
+  color: rgb(179, 0, 0);
+  font-weight: 500;
 }
 
 .trash__icon {
-    display: grid;
-    width: min(60px, 4vw);
-    height: min(60px, 4vw);
-    min-width: 15px;
-    min-height: 15px;
+  display: grid;
+  width: min(60px, 4vw);
+  height: min(60px, 4vw);
+  min-width: 15px;
+  min-height: 15px;
 }

@@ -6,7 +6,7 @@ export const Content = () => {
   return (
     <>
       <div className='content'>
-        <Wrapper name="svg__wrapper">
+        <Wrapper name='svg__wrapper'>
           <img src={contentIcon} className='content__icon' alt='' />
         </Wrapper>
         <Wrapper name='span__wrapper'>

@@ -1,4 +1,26 @@
+ul {
+  list-style: none;
+}
+
+li {
+  display: grid;
+  gap: min(10px, 1vw);
+}
+
+input {
+  display: grid;
+  background-color: rgb(232, 242, 255);
+  padding: min(10px, 1vw);
+  border-radius: min(10px, 1vw);
+}
+
+.recommended__text {
+  padding-left: min(10px, 1vw);
+  font-size: 0.8rem;
+  color: rgb(142, 164, 190);
+}
+
 .container {
-    display: grid;
-    gap: min(10px, 1vw);
+  display: grid;
+  gap: min(10px, 1vw);
 }

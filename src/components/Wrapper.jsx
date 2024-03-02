@@ -1,7 +1,7 @@
 export const Wrapper = ({ name, children }) => {
-    return (
-        <>
-            <div className={name}>{children}</div>
-        </>
-    )
-}
+  return (
+    <>
+      <div className={name}>{children}</div>
+    </>
+  );
+};

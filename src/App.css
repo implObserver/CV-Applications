@@ -22,10 +22,10 @@ body {
   width: 100vw;
   height: min-content;
   gap: min(10px, 1vw);
-  margin: min(10px, 1vw);;
+  margin: min(10px, 1vw);
   font-size: 2vw;
 }
 
 .span__wrapper {
-  padding: min(10px, 1vw);;
+  padding: min(10px, 1vw);
 }

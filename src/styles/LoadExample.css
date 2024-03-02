@@ -1,9 +1,9 @@
 .load__example {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(226, 226, 226);
-    border-radius: min(20px, 2vw);;
-    font-weight: 500;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(226, 226, 226);
+  border-radius: min(20px, 2vw);
+  font-weight: 500;
 }

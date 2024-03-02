@@ -1,22 +1,21 @@
 .template__loader {
-    display: grid;
-    align-items: center;
-    border-radius: min(20px, 2vw);;
-    gap: min(10px, 1vw);
-    background-color: #ffffff;
-    padding: min(10px, 1vw);
-    font-size: min(12px, 2vw);
+  display: grid;
+  align-items: center;
+  border-radius: min(20px, 2vw);
+  gap: min(10px, 1vw);
+  background-color: #ffffff;
+  padding: min(10px, 1vw);
+  font-size: min(12px, 2vw);
 }
 
-
 @media screen and (min-aspect-ratio: 0.9/1) {
-    .template__loader {
-        grid-template-columns: 1fr 1fr;
-    }
+  .template__loader {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (max-aspect-ratio: 0.9/1) {
-    .template__loader {
-        grid-template-rows: 1fr 1fr;
-    }
+  .template__loader {
+    grid-template-rows: 1fr 1fr;
+  }
 }

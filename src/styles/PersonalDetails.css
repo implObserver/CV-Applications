@@ -1,0 +1,6 @@
+.personal__details {
+  display: grid;
+  background-color: white;
+  border-radius: min(10px, 1vw);
+  padding: min(20px, 2vw);
+}

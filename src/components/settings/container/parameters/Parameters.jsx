@@ -1,7 +1,7 @@
 export const Parameters = () => {
-    return (
-        <>
-            <div className='parameters'></div>
-        </>
-    );
+  return (
+    <>
+      <div className='parameters'></div>
+    </>
+  );
 };

@@ -5,7 +5,7 @@
   justify-items: center;
   border-radius: min(20px, 2vw);
   padding: min(10px, 1vw);
-  font-size: min(16px, 2vw);
+  font-size: min(16px, 3vw);
 }
 
 .svg__wrapper {

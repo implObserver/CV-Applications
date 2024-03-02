@@ -6,7 +6,7 @@ export const Customize = () => {
   return (
     <>
       <div className='customize'>
-        <Wrapper name="svg__wrapper">
+        <Wrapper name='svg__wrapper'>
           <img src={settingsIcon} className='settings__icon' alt='' />
         </Wrapper>
         <Wrapper name='span__wrapper'>

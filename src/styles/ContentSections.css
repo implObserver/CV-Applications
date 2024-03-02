@@ -1,6 +1,5 @@
 .content__sections {
-    display: grid;
-    height: 2vw;
-    border-radius: min(20px, 2vw);
-    background-color: white;
+  display: grid;
+  border-radius: min(20px, 2vw);
+  gap: min(10px, 1vw);
 }
