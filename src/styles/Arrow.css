@@ -1,0 +1,21 @@
+:root {
+  --size: min(3px, 1vw);
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 var(--size) var(--size) 0;
+  display: inline-block;
+  padding: var(--size);
+  transition: transform 0.1s ease-in-out;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}

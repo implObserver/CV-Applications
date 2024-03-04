@@ -1,6 +1,5 @@
 .resume {
   display: grid;
-  height: 20%;
   background-color: white;
   border-radius: min(20px, 2vw);
 }

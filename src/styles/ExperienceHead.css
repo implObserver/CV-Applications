@@ -1,0 +1,15 @@
+.experience__head {
+    display: grid;
+    grid-template-columns: max-content min-content;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.open__head {
+    border-radius: min(10px, 1vw) min(10px, 1vw) 0 0;
+}
+
+.close__head {
+    border-radius: min(10px, 1vw);
+}

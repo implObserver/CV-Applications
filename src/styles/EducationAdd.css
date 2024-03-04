@@ -1,0 +1,5 @@
+.education__add {
+    display: grid;
+    border: 1px red solid;
+    width: 10vw;
+}

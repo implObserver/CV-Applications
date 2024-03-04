@@ -1,0 +1,18 @@
+.education__head {
+    display: grid;
+    grid-template-columns: max-content min-content;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.open__head {
+    border-radius: min(10px, 1vw) min(10px, 1vw) 0 0;
+    transition-delay: 0s;
+}
+
+.close__head {
+    border-radius: min(10px, 1vw);
+    transition: border-radius 0.1s ease-in-out;
+    transition-delay: 0.3s;
+}
