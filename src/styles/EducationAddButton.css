@@ -1,0 +1,28 @@
+.education__add__button {
+    display: grid;
+    width: 150px;
+    justify-self: center;
+    align-self: self-end;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-5vw);
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    border-radius: min(10px, 1vw);
+    font-size: 1rem;
+}
+
+.close {
+    border: 0px green solid;
+    font-size: 0;
+    transform: translateX(-5vw);
+    margin: 0;
+}
+
+.open {
+    border: 1px red solid;
+    height: min-content;
+    transform: translateX(0vw);
+    opacity: 1;
+    margin: 1vw;
+}

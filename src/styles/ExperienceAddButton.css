@@ -1,0 +1,27 @@
+.experience__add__button {
+    display: grid;
+    width: 150px;
+    justify-self: center;
+    align-self: self-end;
+    justify-content: center;
+    align-items: center;
+    border-radius: min(10px, 1vw);
+    font-size: 1rem;
+    border: 1px red solid;
+}
+
+.close {
+    font-size: 0;
+    transform: translateX(-8vw);
+    margin: 0;
+    opacity: 0;
+    transition: all 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.open {
+    height: min-content;
+    transform: translateX(0vw);
+    opacity: 1;
+    margin: 1vw;
+    transition: all 0.4s ease-in-out, opacity 0.6s ease-in-out;
+}

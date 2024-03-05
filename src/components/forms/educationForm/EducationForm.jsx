@@ -2,7 +2,6 @@ export const EducationForm = () => {
   return (
     <>
       <form id='education__form' action='#' method='post'>
-        <h2>Education</h2>
         <ul className='fields'>
           <li>
             <label htmlFor='school'>School</label>

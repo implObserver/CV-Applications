@@ -1,18 +1,5 @@
 .education__section {
   display: grid;
-  transition: opacity 0.4s ease-in-out;
   background-color: white;
   border-radius: 0 0 min(10px, 1vw) min(10px, 1vw);
-}
-
-.close {
-  visibility: hidden;
-  opacity: 0;
-  height: 0;
-}
-
-.open {
-  opacity: 1;
-  visibility: visible;
-  height: min-content;
 }

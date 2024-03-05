@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import '../../../../../../styles/ExperienceSection.css';
+import { ExperienceAdd } from './experienceAdd/ExperienceAdd';
 
 export const ExperienceSection = () => {
   const [state, setState] = useState('close');
 
   const render = (
     <>
-      <div className={`experience__section ${state}`}></div>
+      <div className={`experience__section`}>
+        <ExperienceAdd status={state}></ExperienceAdd>
+      </div>
     </>
   );
 

@@ -5,11 +5,5 @@
     border-radius: 0 0 min(10px, 1vw) min(10px, 1vw);
   }
   
-  .close {
-    height: 0vw;
-  }
-  
-  .open {
-    height: min-content;
-  }
+
   
