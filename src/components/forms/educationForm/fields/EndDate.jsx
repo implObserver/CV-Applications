@@ -7,6 +7,10 @@ export const EndDate = () => {
         setVisible(visible === 'unvisible__field' ? 'visible__field' : 'unvisible__field');
     }
 
+    const isVisible = () => {
+        return visible === 'visible__field';
+    }
+
     const render = (<>
         <li className={visible}>
             <label htmlFor='end__date'>End Date</label>
@@ -23,5 +27,5 @@ export const EndDate = () => {
         </li>
     </>)
 
-    return { render, changeVisible }
+    return { render, changeVisible, isVisible }
 }

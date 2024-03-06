@@ -7,6 +7,10 @@ export const Degree = () => {
         setVisible(visible === 'unvisible__field' ? 'visible__field' : 'unvisible__field');
     }
 
+    const isVisible = () => {
+        return visible === 'visible__field';
+    }
+
     const render = (<>
         <li className={visible}>
             <label htmlFor='degree'>Degree</label>
@@ -24,5 +28,5 @@ export const Degree = () => {
         </li>
     </>)
 
-    return { render, changeVisible }
+    return { render, changeVisible, isVisible }
 }

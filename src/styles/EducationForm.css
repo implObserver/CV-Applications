@@ -1,3 +1,15 @@
-.visible {
+#education__form {
     display: grid;
+    transition: height 1s ease-in-out;
+}
+
+
+.visible__form {
+    height: max-content;
+
+}
+
+.unvisible__form {
+    height: 0;
+    padding: 0;
 }

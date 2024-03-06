@@ -7,41 +7,49 @@ import { School } from './fields/School';
 import { StartDate } from './fields/StartDate';
 
 export const EducationForm = () => {
-  const [fields, setFields] = useState([School(), Degree(), StartDate(), EndDate(), Location()]);
-  const [visibleFields, setVisibleFields] = useState([]);
+  const fields = [School(), Degree(), StartDate(), EndDate(), Location()];
+  const [toggle, setToggle] = useState(true);
+  const [visible, setVisible] = useState('unvisible__form');
+
+  const changeVisible = () => {
+    setVisible(visible === 'visible__form' ? 'unvisible__form' : 'visible__form');
+  }
 
   const timeout = async (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-
-
   const changeVisibleFields = async () => {
-    let newVisibleFields = [];
-    if (visibleFields.length === 0) {
+    let buff = true;
+    setToggle(!toggle);
+    if (toggle) {
       for (let field of fields) {
-        await timeout(200);
-        field.changeVisible()
-        newVisibleFields.push(field);
-      }
-      setFields(newVisibleFields)
-      setVisibleFields(newVisibleFields);
-    } else {
-      console.log(visibleFields)
-      for (let field of visibleFields) {
-        await timeout(200);
+        await timeout(100);
+        if (buff) {
+          changeVisible();
+          buff = false;
+        }
         field.changeVisible();
       }
-      setVisibleFields([]);
+    } else {
+      let newFields = fields.reverse();
+      for (let field of newFields) {
+        await timeout(50);
+        field.changeVisible();
+      }
+      await timeout(50);
+      changeVisible();
     }
   }
 
   const render = () => (
     <>
-      <form id='education__form' action='#' method='post'>
-        {fields.map((field) => {
-          return field.render;
-        })}
+      <form className={visible} id='education__form' action='#' method='post'>
+        <ul>
+          {fields.map((field) => {
+            return field.render;
+          })}
+        </ul>
       </form>
     </>
   );

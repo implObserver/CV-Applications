@@ -13,3 +13,7 @@
 .close__head {
     border-radius: min(10px, 1vw);
 }
+
+.block {
+    pointer-events: none;
+}
