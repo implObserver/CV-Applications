@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import '../../../../../../styles/EducationSection.css';
 import { EducationAdd } from './educationAdd/EducationAdd';
-import { EducationForm } from '../../../../../forms/educationForm/EducationForm';
 
-export const EducationSection = () => {
+export const EducationSection = (form) => {
+    const [state, setState] = useState(0);
     const [isForm, setIsForm] = useState(false);
-    const [state, setState] = useState('close');
 
-    const setForm = (val) => {
-        setIsForm(val);
+    const setForm = () => {
+        setIsForm(!isForm);
     }
 
     const render = (
@@ -16,10 +15,11 @@ export const EducationSection = () => {
             <div className={`education__section`}>
                 {(() => {
                     if (isForm) {
-                        return (<><EducationForm></EducationForm></>)
+                        return (<>
+                            {form.render()}
+                        </>)
                     } else {
-                        console.log(isForm)
-                        return (<><EducationAdd setForm = {setForm} status={state}></EducationAdd></>)
+                        return (<><EducationAdd setForm={setForm} status={state} form={form}></EducationAdd></>)
                     }
                 })()}
             </div>
@@ -27,8 +27,12 @@ export const EducationSection = () => {
     );
 
     const changeState = () => {
-        setState(state === 'close' ? 'open' : 'close');
+        setState(state === 1 ? 0 : 1);
     };
 
-    return { render, changeState };
+    const isFormOpen = () => {
+        return isForm;
+    }
+
+    return { render, changeState, isFormOpen };
 };

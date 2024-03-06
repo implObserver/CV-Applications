@@ -12,14 +12,14 @@
     font-size: 1rem;
 }
 
-.close {
+.close__button {
     border: 0px green solid;
     font-size: 0;
     transform: translateX(-5vw);
     margin: 0;
 }
 
-.open {
+.open__button {
     border: 1px red solid;
     height: min-content;
     transform: translateX(0vw);

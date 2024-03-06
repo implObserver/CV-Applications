@@ -1,77 +1,50 @@
+import { useState } from 'react';
+import '../../../styles/EducationForm.css'
+import { Degree } from './fields/Degree';
+import { EndDate } from './fields/EndDate';
+import { Location } from './fields/Location';
+import { School } from './fields/School';
+import { StartDate } from './fields/StartDate';
+
 export const EducationForm = () => {
-  return (
+  const [fields, setFields] = useState([School(), Degree(), StartDate(), EndDate(), Location()]);
+  const [visibleFields, setVisibleFields] = useState([]);
+
+  const timeout = async (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+
+
+  const changeVisibleFields = async () => {
+    let newVisibleFields = [];
+    if (visibleFields.length === 0) {
+      for (let field of fields) {
+        await timeout(200);
+        field.changeVisible()
+        newVisibleFields.push(field);
+      }
+      setFields(newVisibleFields)
+      setVisibleFields(newVisibleFields);
+    } else {
+      console.log(visibleFields)
+      for (let field of visibleFields) {
+        await timeout(200);
+        field.changeVisible();
+      }
+      setVisibleFields([]);
+    }
+  }
+
+  const render = () => (
     <>
       <form id='education__form' action='#' method='post'>
-        <ul className='fields'>
-          <li>
-            <label htmlFor='school'>School</label>
-
-            <input
-              type='text'
-              id='school'
-              name='user__school'
-              placeholder='Enter school / university'
-              className='field'
-              maxLength='100'
-            />
-
-            <span className='error' aria-live='polite'></span>
-          </li>
-          <li>
-            <label htmlFor='degree'>Degree</label>
-
-            <input
-              type='text'
-              id='degree'
-              name='user__degree'
-              placeholder='Enter degree / Field of study'
-              className='field'
-              maxLength='100'
-            />
-
-            <span className='error' aria-live='polite'></span>
-          </li>
-          <li>
-            <label htmlFor='start__date'>Start Date</label>
-
-            <input
-              type='date'
-              id='start__date'
-              name='user__start-date'
-              className='field'
-              placeholder='Enter start date'
-            />
-
-            <span className='error' aria-live='polite'></span>
-          </li>
-          <li>
-            <label htmlFor='end__date'>End Date</label>
-
-            <input
-              type='date'
-              id='end__date'
-              name='user__end-date'
-              className='field'
-              placeholder='Enter end date'
-            />
-
-            <span className='error' aria-live='polite'></span>
-          </li>
-          <li>
-            <label htmlFor='location'>Location</label>
-
-            <input
-              type='date'
-              id='location'
-              name='user__location'
-              className='field'
-              placeholder='Enter location'
-            />
-
-            <span className='error' aria-live='polite'></span>
-          </li>
-        </ul>
+        {fields.map((field) => {
+          return field.render;
+        })}
       </form>
     </>
   );
+
+  return { render, changeVisibleFields }
 };
