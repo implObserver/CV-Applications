@@ -1,37 +1,30 @@
-import { useState } from 'react';
-import '../../../../../../styles/EducationHead.css';
-import { Arrow } from '../../../../../arrow/Arrow';
+import { Head } from '../../../../../templates/sectionHead/Head';
 
 export const EducationHead = ({ section, form }) => {
-    const [state, setState] = useState('close__head');
-    const [block, setBlock] = useState('');
-
-    const arrow = Arrow();
-
-    const changeState = () => {
-        setState(state === 0 ? 1 : 0);
-    }
-
-    return (
+    const prototype = Head();
+    
+    const render = (
         <>
             <button
-                className={`education__head ${state === 0 ? 'close__head' : 'open__head'} ${block}`}
+                className={`education__head ${prototype.getState() === 0 ? 'close__head' : 'open__head'} ${prototype.getBlockStatus()}`}
                 onClick={() => {
-                    arrow.setPozitionArrow();
+                    prototype.changeBlock('block')
+                    prototype.getArrow().setPozitionArrow();
                     section.changeState();
-                    changeState();
+                    prototype.changeState();
                     if (section.isFormOpen()) {
                         form.changeVisibleFields();
                     }
-                    setBlock('block');
                     setTimeout(() => {
-                        setBlock('');
-                    }, 600);
+                        prototype.changeBlock('unblock')
+                    }, 250);
                 }}
             >
                 <h2>Education</h2>
-                {arrow.render}
+                {prototype.getArrow().render}
             </button >
         </>
     );
+
+    return Object.assign(prototype, { render });
 };

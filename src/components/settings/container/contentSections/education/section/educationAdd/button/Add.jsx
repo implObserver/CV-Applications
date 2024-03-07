@@ -1,5 +1,3 @@
-import '../../../../../../../../styles/EducationAddButton.css'
-
 export const EducationAddButton = ({ setForm, status, form }) => {
     return (
         <>

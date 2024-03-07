@@ -1,5 +1,3 @@
-import '../../../styles/DetailsForm.css';
-
 export const DetailsForm = () => {
   return (
     <>

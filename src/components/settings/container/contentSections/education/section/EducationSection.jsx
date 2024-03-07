@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import '../../../../../../styles/EducationSection.css';
 import { EducationAdd } from './educationAdd/EducationAdd';
 
 export const EducationSection = (form) => {

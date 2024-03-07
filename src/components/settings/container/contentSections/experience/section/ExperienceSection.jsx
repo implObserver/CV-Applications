@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import '../../../../../../styles/ExperienceSection.css';
 import { ExperienceAdd } from './experienceAdd/ExperienceAdd';
 
 export const ExperienceSection = () => {

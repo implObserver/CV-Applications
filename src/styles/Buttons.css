@@ -1,0 +1,19 @@
+.education__add__button,
+.experience__add__button {
+    display: grid;
+    justify-self: center;
+    align-self: self-end;
+    border-radius: min(10px, 1vw);
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.close__button {
+    font-size: 0;
+    opacity: 0;
+}
+
+.open__button {
+    opacity: 1;
+    margin: min(10px, 1vw);
+}

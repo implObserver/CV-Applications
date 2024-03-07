@@ -3,3 +3,37 @@
   border-radius: min(20px, 2vw);
   gap: min(10px, 1vw);
 }
+
+.experience,
+.education {
+  display: grid;
+}
+
+.education__head,
+.experience__head {
+  display: grid;
+  grid-template-columns: max-content min-content;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.open__head {
+  border-radius: min(10px, 1vw) min(10px, 1vw) 0 0;
+}
+
+.close__head {
+  border-radius: min(10px, 1vw);
+  transition: border-radius 0.1s ease-in-out;
+}
+
+.education__section,
+.experience__section {
+  display: grid;
+  background-color: white;
+  border-radius: 0 0 min(10px, 1vw) min(10px, 1vw);
+}
+
+.block {
+  pointer-events: none;
+}

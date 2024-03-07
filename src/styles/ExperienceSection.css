@@ -1,9 +1,0 @@
-.experience__section {
-    display: grid;
-    transition: height 0.4s ease-in-out;
-    background-color: white;
-    border-radius: 0 0 min(10px, 1vw) min(10px, 1vw);
-  }
-  
-
-  

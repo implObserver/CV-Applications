@@ -15,11 +15,6 @@
   padding: min(10px, 1vw);
 }
 
-.span__wrapper {
-  display: grid;
-  justify-content: center;
-}
-
 @media screen and (min-aspect-ratio: 0.9/1) {
   .sidebar {
     grid-template-rows: 1fr 1fr;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../../styles/Arrow.css';
+import '../../../styles/Arrow.css';
 
 export const Arrow = () => {
   const [pozition, setPozition] = useState('right');

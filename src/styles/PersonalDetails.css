@@ -1,4 +1,7 @@
 .personal__details {
   display: grid;
   background-color: white;
+  min-width: 100%;
+  width: max-content;
+  border-radius: min(10px, 1vw);
 }

@@ -1,20 +1,14 @@
 li {
-    transition: all 1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .unvisible__field {
-    font-size: 0;
     opacity: 0;
     height: 0;
-    transition: all 0.02s ease-in-out, transform 4s ease-in-out;
-}
-
-.unvisible__field>input {
-    height: 0;
-    padding: 0;
-    display:none;
+    transform: translateX(-3vw);
+    transition: all 0.2s ease-in-out, transform 1s ease-in-out;
 }
 
 .visible__field {
-    transition: all 0.1s ease-in-out;
+    height: min(80px, 25vw);
 }

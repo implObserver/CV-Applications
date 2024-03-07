@@ -14,13 +14,6 @@ body {
   background-color: rgb(232, 242, 255);
 }
 
-form {
-  display: grid;
-  border-radius: min(10px, 1vw);
-  padding: min(20px, 3vw);
-  transition: all 1s ease-in-out;
-}
-
 #root {
   display: grid;
   align-self: self-start;
@@ -30,7 +23,6 @@ form {
   height: min-content;
   gap: min(10px, 1vw);
   margin: min(10px, 1vw);
-  font-size: 2vw;
 }
 
 .span__wrapper {

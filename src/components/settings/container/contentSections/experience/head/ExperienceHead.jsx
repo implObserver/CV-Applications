@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import '../../../../../../styles/ExperienceHead.css';
-import { Arrow } from '../../../../../arrow/Arrow';
+import { Arrow } from '../../../../../templates/arrow/Arrow';
 
 export const ExperienceHead = ({ section }) => {
     const [state, setState] = useState('close__head');

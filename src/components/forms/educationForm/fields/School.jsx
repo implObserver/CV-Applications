@@ -1,33 +1,23 @@
-import { useState } from "react"
 import '../../../../styles/Field.css'
+import { Field } from "../../../templates/field/Field"
 
 export const School = () => {
-    const [visible, setVisible] = useState('unvisible__field')
-  
-    const changeVisible = () => {
-        setVisible(visible === 'unvisible__field' ? 'visible__field' : 'unvisible__field');
-    }
-
-    const isVisible = () => {
-        return visible === 'visible__field';
-    }
+    const prototype = Field('School');
 
     const render = (<>
-        <li className={visible}>
-            <label htmlFor='school'>School</label>
+        <label htmlFor='school'>School</label>
 
-            <input
-                type='text'
-                id='school'
-                name='user__school'
-                placeholder='Enter school / university'
-                className='field'
-                maxLength='100'
-            />
+        <input
+            type='text'
+            id='school'
+            name='user__school'
+            placeholder='Enter school / university'
+            className='field'
+            maxLength='100'
+        />
 
-            <span className='error' aria-live='polite'></span>
-        </li>
+        <span className='error' aria-live='polite'></span>
     </>)
 
-    return { render, changeVisible, isVisible }
+    return Object.assign(prototype, { render });
 }
