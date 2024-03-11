@@ -1,4 +1,4 @@
-import { Head } from '../../../../../prototypes/sectionHead/Head';
+import { Head } from '../../../../../prototypes/contentSection/head/Head';
 
 export const EducationHead = () => {
     const prototype = Head();

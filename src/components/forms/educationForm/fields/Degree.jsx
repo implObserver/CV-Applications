@@ -3,7 +3,7 @@ import { Field } from "../../../prototypes/field/Field";
 export const Degree = () => {
     const prototype = Field('Degree');
 
-    const render = (<>
+    const render = () => (<>
         <label htmlFor='degree'>Degree</label>
 
         <input

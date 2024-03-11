@@ -1,9 +1,9 @@
-import { Head } from '../../../../../prototypes/sectionHead/Head';
+import { Head } from '../../../../../prototypes/contentSection/head/Head';
 
-export const ExperienceHead = ({ section, form }) => {
+export const ExperienceHead = () => {
     const prototype = Head();
 
-    const render = (
+    const render = (section, form) => (
         <>
             <button
                 className={`experience__head ${prototype.getState() === 0 ? 'close__head' : 'open__head'} ${prototype.getBlockStatus()}`}
@@ -13,7 +13,7 @@ export const ExperienceHead = ({ section, form }) => {
                     section.changeState();
                     prototype.changeState();
                     if (section.isFormOpen()) {
-                        form.changeVisibleFields();
+                        form.changeVisible();
                     }
                     setTimeout(() => {
                         prototype.changeBlock('unblock')

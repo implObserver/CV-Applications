@@ -1,32 +1,20 @@
-import { useState } from 'react';
-import { EducationAdd } from './educationAdd/EducationAdd';
+import { EducationButtonWrapper } from './buttonWrapper/ButtonWrapper';
+import { Section } from '../../../../../prototypes/contentSection/section/Section';
 
 export const EducationSection = () => {
-    const [state, setState] = useState(0);
-    const [draw, setDraw] = useState('button');
-
-    const buttonWrapper = EducationAdd();
-
-    const drawIt = (val) => {
-        setDraw(val);
-        if (val === 'button') {
-            setTimeout(() => {
-                buttonWrapper.changeState();
-            }, 1);
-        }
-    }
+    const prototype = Section(EducationButtonWrapper());
 
     const render = (form) => (
         <>
             <div className={`education__section`}>
                 {(() => {
-                    if (draw === 'form') {
+                    if (prototype.getDrawStatus() === 'form') {
                         return (<>
-                            {form.render()}
+                            {form.render(prototype.drawIt)}
                         </>)
                     } else {
                         return (<>
-                            {buttonWrapper.render(drawIt, form)}
+                            {prototype.getChilds()[0].render(prototype.drawIt, form)}
                         </>)
                     }
                 })()}
@@ -34,14 +22,5 @@ export const EducationSection = () => {
         </>
     );
 
-    const changeState = () => {
-        setState(state === 1 ? 0 : 1);
-        buttonWrapper.changeState();
-    };
-
-    const isFormOpen = () => {
-        return draw === 'form';
-    }
-
-    return { render, changeState, isFormOpen, drawIt };
+    return Object.assign(prototype, { render });
 };

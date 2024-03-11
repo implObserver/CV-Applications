@@ -23,6 +23,15 @@ body {
   height: min-content;
   gap: min(10px, 1vw);
   margin: min(10px, 1vw);
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    visibility: hidden;
+    width: 0;
 }
 
 .span__wrapper {

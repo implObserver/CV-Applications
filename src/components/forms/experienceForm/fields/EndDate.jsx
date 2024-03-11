@@ -3,7 +3,7 @@ import { Field } from "../../../prototypes/field/Field";
 export const EndDate = () => {
     const prototype = Field('EndDate');
 
-    const render = (<>
+    const render = () => (<>
         <label htmlFor='end__date'>End Date</label>
 
         <input

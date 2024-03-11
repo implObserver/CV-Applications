@@ -1,37 +1,26 @@
-import { useState } from 'react';
-import { ExperienceAdd } from './experienceAdd/ExperienceAdd';
+import { ExperienceButtonWrapper } from './buttonWrapper/ButtonWrapper';
+import { Section } from '../../../../../prototypes/contentSection/section/Section';
 
-export const ExperienceSection = (form) => {
-  const [state, setState] = useState(0);
-  const [isForm, setIsForm] = useState(false);
+export const ExperienceSection = () => {
+  const prototype = Section(ExperienceButtonWrapper());
 
-  const setForm = () => {
-    setIsForm(!isForm);
-  }
-
-  const render = (
+  const render = (form) => (
     <>
       <div className={`experience__section`}>
         {(() => {
-          if (isForm) {
+          if (prototype.getDrawStatus() === 'form') {
             return (<>
-              {form.render()}
+              {form.render(prototype.drawIt)}
             </>)
           } else {
-            return (<><ExperienceAdd setForm={setForm} status={state} form={form}></ExperienceAdd></>)
+            return (<>
+              {prototype.getChilds()[0].render(prototype.drawIt, form)}
+            </>)
           }
         })()}
       </div>
     </>
   );
 
-  const changeState = () => {
-    setState(state === 1 ? 0 : 1);
-  };
-
-  const isFormOpen = () => {
-    return isForm;
-  }
-
-  return { render, changeState, isFormOpen };
+  return Object.assign(prototype, { render });
 };

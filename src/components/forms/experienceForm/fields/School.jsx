@@ -4,7 +4,7 @@ import { Field } from "../../../prototypes/field/Field"
 export const School = () => {
     const prototype = Field('School');
 
-    const render = (<>
+    const render = () => (<>
         <label htmlFor='school'>School</label>
 
         <input

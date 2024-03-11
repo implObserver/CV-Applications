@@ -4,7 +4,7 @@ import { EducationForm } from '../../../../forms/educationForm/EducationForm.jsx
 
 export const Education = () => {
   const section = EducationSection();
-  const form = EducationForm(section);
+  const form = EducationForm();
   const head = EducationHead();
 
   return (

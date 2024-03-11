@@ -9,7 +9,6 @@ export const Cancel = () => {
             className='cancel'
             value='Cancel'
             onClick={async () => {
-                
                 changeVisible();
                 await timeout(450);
                 drawIt('button');

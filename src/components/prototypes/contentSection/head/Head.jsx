@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Arrow } from "../arrow/Arrow";
+import { Arrow } from "../../arrow/Arrow";
 
 export const Head = () => {
     const [state, setState] = useState(0);

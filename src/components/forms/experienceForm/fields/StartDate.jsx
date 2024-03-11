@@ -3,7 +3,7 @@ import { Field } from "../../../prototypes/field/Field";
 export const StartDate = () => {
     const prototype = Field('StartDate');
 
-    const render = (<>
+    const render = () => (<>
         <label htmlFor='start__date'>Start Date</label>
 
         <input

@@ -21,15 +21,16 @@
     align-self: self-end;
     border-radius: min(10px, 1vw);
     font-size: 1rem;
+    max-height: 10vh;
+    transition: all 0.2s ease-in-out;
 }
 
 .close__button {
     opacity: 0;
-    transition: all 0.2s ease-in-out;
+    max-height: 0;
+    transform: translateX(-3vw);
 }
 
 .open__button {
     opacity: 1;
-    margin: min(10px, 1vw);
-    transition: all 0.4s ease-in-out;
 }

@@ -2,7 +2,6 @@
   display: grid;
   border-radius: min(20px, 2vw);
   gap: min(10px, 1vw);
-  transition: all 1s ease-in-out;
 }
 
 .experience,
