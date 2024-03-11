@@ -1,11 +1,11 @@
 import '../../../../../../../styles/ExperienceAdd.css'
 import { ExperienceAddButton } from './button/Add'
 
-export const ExperienceAdd = ({ status }) => {
+export const ExperienceAdd = ({ setForm, status, form }) => {
     return (
         <>
             <div className={`experience__add`}>
-                <ExperienceAddButton status={status}></ExperienceAddButton>
+                <ExperienceAddButton setForm={setForm} status={status} form={form}></ExperienceAddButton>
             </div>
         </>
     )

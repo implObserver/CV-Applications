@@ -1,9 +1,9 @@
-import { Head } from '../../../../../templates/sectionHead/Head';
+import { Head } from '../../../../../prototypes/sectionHead/Head';
 
-export const EducationHead = ({ section, form }) => {
+export const EducationHead = () => {
     const prototype = Head();
-    
-    const render = (
+
+    const render = (section, form) => (
         <>
             <button
                 className={`education__head ${prototype.getState() === 0 ? 'close__head' : 'open__head'} ${prototype.getBlockStatus()}`}
@@ -13,7 +13,7 @@ export const EducationHead = ({ section, form }) => {
                     section.changeState();
                     prototype.changeState();
                     if (section.isFormOpen()) {
-                        form.changeVisibleFields();
+                        form.changeVisible();
                     }
                     setTimeout(() => {
                         prototype.changeBlock('unblock')

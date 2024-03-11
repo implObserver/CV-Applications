@@ -4,32 +4,31 @@ import { EndDate } from './fields/EndDate';
 import { Location } from './fields/Location';
 import { School } from './fields/School';
 import { StartDate } from './fields/StartDate';
+import { Buttons } from './fields/Buttons';
 
-export const EducationForm = () => {
-  const fields = [School(), Degree(), StartDate(), EndDate(), Location()];
-  const [toggle, setToggle] = useState(true);
-  const [visible, setVisible] = useState('unvisible__form');
-  const [keys, setKeys] = useState([]);
-
+export const EducationForm = (section) => {
   const changeVisible = () => {
     setVisible(visible === 'visible__form' ? 'unvisible__form' : 'visible__form');
+    changeVisibleFields();
   }
+
+  const changeVisibleFields = async () => {
+    setToggle(!toggle);
+    toggle ? addFields() : removeFields();
+  }
+
+  const fields = [School(), Degree(), StartDate(), EndDate(), Location(), Buttons(changeVisible, section)];
+  const [toggle, setToggle] = useState(true);
+  const [keys, setKeys] = useState([]);
+  const [visible, setVisible] = useState('unvisible__form');
 
   const timeout = async (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  const changeVisibleFields = async () => {
-    setToggle(!toggle);
-    console.log('what')
-    changeVisible();
-    toggle ? addFields() : removeFields();
-  }
-
   const addFields = async () => {
     for (let field of fields) {
       let key = field.getKey();
-      console.log(field)
       if (!keys.includes(key)) {
         await timeout(50);
         field.changeVisible();
@@ -66,5 +65,5 @@ export const EducationForm = () => {
     </>
   );
 
-  return { render, changeVisibleFields }
+  return { render, changeVisible, changeVisibleFields }
 };

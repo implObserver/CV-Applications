@@ -3,15 +3,15 @@ import { EducationHead } from './head/EducationHead.jsx';
 import { EducationForm } from '../../../../forms/educationForm/EducationForm.jsx';
 
 export const Education = () => {
-  const form = EducationForm();
-  const section = EducationSection(form);
-  const head = EducationHead({ section, form });
+  const section = EducationSection();
+  const form = EducationForm(section);
+  const head = EducationHead();
 
   return (
     <>
       <div className='education'>
-        {head.render}
-        {section.render}
+        {head.render(section, form)}
+        {section.render(form)}
       </div>
     </>
   );

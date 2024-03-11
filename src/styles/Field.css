@@ -4,11 +4,11 @@ li {
 
 .unvisible__field {
     opacity: 0;
-    height: 0;
+    max-height: 0;
     transform: translateX(-3vw);
     transition: all 0.2s ease-in-out, transform 1s ease-in-out;
 }
 
 .visible__field {
-    height: min(80px, 25vw);
+    max-height: 100vh;
 }

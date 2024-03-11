@@ -1,24 +1,33 @@
 import { useState } from 'react';
 import { EducationAdd } from './educationAdd/EducationAdd';
 
-export const EducationSection = (form) => {
+export const EducationSection = () => {
     const [state, setState] = useState(0);
-    const [isForm, setIsForm] = useState(false);
+    const [draw, setDraw] = useState('button');
 
-    const setForm = () => {
-        setIsForm(!isForm);
+    const buttonWrapper = EducationAdd();
+
+    const drawIt = (val) => {
+        setDraw(val);
+        if (val === 'button') {
+            setTimeout(() => {
+                buttonWrapper.changeState();
+            }, 1);
+        }
     }
 
-    const render = (
+    const render = (form) => (
         <>
             <div className={`education__section`}>
                 {(() => {
-                    if (isForm) {
+                    if (draw === 'form') {
                         return (<>
                             {form.render()}
                         </>)
                     } else {
-                        return (<><EducationAdd setForm={setForm} status={state} form={form}></EducationAdd></>)
+                        return (<>
+                            {buttonWrapper.render(drawIt, form)}
+                        </>)
                     }
                 })()}
             </div>
@@ -27,11 +36,12 @@ export const EducationSection = (form) => {
 
     const changeState = () => {
         setState(state === 1 ? 0 : 1);
+        buttonWrapper.changeState();
     };
 
     const isFormOpen = () => {
-        return isForm;
+        return draw === 'form';
     }
 
-    return { render, changeState, isFormOpen };
+    return { render, changeState, isFormOpen, drawIt };
 };

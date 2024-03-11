@@ -1,3 +1,19 @@
+.buttons {
+    display: grid;
+    grid-template-columns: min-content 3fr 1fr;
+    column-gap: min(10px, 1vw);
+    padding-top: min(10px, 1vw);
+}
+
+.save {
+    width: min-content;
+    justify-self: right;
+}
+
+.cancel {
+    cursor: pointer;
+}
+
 .education__add__button,
 .experience__add__button {
     display: grid;
@@ -5,15 +21,15 @@
     align-self: self-end;
     border-radius: min(10px, 1vw);
     font-size: 1rem;
-    transition: all 0.2s ease-in-out;
 }
 
 .close__button {
-    font-size: 0;
     opacity: 0;
+    transition: all 0.2s ease-in-out;
 }
 
 .open__button {
     opacity: 1;
     margin: min(10px, 1vw);
+    transition: all 0.4s ease-in-out;
 }

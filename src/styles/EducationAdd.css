@@ -1,5 +1,19 @@
 .education__add {
     display: grid;
-    height: min-content;
+    max-height: 10vh;
+    transition: all 0.2s ease-in-out;
+    padding: min(10px, 1vw);
+}
+
+.unvisible__education-add {
+    max-height: 0;
     padding: 0;
+}
+
+.unvisible__education-add>button {
+    opacity: 0;
+}
+
+.visible__education-add {
+    
 }
