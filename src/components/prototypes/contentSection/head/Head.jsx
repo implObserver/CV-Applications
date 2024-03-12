@@ -1,7 +1,7 @@
 import { Arrow } from '../../arrow/Arrow';
 import { Toggle } from '../../toggle/Toggle';
 
-export const Head = () => {
+export const Head = (name) => {
   const state = Toggle('close__head', 'open__head');
   const block = Toggle('unblock', 'block');
 
@@ -48,7 +48,7 @@ export const Head = () => {
           formVerification(section, form);
         }}
       >
-        <h2>Education</h2>
+        <h2>{name}</h2>
         {arrow.render}
       </button>
     </>

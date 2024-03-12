@@ -60,7 +60,7 @@ export const DynamicForm = (id, fields) => {
         return visibleState.getState();
     };
 
-    const render = (drawIt) => (
+    const render = (drawIt = '') => (
         <>
             <form
                 className={getVisible()}

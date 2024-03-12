@@ -18,11 +18,15 @@ li {
   gap: min(10px, 1vw);
 }
 
-input {
+input, textarea {
   display: grid;
   background-color: rgb(232, 242, 255);
   padding: min(10px, 2vw);
   border-radius: min(10px, 1vw);
+}
+
+textarea {
+  resize: vertical;
 }
 
 .recommended__text {

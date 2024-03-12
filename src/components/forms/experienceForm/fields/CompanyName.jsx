@@ -1,18 +1,17 @@
-import '../../../../styles/Field.css';
 import { Field } from '../../../prototypes/field/Field';
 
-export const School = () => {
-  const prototype = Field('School');
+export const CompanyName = () => {
+  const prototype = Field('CompanyName');
 
   const render = () => (
     <>
-      <label htmlFor='school'>School</label>
+      <label htmlFor='company__name'>Company Name</label>
 
       <input
         type='text'
-        id='school'
-        name='user__school'
-        placeholder='Enter school / university'
+        id='company__name'
+        name='user__company-name'
+        placeholder='Enter Company Name'
         className='field'
         maxLength='100'
       />

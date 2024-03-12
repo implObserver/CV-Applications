@@ -4,10 +4,12 @@ import { Experience } from './experience/Experience';
 import { PersonalDetails } from './personalDetails/PersonalDetails';
 
 export const ContentSections = () => {
+  const personalDetails = PersonalDetails();
+
   return (
     <>
       <div className='content__sections'>
-        <PersonalDetails></PersonalDetails>
+        {personalDetails.render()}
         <Education></Education>
         <Experience></Experience>
       </div>

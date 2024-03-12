@@ -1,18 +1,20 @@
-import { Degree } from './fields/Degree';
+import { CompanyName } from './fields/CompanyName';
 import { EndDate } from './fields/EndDate';
 import { Location } from './fields/Location';
-import { School } from './fields/School';
+import { PositionTitle } from './fields/PositionTitle';
 import { StartDate } from './fields/StartDate';
 import { Buttons } from './fields/Buttons';
 import { DynamicForm } from '../../prototypes/form/DynamicForm';
+import { Description } from './fields/Description';
 
 export const ExperienceForm = () => {
   const fields = [
-    School(),
-    Degree(),
+    CompanyName(),
+    PositionTitle(),
     StartDate(),
     EndDate(),
     Location(),
+    Description(),
     Buttons(),
   ];
 
