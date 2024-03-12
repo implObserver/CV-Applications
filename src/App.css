@@ -30,8 +30,8 @@ body {
 }
 
 html::-webkit-scrollbar {
-    visibility: hidden;
-    width: 0;
+  visibility: hidden;
+  width: 0;
 }
 
 .span__wrapper {

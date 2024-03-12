@@ -1,16 +1,16 @@
-import { useState } from 'react';
 import '../../../styles/Arrow.css';
+import { Toggle } from '../toggle/Toggle';
 
 export const Arrow = () => {
-  const [pozition, setPozition] = useState('right');
+  const pozition = Toggle('right', 'down');
 
   const setPozitionArrow = () => {
-    setPozition(pozition === 'right' ? 'down' : 'right');
+    pozition.switchState();
   };
 
   const render = (
     <>
-      <div className={`arrow ${pozition}`}></div>
+      <div className={`arrow ${pozition.getState()}`}></div>
     </>
   );
 

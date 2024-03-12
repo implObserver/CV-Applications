@@ -14,8 +14,7 @@
     cursor: pointer;
 }
 
-.education__add__button,
-.experience__add__button {
+.add__button {
     display: grid;
     justify-self: center;
     align-self: self-end;
@@ -29,6 +28,7 @@
     opacity: 0;
     max-height: 0;
     transform: translateX(-3vw);
+    pointer-events: none;
 }
 
 .open__button {

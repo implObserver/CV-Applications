@@ -1,37 +1,63 @@
-import { useState } from "react";
+import { Toggle } from '../../toggle/Toggle';
 
 export const Section = (buttonWrapper) => {
-    const [state, setState] = useState(0);
-    const [draw, setDraw] = useState('button');
-    const childs = [buttonWrapper];
+  const drawnNode = Toggle();
+  const childs = [buttonWrapper];
 
-    const drawIt = (val) => {
-        setDraw(val);
-        setTimeout(() => {
-            changeStateChilds();
-        }, 10);
-    }
+  const startDrawAnimation = () => {
+    setTimeout(() => {
+      changeStateChilds();
+    }, 10);
+  }
 
-    const changeState = () => {
-        setState(state === 1 ? 0 : 1);
-        changeStateChilds();
-    };
+  const drawIt = (val) => {
+    drawnNode.manual(val);
+    startDrawAnimation();
+  };
 
-    const changeStateChilds = () => {
-        buttonWrapper.changeState();
-    }
+  const changeState = () => {
+    changeStateChilds();
+  };
 
-    const isFormOpen = () => {
-        return draw === 'form';
-    }
+  const changeStateChilds = () => {
+    buttonWrapper.changeVisible();
+  };
 
-    const getDrawStatus = () => {
-        return draw;
-    }
+  const isFormOpen = () => {
+    return drawnNode.getState() === 'form';
+  };
 
-    const getChilds = () => {
-        return childs;
-    }
+  const getDrawStatus = () => {
+    return drawnNode.getState();
+  };
 
-    return { changeState, isFormOpen, drawIt, changeStateChilds, getDrawStatus, getChilds };
+  const getChilds = () => {
+    return childs;
+  };
+
+  const render = (form) => (
+    <>
+      <div className={`section__body`}>
+        {(() => {
+          if (getDrawStatus() === 'form') {
+            return <>{form.render(drawIt)}</>;
+          } else {
+            return (
+              <>{childs[0].render(drawIt, form)}</>
+            );
+          }
+        })()}
+      </div>
+    </>
+  );
+
+  return {
+    changeState,
+    isFormOpen,
+    drawIt,
+    changeStateChilds,
+    getDrawStatus,
+    getChilds,
+    render
+  };
 };

@@ -9,8 +9,7 @@
   display: grid;
 }
 
-.education__head,
-.experience__head {
+.section__head {
   display: grid;
   grid-template-columns: max-content min-content;
   align-items: center;
@@ -27,8 +26,7 @@
   transition: border-radius 0.1s ease-in-out;
 }
 
-.education__section,
-.experience__section {
+.section__body {
   display: grid;
   background-color: white;
   border-radius: 0 0 min(10px, 1vw) min(10px, 1vw);

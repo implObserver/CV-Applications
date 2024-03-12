@@ -1,14 +1,14 @@
 .button__wrapper {
-    display: grid;
-    transition: all 0.2s ease-in-out;
+  display: grid;
+  transition: all 0.2s ease-in-out;
 }
 
 .unvisible__button-wrapper {
-    max-height: 0;
-    padding: 0;
+  max-height: 0;
+  padding: 0;
 }
 
 .visible__button-wrapper {
-    padding: min(10px, 1vw);
-    max-height: 10vh;
+  padding: min(10px, 1vw);
+  max-height: 10vh;
 }

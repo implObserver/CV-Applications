@@ -3,16 +3,16 @@ import { ExperienceHead } from './head/ExperienceHead';
 import { ExperienceSection } from './section/ExperienceSection';
 
 export const Experience = () => {
-    const section = ExperienceSection();
-    const form = ExperienceForm(section);
-    const head = ExperienceHead({ section, form });
+  const head = ExperienceHead();
+  const section = ExperienceSection();
+  const form = ExperienceForm();
 
-    return (
-        <>
-            <div className='experience'>
-                {head.render(section, form)}
-                {section.render(form)}
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className='experience'>
+        {head.render(section, form)}
+        {section.render(form)}
+      </div>
+    </>
+  );
 };

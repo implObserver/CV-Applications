@@ -1,25 +1,6 @@
-import { useState } from "react";
+import { FormAddButton } from '../../../../../../../prototypes/contentSection/section/buttonWrapper/button/Button';
 
 export const ExperienceAddButton = () => {
-    const [state, setState] = useState('close__button');
-
-    const changeState = () => {
-        setState(state === 'close__button' ? 'open__button' : 'close__button');
-    }
-
-    const render = (drawIt, form, changeState) => {
-        return (<>
-            <button className={`experience__add__button ${state}`}
-                onClick={() => {
-                    console.log(form)
-                    drawIt('form');
-                    form.changeVisible();
-                    changeState()
-                }}>
-                <span>+ Experience</span>
-            </button>
-        </>)
-    }
-
-    return { render, changeState }
-}
+  const prototype = FormAddButton('Experience');
+  return Object.assign(prototype);
+};

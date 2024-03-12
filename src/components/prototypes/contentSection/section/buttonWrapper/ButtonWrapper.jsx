@@ -1,21 +1,26 @@
-import { useState } from "react";
 import '../../../../../styles/ButtonWrapper.css';
+import { Toggle } from '../../../toggle/Toggle';
 
 export const ButtonWrapper = (button) => {
-    const [state, setState] = useState('unvisible__button-wrapper');
+  const visibleState = Toggle(
+    'unvisible__button-wrapper',
+    'visible__button-wrapper',
+  );
 
-    const changeState = () => {
-        setState(state === 'visible__button-wrapper' ? 'unvisible__button-wrapper' : 'visible__button-wrapper');
-        button.changeState();
-    }
+  const changeVisible = () => {
+    visibleState.switchState();
+    button.changeState();
+  };
 
-    const render = (drawIt, form) => {
-        return (<>
-            <div className={`button__wrapper ${state}`}>
-                {button.render(drawIt, form, changeState)}
-            </div>
-        </>)
-    }
+  const render = (drawIt, form) => {
+    return (
+      <>
+        <div className={`button__wrapper ${visibleState.getState()}`}>
+          {button.render(drawIt, form, changeVisible)}
+        </div>
+      </>
+    );
+  };
 
-    return { render, changeState };
-}
+  return { render, changeVisible };
+};

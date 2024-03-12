@@ -1,32 +1,36 @@
-import { useState } from "react";
+import { Toggle } from '../toggle/Toggle';
 
 export const Field = (name) => {
-    const [visible, setVisible] = useState('unvisible__field')
-    const key = setKey(name);
+  const visibleState = Toggle(
+    'unvisible__field',
+    'visible__field',
+  );
 
-    const changeVisible = () => {
-        setVisible(visible === 'unvisible__field' ? 'visible__field' : 'unvisible__field');
-    }
+  const key = setKey(name);
 
-    const getVisible = () => {
-        return visible;
-    }
+  const changeVisible = () => {
+    visibleState.switchState();
+  };
 
-    const isVisible = () => {
-        return visible === 'visible__field';
-    }
+  const getVisible = () => {
+    return visibleState.getState();
+  };
 
-    const getKey = () => {
-        return key;
-    }
+  const isVisible = () => {
+    return visibleState.getState() === 'visible__field';
+  };
 
-    return { changeVisible, isVisible, getVisible, getKey }
-}
+  const getKey = () => {
+    return key;
+  };
+
+  return { changeVisible, isVisible, getVisible, getKey };
+};
 
 const setKey = (name) => {
-    let key = '';
-    for (let i = 0; i < name.length; i++) {
-        key += name[i].charCodeAt();
-    }
-    return key;
-}
+  let key = '';
+  for (let i = 0; i < name.length; i++) {
+    key += name[i].charCodeAt();
+  }
+  return key;
+};

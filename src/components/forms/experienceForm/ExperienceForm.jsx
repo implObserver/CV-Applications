@@ -7,22 +7,16 @@ import { Buttons } from './fields/Buttons';
 import { DynamicForm } from '../../prototypes/form/DynamicForm';
 
 export const ExperienceForm = () => {
-    const fields = [School(), Degree(), StartDate(), EndDate(), Location(), Buttons()];
-    const prototype = DynamicForm(fields);
+  const fields = [
+    School(),
+    Degree(),
+    StartDate(),
+    EndDate(),
+    Location(),
+    Buttons(),
+  ];
 
-    const render = (drawIt) => (
-        <>
-            <form className={prototype.getVisible()} id='experience__form' action='#' method='post'>
-                <ul>
-                    {fields.map((field) => {
-                        return <li key={field.getKey()} className={field.getVisible()}>
-                            {field.render(prototype.changeVisible, drawIt)}
-                        </li>
-                    })}
-                </ul>
-            </form>
-        </>
-    );
+  const prototype = DynamicForm('experience__form', fields);
 
-    return Object.assign(prototype, { render });
+  return Object.assign(prototype);
 };
