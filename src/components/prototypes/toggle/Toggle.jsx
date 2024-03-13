@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const Toggle = (state1 = 0, state2 = 1) => {
+export const State = (state1 = 0, state2 = 1) => {
     const [state, setState] = useState(state1);
 
     const switchState = () => {
@@ -11,9 +11,5 @@ export const Toggle = (state1 = 0, state2 = 1) => {
         return state;
     };
 
-    const manual = (state) => {
-        setState(state);
-    }
-
-    return { switchState, getState, manual };
+    return { switchState, getState, setState };
 };

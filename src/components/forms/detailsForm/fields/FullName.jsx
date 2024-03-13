@@ -1,28 +1,17 @@
 import { Field } from '../../../prototypes/field/Field';
 
 export const FullName = () => {
-    const prototype = Field('FullName');
+    const props = {
+        label: 'FullName',
+        type: 'text',
+        id: 'full_name',
+        name: 'user_full-name',
+        placeholder: 'Enter full name...',
+        maxLength: 50,
+        isRequied: true,
+    }
 
-    const render = () => (
-        <>
-            <label htmlFor='full_name'>
-                Full name
-                <span aria-label='required'>*</span>
-            </label>
+    const prototype = Field(props);
 
-            <input
-                type='text'
-                id='full_name'
-                name='user_full-name'
-                placeholder='Enter full name...'
-                className='field'
-                maxLength='50'
-                required
-            />
-
-            <span className='error' aria-live='polite'></span>
-        </>
-    );
-
-    return Object.assign(prototype, { render });
+    return Object.assign(prototype);
 };

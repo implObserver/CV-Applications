@@ -1,27 +1,18 @@
 import { Field } from '../../../prototypes/field/Field';
 
 export const Email = () => {
-    const prototype = Field('Email');
+    const props = {
+        label: 'Email',
+        type: 'email',
+        id: 'mail',
+        name: 'user__email',
+        placeholder: 'Add email...',
+        maxLength: 200,
+        minLength: 8,
+        isRecommended: true,
+    }
 
-    const render = () => (
-        <>
-            <label htmlFor='mail'>
-                Email
-                <span className='recommended__text'> recommended</span>
-            </label>
+    const prototype = Field(props);
 
-            <input
-                type='email'
-                id='mail'
-                name='user__email'
-                placeholder='Add email...'
-                className='field'
-                minLength='8'
-            />
-
-            <span className='error' aria-live='polite'></span>
-        </>
-    );
-
-    return Object.assign(prototype, { render });
+    return Object.assign(prototype);
 };

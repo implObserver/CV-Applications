@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { later } from '../../helper/Timeout';
-import { Toggle } from '../toggle/Toggle';
+import { State } from '../toggle/Toggle';
 
 export const DynamicForm = (id, fields) => {
     const [keys, setKeys] = useState([]);
     const [timer, setTimer] = useState(later(50));
 
-    const toggle = Toggle(true, false);
+    const toggle = State(true, false);
 
-    const visibleState = Toggle(
+    const visibleState = State(
         'unvisible__form',
         'visible__form',
     );

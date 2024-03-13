@@ -1,27 +1,18 @@
 import { Field } from '../../../prototypes/field/Field';
 
 export const Address = () => {
-    const prototype = Field('Address');
+    const props = {
+        label: 'Address',
+        type: 'text',
+        id: 'address',
+        name: 'user__address',
+        placeholder: 'City, Country',
+        maxLength: 200,
+        minLength: 8,
+        isRecommended: true,
+    }
 
-    const render = () => (
-        <>
-            <label htmlFor='address'>
-                Address
-                <span className='recommended__text'> recommended</span>
-            </label>
+    const prototype = Field(props);
 
-            <input
-                type='text'
-                id='address'
-                name='user__address'
-                placeholder='City, Country'
-                className='field'
-                minLength='8'
-            />
-
-            <span className='error' aria-live='polite'></span>
-        </>
-    );
-
-    return Object.assign(prototype, { render });
+    return Object.assign(prototype);
 };

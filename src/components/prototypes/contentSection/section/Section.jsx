@@ -1,7 +1,7 @@
-import { Toggle } from '../../toggle/Toggle';
+import { State } from '../../toggle/Toggle';
 
 export const Section = (buttonWrapper) => {
-  const drawnNode = Toggle();
+  const drawnNode = State();
   const childs = [buttonWrapper];
 
   const startDrawAnimation = () => {
@@ -11,7 +11,7 @@ export const Section = (buttonWrapper) => {
   }
 
   const drawIt = (val) => {
-    drawnNode.manual(val);
+    drawnNode.setState(val);
     startDrawAnimation();
   };
 

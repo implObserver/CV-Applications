@@ -1,23 +1,15 @@
 import { Field } from '../../../prototypes/field/Field';
 
 export const EndDate = () => {
-  const prototype = Field('EndDate');
+  const props = {
+    label: 'EndDate',
+    type: 'date',
+    id: 'end__date',
+    name: 'user__end-date',
+    placeholder: 'Enter end date',
+  }
 
-  const render = () => (
-    <>
-      <label htmlFor='end__date'>End Date</label>
+  const prototype = Field(props);
 
-      <input
-        type='date'
-        id='end__date'
-        name='user__end-date'
-        className='field'
-        placeholder='Enter end date'
-      />
-
-      <span className='error' aria-live='polite'></span>
-    </>
-  );
-
-  return Object.assign(prototype, { render });
+  return Object.assign(prototype);
 };

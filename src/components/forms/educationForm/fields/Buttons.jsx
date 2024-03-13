@@ -1,10 +1,10 @@
-import { Field } from '../../../prototypes/field/Field';
+import { ImaginaryField } from '../../../prototypes/field/Field';
 import { Cancel } from '../buttons/Cancel';
 import { Delete } from '../buttons/Delete';
 import { Save } from '../buttons/Save';
 
 export const Buttons = () => {
-  const prototype = Field('Buttons');
+  const prototype = ImaginaryField('Buttons');
   const deleteButton = Delete();
   const saveButton = Save();
   const cancelButton = Cancel();

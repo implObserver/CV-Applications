@@ -1,9 +1,8 @@
 import { Arrow } from '../../arrow/Arrow';
-import { Toggle } from '../../toggle/Toggle';
+import { State } from '../../toggle/Toggle';
 
 export const Head = (name) => {
-  const state = Toggle('close__head', 'open__head');
-  const block = Toggle('unblock', 'block');
+  const state = State('close__head', 'open__head');
 
   const arrow = Arrow();
 
@@ -15,16 +14,8 @@ export const Head = (name) => {
     state.switchState();
   };
 
-  const changeBlock = (val) => {
-    block.manual(val);
-  };
-
   const getState = () => {
     return state.getState();
-  };
-
-  const getBlockStatus = () => {
-    return block.getState();
   };
 
   const setOpenerVizualization = (section) => {
@@ -42,7 +33,7 @@ export const Head = (name) => {
   const render = (section, form) => (
     <>
       <button
-        className={`section__head ${state.getState()} ${block.getState()}`}
+        className={`section__head ${state.getState()}`}
         onClick={() => {
           setOpenerVizualization(section);
           formVerification(section, form);
@@ -54,5 +45,5 @@ export const Head = (name) => {
     </>
   );
 
-  return { getArrow, changeState, changeBlock, getState, getBlockStatus, render };
+  return { getArrow, changeState, getState, render };
 };

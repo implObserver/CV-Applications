@@ -2,7 +2,6 @@ export const timeout = async (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-
 export const later = (delay, value) => {
   let timer = 0;
   let reject = null;

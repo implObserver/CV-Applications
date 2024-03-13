@@ -1,7 +1,7 @@
-import { Toggle } from '../../../../toggle/Toggle';
+import { State } from '../../../../toggle/Toggle';
 
 export const FormAddButton = (className) => {
-  const opener = Toggle('close__button', 'open__button');
+  const opener = State('close__button', 'open__button');
 
   const changeState = () => {
     opener.switchState();

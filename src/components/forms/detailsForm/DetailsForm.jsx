@@ -14,7 +14,5 @@ export const DetailsForm = () => {
 
   const prototype = DynamicForm('details__form', fields);
 
-
-
   return Object.assign(prototype);
 };

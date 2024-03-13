@@ -1,8 +1,8 @@
 import '../../../../../styles/ButtonWrapper.css';
-import { Toggle } from '../../../toggle/Toggle';
+import { State } from '../../../toggle/Toggle';
 
 export const ButtonWrapper = (button) => {
-  const visibleState = Toggle(
+  const visibleState = State(
     'unvisible__button-wrapper',
     'visible__button-wrapper',
   );

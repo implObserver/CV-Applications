@@ -1,24 +1,16 @@
 import { Field } from '../../../prototypes/field/Field';
 
 export const Degree = () => {
-  const prototype = Field('Degree');
+  const props = {
+    label: 'Degree',
+    type: 'text',
+    id: 'degree',
+    name: 'user__degree',
+    placeholder: 'Enter degree / Field of study',
+    maxLength: 200
+  }
 
-  const render = () => (
-    <>
-      <label htmlFor='degree'>Degree</label>
+  const prototype = Field(props);
 
-      <input
-        type='text'
-        id='degree'
-        name='user__degree'
-        placeholder='Enter degree / Field of study'
-        className='field'
-        maxLength='100'
-      />
-
-      <span className='error' aria-live='polite'></span>
-    </>
-  );
-
-  return Object.assign(prototype, { render });
+  return Object.assign(prototype);
 };

@@ -1,7 +1,7 @@
-import { Field } from '../../../prototypes/field/Field';
+import { ImaginaryField } from '../../../prototypes/field/Field';
 
 export const Description = () => {
-    const prototype = Field('Description');
+    const prototype = ImaginaryField('Description');
 
     const render = () => (
         <>

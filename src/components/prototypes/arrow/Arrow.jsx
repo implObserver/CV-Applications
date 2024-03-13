@@ -1,8 +1,8 @@
 import '../../../styles/Arrow.css';
-import { Toggle } from '../toggle/Toggle';
+import { State } from '../toggle/Toggle';
 
 export const Arrow = () => {
-  const pozition = Toggle('right', 'down');
+  const pozition = State('right', 'down');
 
   const setPozitionArrow = () => {
     pozition.switchState();
