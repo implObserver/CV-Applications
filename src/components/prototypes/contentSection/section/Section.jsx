@@ -1,8 +1,8 @@
 import { State } from '../../toggle/Toggle';
 
-export const Section = (buttonWrapper) => {
+export const Section = (buttonWrapper, placesWrapper) => {
   const drawnNode = State();
-  const childs = [buttonWrapper];
+  const childs = [placesWrapper, buttonWrapper];
 
   const startDrawAnimation = () => {
     setTimeout(() => {
@@ -43,8 +43,12 @@ export const Section = (buttonWrapper) => {
             return <>{form.render(drawIt)}</>;
           } else {
             return (
-              <>{childs[0].render(drawIt, form)}</>
-            );
+              <>
+                {childs.map((child) => {
+                  return child.render(drawIt, form);
+                })}
+              </>
+            )
           }
         })()}
       </div>

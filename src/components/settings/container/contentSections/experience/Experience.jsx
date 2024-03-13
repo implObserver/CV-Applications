@@ -10,8 +10,7 @@ export const Experience = () => {
   return (
     <>
       <div className='experience'>
-        {head.render(section, form)}
-        {section.render(form)}
+        
       </div>
     </>
   );
