@@ -9,11 +9,11 @@ export const Buttons = () => {
   const saveButton = Save();
   const cancelButton = Cancel();
 
-  const render = (changeVisible, drawIt) => (
+  const render = (changeVisible, drawIt, placesWrapper, getValues, masterKey) => (
     <>
       <div className='buttons'>
         {deleteButton.render(changeVisible, drawIt)}
-        {saveButton.render(changeVisible, drawIt)}
+        {saveButton.render(changeVisible, drawIt, placesWrapper, getValues, masterKey)}
         {cancelButton.render(changeVisible, drawIt)}
       </div>
     </>

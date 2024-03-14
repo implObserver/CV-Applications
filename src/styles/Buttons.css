@@ -27,7 +27,6 @@
 .close__button {
     opacity: 0;
     max-height: 0;
-    transform: translateX(-3vw);
     pointer-events: none;
 }
 

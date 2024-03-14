@@ -1,5 +1,7 @@
+import { timeout } from "../../../helper/Timeout";
+
 export const Save = () => {
-  const render = () => (
+  const render = (changeVisible, drawIt, placesWrapper, getValues, masterKey) => (
     <>
       <input
         type='button'
@@ -7,6 +9,13 @@ export const Save = () => {
         name='education__save'
         className='save'
         value='save'
+        onClick={async () => {
+          const values = getValues();
+          placesWrapper.update(masterKey, values);
+          changeVisible();
+          await timeout(450);
+          drawIt('button');
+        }}
       />
     </>
   );

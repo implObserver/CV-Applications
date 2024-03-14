@@ -21,6 +21,7 @@ export const Head = (name) => {
   const setOpenerVizualization = (section) => {
     arrow.setPozitionArrow();
     section.changeState();
+    section.getChilds()[0].changeVisible();
     changeState();
   }
 

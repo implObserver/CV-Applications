@@ -40,7 +40,7 @@ export const Section = (buttonWrapper, placesWrapper) => {
       <div className={`section__body`}>
         {(() => {
           if (getDrawStatus() === 'form') {
-            return <>{form.render(drawIt)}</>;
+            return <>{form.render(drawIt, placesWrapper)}</>;
           } else {
             return (
               <>

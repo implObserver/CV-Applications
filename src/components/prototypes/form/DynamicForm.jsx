@@ -5,6 +5,7 @@ import { State } from '../toggle/Toggle';
 export const DynamicForm = (id, fields) => {
     const [keys, setKeys] = useState([]);
     const [timer, setTimer] = useState(later(50));
+    const [masterKey, setMasterKey] = useState(0);
 
     const toggle = State(true, false);
 
@@ -13,7 +14,8 @@ export const DynamicForm = (id, fields) => {
         'visible__form',
     );
 
-    const changeVisible = () => {
+    const changeVisible = (newKey = '0') => {
+        setMasterKey(newKey);
         visibleState.switchState();
         changeVisibleFields();
     };
@@ -60,7 +62,26 @@ export const DynamicForm = (id, fields) => {
         return visibleState.getState();
     };
 
-    const render = (drawIt = '') => (
+    const setValues = (values) => {
+        for (let i = 0; i < values.length; i++) {
+            fields[i].setValue(values[i]);
+        }
+    }
+
+    const getValues = () => {
+        const values = [];
+
+        fields.forEach(field => {
+            if (field.getLabel() !== 'Buttons') {
+                console.log(field.getLabel())
+                values.push(field.getValue());
+            }
+        });
+
+        return values;
+    }
+
+    const render = (drawIt = '', placesWrapper = '') => (
         <>
             <form
                 className={getVisible()}
@@ -72,7 +93,7 @@ export const DynamicForm = (id, fields) => {
                     {fields.map((field) => {
                         return (
                             <li key={field.getKey()} className={field.getVisible()}>
-                                {field.render(changeVisible, drawIt)}
+                                {field.render(changeVisible, drawIt, placesWrapper, getValues, masterKey)}
                             </li>
                         );
                     })}
@@ -81,5 +102,5 @@ export const DynamicForm = (id, fields) => {
         </>
     );
 
-    return { changeVisible, changeVisibleFields, getVisible, render };
+    return { changeVisible, changeVisibleFields, getVisible, render, getValues, setValues };
 };

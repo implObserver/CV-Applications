@@ -7,6 +7,10 @@ export const ImaginaryField = (label) => {
     'visible__field',
   );
 
+  const getLabel = () => {
+    return label;
+  }
+
   const key = setKey(label);
 
   const changeVisible = () => {
@@ -25,7 +29,7 @@ export const ImaginaryField = (label) => {
     return key;
   };
 
-  return { changeVisible, isVisible, getVisible, getKey };
+  return { changeVisible, isVisible, getVisible, getKey, getLabel };
 }
 
 export const Field = (props) => {
@@ -36,8 +40,8 @@ export const Field = (props) => {
     return input.getValue()
   }
 
-  const setValue = () => {
-    input.setValue();
+  const setValue = (value) => {
+    input.setValue(value);
   }
 
   const render = () => (
