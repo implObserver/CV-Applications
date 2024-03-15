@@ -1,4 +1,4 @@
-import { Field } from '../../../prototypes/field/Field';
+import { Field } from '../../../prototypes/form/field/Field';
 
 export const Location = () => {
   const props = {

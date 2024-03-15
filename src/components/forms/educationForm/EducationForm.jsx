@@ -7,16 +7,18 @@ import { Buttons } from './fields/Buttons';
 import { DynamicForm } from '../../prototypes/form/DynamicForm';
 
 export const EducationForm = () => {
+  const id = 'education__form';
+
   const fields = [
-    School(),
-    Degree(),
-    StartDate(),
-    EndDate(),
-    Location(),
-    Buttons(),
+    School(id),
+    Degree(id),
+    StartDate(id),
+    EndDate(id),
+    Location(id),
+    Buttons(id),
   ];
 
-  const prototype = DynamicForm('education__form', fields);
+  const prototype = DynamicForm(id, fields);
 
   return Object.assign(prototype);
 };

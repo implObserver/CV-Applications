@@ -1,10 +1,10 @@
-import { Field } from '../../../prototypes/field/Field';
+import { Field } from '../../../prototypes/form/field/Field';
 
-export const Degree = () => {
+export const Degree = (formId) => {
   const props = {
     label: 'Degree',
     type: 'text',
-    id: 'degree',
+    id: `${formId}-degree`,
     name: 'user__degree',
     placeholder: 'Enter degree / Field of study',
     maxLength: 200

@@ -1,10 +1,10 @@
-import { Field } from '../../../prototypes/field/Field';
+import { Field } from '../../../prototypes/form/field/Field';
 
-export const EndDate = () => {
+export const EndDate = (formId) => {
   const props = {
     label: 'EndDate',
     type: 'date',
-    id: 'end__date',
+    id: `${formId}-end__date`,
     name: 'user__end-date',
     placeholder: 'Enter end date',
   }

@@ -1,11 +1,11 @@
-import { Field } from '../../../prototypes/field/Field';
+import { Field } from '../../../prototypes/form/field/Field';
 
-export const FullName = () => {
+export const FullName = (formId) => {
     const props = {
         label: 'FullName',
         type: 'text',
-        id: 'full_name',
-        name: 'user_full-name',
+        id: `${formId}-full__name`,
+        name: 'user__full-name',
         placeholder: 'Enter full name...',
         maxLength: 50,
         isRequied: true,

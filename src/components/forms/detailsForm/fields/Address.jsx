@@ -1,10 +1,10 @@
-import { Field } from '../../../prototypes/field/Field';
+import { Field } from '../../../prototypes/form/field/Field';
 
-export const Address = () => {
+export const Address = (formId) => {
     const props = {
         label: 'Address',
         type: 'text',
-        id: 'address',
+        id: `${formId}-address`,
         name: 'user__address',
         placeholder: 'City, Country',
         maxLength: 200,

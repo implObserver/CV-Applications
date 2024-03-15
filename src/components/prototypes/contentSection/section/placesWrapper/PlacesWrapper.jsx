@@ -10,6 +10,18 @@ export const PlacesWrapper = () => {
         visible.switchState();
     }
 
+    const deletePlace = (key) => {
+        const place = getPlace(key);
+        if (place !== 'none') {
+            const newPlaces = [...places];
+            const index = newPlaces.indexOf(place);
+            if (index > -1) {
+                newPlaces.splice(index, 1);
+            }
+            setPlaces(newPlaces);
+        }
+    }
+
     const update = (key, inputValues) => {
         const place = getPlace(key);
         if (place === 'none') {
@@ -58,5 +70,5 @@ export const PlacesWrapper = () => {
         </>
     )
 
-    return { render, update, changeVisible };
+    return { render, update, changeVisible, deletePlace };
 }

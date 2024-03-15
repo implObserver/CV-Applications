@@ -3,12 +3,19 @@ import { Content } from './content/Content';
 import { Customize } from './customize/Customize';
 
 export const Sidebar = () => {
-  return (
-    <>
-      <div className='sidebar'>
-        <Content></Content>
-        <Customize></Customize>
-      </div>
-    </>
-  );
+  const content = Content();
+  const customize = Customize();
+
+  const render = () => {
+    return (
+      <>
+        <div className='sidebar'>
+          {content.render()}
+          {customize.render()}
+        </div>
+      </>
+    )
+  }
+
+  return { render }
 };

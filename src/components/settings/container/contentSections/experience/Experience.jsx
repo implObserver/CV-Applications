@@ -7,12 +7,16 @@ export const Experience = () => {
   const section = ExperienceSection();
   const form = ExperienceForm();
 
-  return (
-    <>
-      <div className='experience'>
-        {head.render(section, form)}
-        {section.render(form)}
-      </div>
-    </>
-  );
+  const render = () => {
+    return (
+      <>
+        <div className='experience'>
+          {head.render(section, form)}
+          {section.render(form)}
+        </div>
+      </>
+    )
+  }
+
+  return { render }
 };

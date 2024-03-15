@@ -1,11 +1,11 @@
 import '../../../../styles/Field.css';
-import { Field } from '../../../prototypes/field/Field';
+import { Field } from '../../../prototypes/form/field/Field';
 
-export const School = () => {
+export const School = (formId) => {
   const props = {
     label: 'School',
     type: 'text',
-    id: 'school',
+    id: `${formId}-school`,
     name: 'user__school',
     placeholder: 'Enter school / university',
     maxLength: 100,

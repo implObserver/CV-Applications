@@ -1,4 +1,4 @@
-import { timeout } from '../../../helper/Timeout';
+import { timeout } from "../../../../helper/Timeout";
 
 export const Cancel = () => {
   const render = (changeVisible, drawIt) => (

@@ -1,3 +1,5 @@
+import { generateKey } from "../../../../../helper/KeyGenerator";
+
 export const Place = (inputValues) => {
     let values = inputValues;
 
@@ -18,8 +20,4 @@ export const Place = (inputValues) => {
     )
 
     return { render, update, key };
-}
-
-const generateKey = (pre) => {
-    return `${pre}_${new Date().getTime()}`;
 }

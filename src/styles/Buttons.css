@@ -8,10 +8,15 @@
 .save {
     width: min-content;
     justify-self: right;
+    background-color: rgb(144, 240, 186);
 }
 
 .cancel {
     cursor: pointer;
+}
+
+.delete {
+    background-color: rgb(252, 178, 178);
 }
 
 .add__button {

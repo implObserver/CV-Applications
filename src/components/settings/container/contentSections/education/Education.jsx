@@ -7,12 +7,16 @@ export const Education = () => {
   const form = EducationForm();
   const head = EducationHead();
 
-  return (
-    <>
-      <div className='education'>
-        {head.render(section, form)}
-        {section.render(form)}
-      </div>
-    </>
-  );
+  const render = () => {
+    return (
+      <>
+        <div className='education'>
+          {head.render(section, form)}
+          {section.render(form)}
+        </div>
+      </>
+    );
+  }
+
+  return { render }
 };

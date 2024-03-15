@@ -6,12 +6,20 @@ import '../../styles/Icons.css';
 import '../../styles/Buttons.css';
 
 export const Settings = () => {
-  return (
-    <>
-      <div className='settings'>
-        <Sidebar></Sidebar>
-        <Container></Container>
-      </div>
-    </>
-  );
-};
+
+  const container = Container();
+  const sidebar = Sidebar();
+
+  const render = () => {
+    return (
+      <>
+        <div className='settings'>
+          {sidebar.render()}
+          {container.render()}
+        </div>
+      </>
+    )
+  }
+
+  return { render }
+}

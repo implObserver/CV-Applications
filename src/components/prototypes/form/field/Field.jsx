@@ -1,5 +1,5 @@
 import { Input } from '../input/Input';
-import { State } from '../toggle/Toggle';
+import { State } from '../../toggle/Toggle';
 
 export const ImaginaryField = (label) => {
   const visibleState = State(
@@ -66,6 +66,11 @@ export const Field = (props) => {
 
   return Object.assign(prototype, { render, getValue, setValue });
 };
+
+export const generateKey = (pre) => {
+  const time = new Date().getTime();
+  return `${pre}_${time}`;
+}
 
 const setKey = (name) => {
   let key = '';

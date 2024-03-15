@@ -1,5 +1,5 @@
 import '../../../../styles/Field.css';
-import { Field } from '../../../prototypes/field/Field';
+import { Field } from '../../../prototypes/form/field/Field';
 
 export const PositionTitle = () => {
   const props = {

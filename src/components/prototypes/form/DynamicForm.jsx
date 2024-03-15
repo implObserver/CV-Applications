@@ -3,7 +3,7 @@ import { later } from '../../helper/Timeout';
 import { State } from '../toggle/Toggle';
 
 export const DynamicForm = (id, fields) => {
-    const [keys, setKeys] = useState([]);
+    const [labels, setLabel] = useState([]);
     const [timer, setTimer] = useState(later(50));
     const [masterKey, setMasterKey] = useState(0);
 
@@ -15,6 +15,9 @@ export const DynamicForm = (id, fields) => {
     );
 
     const changeVisible = (newKey = '0') => {
+        if (newKey === '0') {
+            setDefaultValues();
+        }
         setMasterKey(newKey);
         visibleState.switchState();
         changeVisibleFields();
@@ -35,32 +38,40 @@ export const DynamicForm = (id, fields) => {
 
     const addFields = async () => {
         for (let field of fields) {
-            let key = field.getKey();
-            if (!keys.includes(key)) {
+            let label = field.getLabel();
+            if (!labels.includes(label)) {
                 await pause(50);
                 field.changeVisible();
-                keys.push(field.getKey());
+                labels.push(label);
             }
         }
-        setKeys(keys);
+        setLabel(labels);
     };
 
     const removeFields = async () => {
         let newFields = fields.reverse();
         for (let field of newFields) {
-            let key = field.getKey();
-            if (keys.includes(key)) {
+            let label = field.getLabel();
+            if (labels.includes(label)) {
                 await pause(50);
                 field.changeVisible();
-                keys.splice(keys.indexOf(key), 1);
+                labels.splice(labels.indexOf(label), 1);
             }
         }
-        setKeys(keys);
+        setLabel(labels);
     };
 
     const getVisible = () => {
         return visibleState.getState();
     };
+
+    const setDefaultValues = () => {
+        for (let i = 0; i < fields.length; i++) {
+            if (fields[i].getLabel() !== 'Buttons') {
+                fields[i].setValue('');
+            }
+        }
+    }
 
     const setValues = (values) => {
         for (let i = 0; i < values.length; i++) {
@@ -73,7 +84,6 @@ export const DynamicForm = (id, fields) => {
 
         fields.forEach(field => {
             if (field.getLabel() !== 'Buttons') {
-                console.log(field.getLabel())
                 values.push(field.getValue());
             }
         });

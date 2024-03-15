@@ -3,16 +3,19 @@ import { Wrapper } from '../../../Wrapper';
 import '../../../../styles/Customize.css';
 
 export const Customize = () => {
-  return (
-    <>
-      <div className='customize'>
-        <Wrapper name='svg__wrapper'>
-          <img src={settingsIcon} className='settings__icon' alt='' />
-        </Wrapper>
-        <Wrapper name='span__wrapper'>
-          <span>Customize</span>
-        </Wrapper>
-      </div>
-    </>
-  );
+  const svgWrapper = Wrapper('svg__wrapper', <img src={settingsIcon} className='settings__icon' alt='' />);
+  const spanWrapper = Wrapper('span__wrapper', <span>Customize</span>);
+
+  const render = () => {
+    return (
+      <>
+        <div className='customize'>
+          {svgWrapper.render()}
+          {spanWrapper.render()}
+        </div>
+      </>
+    )
+  }
+
+  return { render }
 };

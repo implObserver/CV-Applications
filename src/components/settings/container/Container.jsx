@@ -3,12 +3,19 @@ import { ContentSections } from './contentSections/ContentSections';
 import { TemplateLoader } from './templateLoader/TemplateLoader';
 
 export const Container = () => {
-  return (
-    <>
-      <div className='container'>
-        <TemplateLoader></TemplateLoader>
-        <ContentSections></ContentSections>
-      </div>
-    </>
-  );
+  const loader = TemplateLoader();
+  const sections = ContentSections();
+
+  const render = () => {
+    return (
+      <>
+        <div className='container'>
+          {loader.render()}
+          {sections.render()}
+        </div>
+      </>
+    )
+  }
+
+  return { render }
 };

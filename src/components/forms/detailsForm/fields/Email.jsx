@@ -1,10 +1,10 @@
-import { Field } from '../../../prototypes/field/Field';
+import { Field } from '../../../prototypes/form/field/Field';
 
-export const Email = () => {
+export const Email = (formId) => {
     const props = {
         label: 'Email',
         type: 'email',
-        id: 'mail',
+        id: `${formId}-mail`,
         name: 'user__email',
         placeholder: 'Add email...',
         maxLength: 200,

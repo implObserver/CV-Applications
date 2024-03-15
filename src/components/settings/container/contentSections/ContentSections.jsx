@@ -5,14 +5,20 @@ import { PersonalDetails } from './personalDetails/PersonalDetails';
 
 export const ContentSections = () => {
   const personalDetails = PersonalDetails();
+  const education = Education();
+  const experience = Experience();
 
-  return (
-    <>
-      <div className='content__sections'>
-        {personalDetails.render()}
-        <Education></Education>
-        <Experience></Experience>
-      </div>
-    </>
-  );
+  const render = () => {
+    return (
+      <>
+        <div className='content__sections'>
+          {personalDetails.render()}
+          {education.render()}
+          {experience.render()}
+        </div>
+      </>
+    )
+  }
+
+  return { render }
 };

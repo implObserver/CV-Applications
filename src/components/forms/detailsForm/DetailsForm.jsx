@@ -5,14 +5,16 @@ import { FullName } from "./fields/FullName";
 import { PhoneNumber } from "./fields/PhoneNumber";
 
 export const DetailsForm = () => {
+  const id = 'details__form';
+
   const fields = [
-    FullName(),
-    Email(),
-    PhoneNumber(),
-    Address(),
+    FullName(id),
+    Email(id),
+    PhoneNumber(id),
+    Address(id),
   ];
 
-  const prototype = DynamicForm('details__form', fields);
+  const prototype = DynamicForm(id, fields);
 
   return Object.assign(prototype);
 };

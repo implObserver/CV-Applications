@@ -1,5 +1,5 @@
-import { ImaginaryField } from '../../../prototypes/field/Field';
-import { Area } from '../../../prototypes/input/TextArea';
+import { ImaginaryField } from '../../../prototypes/form/field/Field';
+import { Area } from '../../../prototypes/form/input/TextArea';
 
 export const Description = () => {
     const prototype = ImaginaryField('Description');
