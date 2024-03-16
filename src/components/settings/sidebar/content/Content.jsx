@@ -3,18 +3,19 @@ import '../../../../styles/Content.css';
 import { Wrapper } from '../../../Wrapper';
 
 export const Content = () => {
-  const svgWrapper = Wrapper('svg__wrapper', <img src={contentIcon} className='content__icon' alt='' />);
-  const spanWrapper = Wrapper('span__wrapper', <span>Content</span>);
+  return (
+    <>
+      <div className='content'>
 
-  const render = () => {
-    return (
-      <>
-        <div className='content'>
-          {svgWrapper.render()}
-          {spanWrapper.render()}
-        </div>
-      </>
-    )
-  }
-  return { render }
-};
+        <Wrapper name='svg__wrapper'>
+          <img src={contentIcon} className='content__icon' alt='' />
+        </Wrapper>
+
+        <Wrapper name='span__wrapper'>
+          <span>Content</span>
+        </Wrapper>
+
+      </div>
+    </>
+  )
+}

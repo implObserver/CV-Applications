@@ -37,3 +37,7 @@ html::-webkit-scrollbar {
 .span__wrapper {
   padding: min(10px, 1vw);
 }
+
+.disabled {
+  display: none!important;
+}

@@ -1,24 +1,17 @@
-import { Degree } from './fields/Degree';
-import { EndDate } from './fields/EndDate';
-import { Location } from './fields/Location';
-import { School } from './fields/School';
-import { StartDate } from './fields/StartDate';
-import { Buttons } from './fields/Buttons';
 import { DynamicForm } from '../../prototypes/form/DynamicForm';
+import Fields from '../../JSON/Fields.json'
 
-export const EducationForm = () => {
+export const EducationForm = ({ props }) => {
   const id = 'education__form';
 
   const fields = [
-    School(id),
-    Degree(id),
-    StartDate(id),
-    EndDate(id),
-    Location(id),
-    Buttons(id),
+    Fields.educationForm.school,
+    Fields.educationForm.degree,
+    Fields.educationForm.startDate,
+    Fields.educationForm.endDate,
+    Fields.educationForm.location,
+    //Buttons(),
   ];
 
-  const prototype = DynamicForm(id, fields);
-
-  return Object.assign(prototype);
+  return <DynamicForm props={props} id={id} fields={fields}></DynamicForm>;
 };

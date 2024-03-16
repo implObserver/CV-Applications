@@ -1,17 +1,8 @@
 import '../../../../styles/Field.css';
 import { Field } from '../../../prototypes/form/field/Field';
+import Fields from '../../../JSON/Fields.json';
 
 export const PositionTitle = () => {
-  const props = {
-    label: 'PositionTitle',
-    type: 'text',
-    id: 'position__title',
-    name: 'user__position-title',
-    placeholder: 'Enter Position Title',
-    maxLength: '100',
-  }
-
-  const prototype = Field(props);
-
+  const prototype = Field(Fields.experienceForm.positionTitle);
   return Object.assign(prototype);
 };

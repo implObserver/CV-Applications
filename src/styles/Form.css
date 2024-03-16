@@ -3,9 +3,7 @@ form {
   border-radius: min(10px, 1vw);
   padding: min(20px, 2vw);
   transition:
-    all 0.2s ease-in-out,
-    padding-top 0.5s ease-in-out,
-    padding-bottom 0.25s ease-in-out;
+    all 2s ease-in-out;
   overflow: hidden;
   background-color: white;
 }

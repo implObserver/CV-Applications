@@ -1,26 +1,13 @@
 import '../../../../../styles/ButtonWrapper.css';
-import { State } from '../../../toggle/Toggle';
+import { FormAddButton } from './button/Button';
 
-export const ButtonWrapper = (button) => {
-  const visibleState = State(
-    'unvisible__button-wrapper',
-    'visible__button-wrapper',
+export const ButtonWrapper = ({ props, name }) => {
+  const style = props.states.open.getState() ? 'visible__button-wrapper' : 'unvisible__button-wrapper';
+  return (
+    <>
+      <div className={`button__wrapper ${style} ${props.states.drawnNode.getState() === 'form' ? 'disabled' : ''}`}>
+        <FormAddButton props={props} name={name}></FormAddButton>
+      </div>
+    </>
   );
-
-  const changeVisible = () => {
-    visibleState.switchState();
-    button.changeState();
-  };
-
-  const render = (drawIt, form) => {
-    return (
-      <>
-        <div className={`button__wrapper ${visibleState.getState()}`}>
-          {button.render(drawIt, form, changeVisible)}
-        </div>
-      </>
-    );
-  };
-
-  return { render, changeVisible };
 };

@@ -1,22 +1,28 @@
 import { EducationSection } from './section/EducationSection.jsx';
 import { EducationHead } from './head/EducationHead.jsx';
-import { EducationForm } from '../../../../forms/educationForm/EducationForm.jsx';
+import { State } from '../../../../prototypes/toggle/Toggle.jsx';
 
-export const Education = () => {
-  const section = EducationSection();
-  const form = EducationForm();
-  const head = EducationHead();
+export const Education = ({ props }) => {
+  const open = State(false, true);
 
-  const render = () => {
-    return (
-      <>
-        <div className='education'>
-          {head.render(section, form)}
-          {section.render(form)}
-        </div>
-      </>
-    );
+  const drawnNode = State('button', 'form');
+
+  const education = {
+    states: {
+      open: open,
+      drawnNode: drawnNode,
+    }
   }
 
-  return { render }
+  Object.assign(props.states, { education });
+
+  return (
+    <>
+      <div className='education'>
+        <EducationHead name='Education' props={props.states.education}></EducationHead>
+        <EducationSection name='Education' props={props.states.education}></EducationSection>
+      </div>
+    </>
+  );
+
 };

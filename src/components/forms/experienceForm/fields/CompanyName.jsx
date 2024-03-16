@@ -1,16 +1,7 @@
 import { Field } from '../../../prototypes/form/field/Field';
+import Fields from '../../../JSON/Fields.json';
 
 export const CompanyName = () => {
-  const props = {
-    label: 'CompanyName',
-    type: 'text',
-    id: 'company__name',
-    name: 'user__company-name',
-    placeholder: 'Enter Company Name',
-    maxLength: '100',
-  }
-
-  const prototype = Field(props);
-
+  const prototype = Field(Fields.experienceForm.companyName);
   return Object.assign(prototype);
 };

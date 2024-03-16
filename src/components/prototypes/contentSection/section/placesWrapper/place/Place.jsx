@@ -9,15 +9,13 @@ export const Place = (inputValues) => {
         values = inputValues;
     }
 
-    const render = (drawIt, form) => (
+    return (
         <>
-            <div className="place" onClick={() => {
-                drawIt('form');
-                form.changeVisible(key);
-                form.setValues(values);
+            <div key={key} className="place" onClick={() => {
+                //drawIt('form');
+                //form.changeVisible(key);
+                //form.setValues(values);
             }}> <span>{values[0]}</span></div>
         </>
     )
-
-    return { render, update, key };
 }

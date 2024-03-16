@@ -1,16 +1,7 @@
 import { Field } from '../../../prototypes/form/field/Field';
+import Fields from '../../../JSON/Fields.json';
 
 export const Location = () => {
-  const props = {
-    label: 'Location',
-    type: 'text',
-    id: 'location',
-    name: 'user__location',
-    placeholder: 'Enter location',
-    maxLength: 100,
-  }
-
-  const prototype = Field(props);
-
+  const prototype = Field(Fields.experienceForm.location);
   return Object.assign(prototype);
 };

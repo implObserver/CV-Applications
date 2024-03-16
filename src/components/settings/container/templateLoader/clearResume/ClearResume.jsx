@@ -2,7 +2,7 @@ import { Wrapper } from '../../../../Wrapper';
 import trashIcon from '../../../../../assets/trash.svg';
 import '../../../../../styles/ClearResume.css';
 
-export const ClearResume = () => {
+/*export const ClearResume = () => {
   const svgWrapper = Wrapper('svg__wrapper', <img src={trashIcon} className='trash__icon' alt='' />);
   const spanWrapper = Wrapper('span__wrapper', <span>Clear Resume</span>);
 
@@ -17,4 +17,20 @@ export const ClearResume = () => {
     )
   }
   return { render };
-};
+};*/
+
+export const ClearResume = () => {
+  return (
+    <>
+      <div className='clear__resume'>
+        <Wrapper name='svg__wrapper'>
+          <img src={trashIcon} className='trash__icon' alt='' />
+        </Wrapper>
+
+        <Wrapper name='span__wrapper'>
+          <span>Clear Resume</span>
+        </Wrapper>
+      </div>
+    </>
+  )
+}

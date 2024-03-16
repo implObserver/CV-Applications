@@ -1,20 +1,15 @@
 import { DynamicForm } from "../../prototypes/form/DynamicForm";
-import { Address } from "./fields/Address";
-import { Email } from "./fields/Email";
-import { FullName } from "./fields/FullName";
-import { PhoneNumber } from "./fields/PhoneNumber";
+import Fields from '../../JSON/Fields.json'
 
-export const DetailsForm = () => {
+export const DetailsForm = ({ props }) => {
   const id = 'details__form';
 
   const fields = [
-    FullName(id),
-    Email(id),
-    PhoneNumber(id),
-    Address(id),
+    Fields.detailsForm.fullName,
+    Fields.detailsForm.email,
+    Fields.detailsForm.phoneNumber,
+    Fields.detailsForm.address,
   ];
 
-  const prototype = DynamicForm(id, fields);
-
-  return Object.assign(prototype);
+  return <DynamicForm props={props} id={id} fields={fields}></DynamicForm>;
 };

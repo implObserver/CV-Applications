@@ -1,15 +1,7 @@
 import { Field } from '../../../prototypes/form/field/Field';
+import Fields from '../../../JSON/Fields.json';
 
 export const StartDate = () => {
-  const props = {
-    label: 'StartDate',
-    type: 'date',
-    id: 'start__date',
-    name: 'user__start-date',
-    placeholder: 'Enter start date',
-  }
-
-  const prototype = Field(props);
-
+  const prototype = Field(Fields.experienceForm.startDate);
   return Object.assign(prototype);
 };

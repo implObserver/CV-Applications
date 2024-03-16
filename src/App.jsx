@@ -1,17 +1,17 @@
-import { Settings } from './components/settings/Settings';
 import { Resume } from './components/resume/Resume';
 import './App.css';
+import { Settings } from './components/settings/Settings';
 
 export const App = () => {
-  const settings = Settings();
-  const resume = Resume();
-  console.log('d')
- return (
-      <>
-        {settings.render()}
-        {resume.render()}
-      </>
-    );
+  const props = {
+    states: {}
+  }
+
+  return (
+    <>
+      <Settings props={props}></Settings>
+    </>
+  );
 }
 
 export default App;

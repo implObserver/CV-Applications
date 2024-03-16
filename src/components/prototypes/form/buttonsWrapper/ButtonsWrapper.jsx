@@ -5,16 +5,13 @@ import { Save } from "./buttons/Save";
 
 export const ButtonsWrapper = () => {
     const prototype = ImaginaryField('Buttons');
-    const deleteButton = Delete();
-    const saveButton = Save();
-    const cancelButton = Cancel();
 
     const render = (changeVisible, drawIt, placesWrapper, getValues, masterKey) => (
         <>
             <div className='buttons'>
-                {deleteButton.render(changeVisible, drawIt, placesWrapper, masterKey)}
-                {saveButton.render(changeVisible, drawIt, placesWrapper, getValues, masterKey)}
-                {cancelButton.render(changeVisible, drawIt)}
+                <Delete props={{ changeVisible, drawIt, placesWrapper, masterKey }}></Delete>
+                <Save props={{ changeVisible, drawIt, placesWrapper, getValues, masterKey }}></Save>
+                <Cancel props={{ changeVisible, drawIt }}></Cancel>
             </div>
         </>
     );

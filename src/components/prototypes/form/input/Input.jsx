@@ -1,17 +1,9 @@
 import { useState } from "react";
 
-export const Input = () => {
+export const Input = ({ props }) => {
     const [input, setInput] = useState('');
 
-    const getValue = () => {
-        return input;
-    }
-
-    const setValue = (value) => {
-        setInput(value);
-    }
-
-    const render = (props) => (
+    return (
         <>
             <input
                 type={props.type}
@@ -25,7 +17,5 @@ export const Input = () => {
                 value={input} onInput={e => setInput(e.target.value)}
             />
         </>
-    )
-
-    return { render, getValue, setValue };
+    );
 }

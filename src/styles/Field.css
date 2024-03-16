@@ -1,16 +1,25 @@
 li {
-  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  transition: opacity 2s ease-in-out
 }
 
 .unvisible__field {
+  display: grid;
   opacity: 0;
-  max-height: 0;
-  transform: translateX(-3vw);
-  transition:
-    all 0.2s ease-in-out,
-    transform 1s ease-in-out;
+}
+
+.unvisible__field>label {
+  transition: opacity 2s ease-in-out;
+  opacity: 0;
 }
 
 .visible__field {
-  max-height: 100vh;
+  display: grid;
+  transition: opacity 2s ease-in-out;
+  opacity: 1;
+}
+
+.visible__field>label {
+  transition: opacity 2s ease-in-out;
+  opacity: 1;
 }

@@ -1,14 +1,9 @@
 import { useState } from "react";
-import { State } from "../../../toggle/Toggle";
 import { Place } from "./place/Place";
 
-export const PlacesWrapper = () => {
-    const visible = State('unvisible__places-wrapper', 'visible__places-wrapper');
-    const [places, setPlaces] = useState([]);
-
-    const changeVisible = () => {
-        visible.switchState();
-    }
+export const PlacesWrapper = ({ props }) => {
+    const [places, setPlaces] = useState([Place[0]]);
+    const style = props.states.open.getState() ? 'visible__places-wrapper' : 'unvisible__places-wrapper';
 
     const deletePlace = (key) => {
         const place = getPlace(key);
@@ -52,15 +47,19 @@ export const PlacesWrapper = () => {
         place.update(inputValues);
     }
 
-    const render = (drawIt, form) => (
+    return (
         <>
-            <div className={`places__wrapper ${visible.getState()}`}>
+            <div className={`places__wrapper ${style} ${props.states.drawnNode.getState() === 'form' ? 'disabled' : ''}`}>
                 {(() => {
                     return (
                         <>
                             {
                                 places.map((place) => {
-                                    return place.render(drawIt, form);
+                                    return (
+                                        <>
+                                            {place}
+                                        </>
+                                    )
                                 })
                             }
                         </>
@@ -69,6 +68,4 @@ export const PlacesWrapper = () => {
             </div>
         </>
     )
-
-    return { render, update, changeVisible, deletePlace };
 }

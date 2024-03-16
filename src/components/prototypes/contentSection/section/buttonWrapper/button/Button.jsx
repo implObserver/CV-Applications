@@ -1,28 +1,18 @@
-import { State } from '../../../../toggle/Toggle';
+export const FormAddButton = ({ props, name }) => {
+  const style = props.states.open.getState() ? 'open__button' : 'close__button';
 
-export const FormAddButton = (className) => {
-  const opener = State('close__button', 'open__button');
+  const hundleClick = () => {
+    props.states.drawnNode.setState('form');
+  }
 
-  const changeState = () => {
-    opener.switchState();
-  };
-
-  const render = (drawIt, form, changeState) => {
-    return (
-      <>
-        <button
-          className={`add__button ${opener.getState()}`}
-          onClick={() => {
-            drawIt('form');
-            form.changeVisible();
-            changeState();
-          }}
-        >
-          <span>+ {className}</span>
-        </button>
-      </>
-    );
-  };
-
-  return { render, changeState };
+  return (
+    <>
+      <button
+        className={`add__button ${style}`}
+        onClick={hundleClick}
+      >
+        <span>+ {name}</span>
+      </button>
+    </>
+  );
 };

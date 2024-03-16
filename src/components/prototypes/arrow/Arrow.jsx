@@ -1,18 +1,10 @@
 import '../../../styles/Arrow.css';
-import { State } from '../toggle/Toggle';
 
-export const Arrow = () => {
-  const pozition = State('right', 'down');
-
-  const setPozitionArrow = () => {
-    pozition.switchState();
-  };
-
-  const render = (
+export const Arrow = ({ state }) => {
+  const pozition = state ? 'down' : 'right';
+  return (
     <>
-      <div className={`arrow ${pozition.getState()}`}></div>
+      <div className={`arrow ${pozition}`}></div>
     </>
   );
-
-  return { render, setPozitionArrow };
 };

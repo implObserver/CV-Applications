@@ -1,14 +1,9 @@
 import { ImaginaryField } from '../../../prototypes/form/field/Field';
 import { Area } from '../../../prototypes/form/input/TextArea';
+import Fields from '../../../JSON/Fields.json';
 
 export const Description = () => {
     const prototype = ImaginaryField('Description');
-
-    const props = {
-        id: 'description',
-        name: 'user__description',
-        placeholder: 'Enter Description',
-    }
 
     const textArea = Area()
 
@@ -25,7 +20,7 @@ export const Description = () => {
         <>
             <label htmlFor='description'>Description</label>
 
-            {textArea.render(props)}
+            {textArea.render(Fields.experienceForm.description)}
 
             <span className='error' aria-live='polite'></span>
         </>

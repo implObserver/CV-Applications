@@ -1,50 +1,31 @@
+import { later } from '../../../helper/Timeout';
 import { Arrow } from '../../arrow/Arrow';
-import { State } from '../../toggle/Toggle';
 
-export const Head = (name) => {
-  const state = State('close__head', 'open__head');
+export const Head = (name, props) => {
+  const style = props.states.open.getState() ? 'open__head' : 'close__head';
 
-  const arrow = Arrow();
-
-  const getArrow = () => {
-    return arrow;
-  };
-
-  const changeState = () => {
-    state.switchState();
-  };
-
-  const getState = () => {
-    return state.getState();
-  };
-
-  const setOpenerVizualization = (section) => {
-    arrow.setPozitionArrow();
-    section.changeState();
-    section.getChilds()[0].changeVisible();
-    changeState();
-  }
-
-  const formVerification = (section, form) => {
-    if (section.isFormOpen()) {
-      form.changeVisible(state.getState());
+  const hundleClick = async () => {
+    props.states.open.switchState();
+    if (props.states.drawnNode.getState() === 'form') {
+      props.states.formStyle.switchState();
+      switchVisibleFields();
     }
   }
 
-  const render = (section, form) => (
+  const switchVisibleFields = async () => {
+    const fields = props.states.fieldsStyles;
+
+    fields.get('school').switchState()
+
+  }
+
+  return (
     <>
-      <button
-        className={`section__head ${state.getState()}`}
-        onClick={() => {
-          setOpenerVizualization(section);
-          formVerification(section, form);
-        }}
-      >
+      <button className={`section__head ${style}`}
+        onClick={hundleClick}>
         <h2>{name}</h2>
-        {arrow.render}
+        <Arrow state={props.states.open.getState()}></Arrow>
       </button>
     </>
   );
-
-  return { getArrow, changeState, getState, render };
 };

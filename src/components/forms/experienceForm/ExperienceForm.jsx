@@ -14,8 +14,8 @@ export const ExperienceForm = () => {
     StartDate(),
     EndDate(),
     Location(),
-    Description(),
-    Buttons(),
+    //Description(),
+    //Buttons(),
   ];
 
   const prototype = DynamicForm('experience__form', fields);

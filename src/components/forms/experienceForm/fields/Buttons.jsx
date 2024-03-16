@@ -2,6 +2,5 @@ import { ButtonsWrapper } from '../../../prototypes/form/buttonsWrapper/ButtonsW
 
 export const Buttons = () => {
   const prototype = ButtonsWrapper();
-
   return Object.assign(prototype);
 };

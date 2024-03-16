@@ -2,19 +2,13 @@ import '../../../../styles/TemplateLoader.css';
 import { ClearResume } from './clearResume/ClearResume';
 import { LoadExample } from './loadExample/LoadExample';
 
-export const TemplateLoader = () => {
-  const clearResume = ClearResume();
-  const loadExample = LoadExample();
-
-  const render = () => {
+export const TemplateLoader = (props) => {
     return (
       <>
         <div className='template__loader'>
-          {clearResume.render()}
-          {loadExample.render()}
+          <ClearResume props={props}></ClearResume>
+          <LoadExample props={props}></LoadExample>
         </div>
       </>
     )
-  }
-  return { render }
 };
