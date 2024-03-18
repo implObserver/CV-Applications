@@ -30,6 +30,7 @@ export const PersonalDetails = ({ props }) => {
   const personalDetails = {
     states: {
       drawnNode: drawnNode,
+      fieldsStyles: {}
     }
   }
 

@@ -6,21 +6,15 @@ export const Education = ({ props }) => {
   const open = State(false, true);
 
   const drawnNode = State('button', 'form');
-
-  const education = {
-    states: {
-      open: open,
-      drawnNode: drawnNode,
-    }
-  }
-
-  Object.assign(props.states, { education });
+  console.log(props)
+  Object.assign(props.states.open, open);
+  Object.assign(props.states.drawnNode, drawnNode);
 
   return (
     <>
       <div className='education'>
-        <EducationHead name='Education' props={props.states.education}></EducationHead>
-        <EducationSection name='Education' props={props.states.education}></EducationSection>
+        <EducationHead name='Education' props={props}></EducationHead>
+        <EducationSection name='Education' props={props}></EducationSection>
       </div>
     </>
   );

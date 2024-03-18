@@ -1,25 +1,26 @@
 li {
   opacity: 0;
-  transition: opacity 2s ease-in-out
+  max-height: 100vh;
 }
 
 .unvisible__field {
   display: grid;
   opacity: 0;
-}
-
-.unvisible__field>label {
-  transition: opacity 2s ease-in-out;
-  opacity: 0;
+  max-height: 0;
+  transform: translateX(-1vh);
+  transition: all 0.2s ease-in-out;
 }
 
 .visible__field {
   display: grid;
-  transition: opacity 2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   opacity: 1;
 }
 
-.visible__field>label {
-  transition: opacity 2s ease-in-out;
-  opacity: 1;
+.unvisible__field:nth-child(even) {
+  
+}
+
+.unvisible__field:nth-child(odd) {
+  
 }

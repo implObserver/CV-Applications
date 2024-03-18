@@ -2,10 +2,9 @@ form {
   display: grid;
   border-radius: min(10px, 1vw);
   padding: min(20px, 2vw);
-  transition:
-    all 2s ease-in-out;
   overflow: hidden;
   background-color: white;
+  transition: padding 0.3s ease-in-out;
 }
 
 ul {
@@ -17,7 +16,8 @@ li {
   gap: min(10px, 1vw);
 }
 
-input, textarea {
+input,
+textarea {
   display: grid;
   background-color: rgb(232, 242, 255);
   padding: min(10px, 2vw);
@@ -35,6 +35,11 @@ textarea {
 }
 
 .unvisible__form {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.visible__form:has(.unvisible__field) {
   padding-top: 0;
   padding-bottom: 0;
 }

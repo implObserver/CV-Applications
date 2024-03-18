@@ -1,6 +1,6 @@
 import { Input } from '../input/Input';
 import { State } from '../../toggle/Toggle';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 
 /*export const ImaginaryField = (label) => {
   const visibleState = State(
@@ -112,11 +112,14 @@ export const ImaginaryField = (label) => {
 }
 
 export const Field = ({ props, parameters, id }) => {
-  console.log('d')
-  const style = props.states.fieldsStyles.get(parameters.id).getState();
+  const style = id === 'details__form' ? State('visible__field', 'unvisible__field')
+    : State('unvisible__field', 'visible__field');
+
+  Object.assign(props.states.fieldsStyles, { [parameters.id]: style });
+
   return (
     <>
-      <li className={style}>
+      <li className={style.getState()}>
         <label htmlFor={parameters.id}>
           {parameters.label}
           {(() => {
