@@ -1,20 +1,15 @@
-import { ImaginaryField } from "../field/Field";
 import { Cancel } from "./buttons/Cancel";
 import { Delete } from "./buttons/Delete";
 import { Save } from "./buttons/Save";
 
-export const ButtonsWrapper = () => {
-    const prototype = ImaginaryField('Buttons');
-
-    const render = (changeVisible, drawIt, placesWrapper, getValues, masterKey) => (
+export const ButtonsWrapper = ({ props, parameters }) => {
+    return (
         <>
-            <div className='buttons'>
-                <Delete props={{ changeVisible, drawIt, placesWrapper, masterKey }}></Delete>
-                <Save props={{ changeVisible, drawIt, placesWrapper, getValues, masterKey }}></Save>
-                <Cancel props={{ changeVisible, drawIt }}></Cancel>
-            </div>
+            <li className={`${props.states.fieldsStyles[parameters.id].getState()} buttons`}>
+                <Delete></Delete>
+                <Save></Save>
+                <Cancel></Cancel>
+            </li>
         </>
     );
-
-    return Object.assign(prototype, { render });
 }

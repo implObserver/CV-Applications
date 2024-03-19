@@ -1,20 +1,25 @@
-import { useState } from "react";
+import { State } from "../../toggle/Toggle";
 
-export const Input = ({ props }) => {
-    const [input, setInput] = useState('');
+export const Input = ({ props, parameters }) => {
+    const value = State('');
+    Object.assign(props.inputs, { [parameters.id]: value });
+    
+    const inputHandler = (e) => {
+        value.setState(e.target.value);
+    }
 
     return (
         <>
             <input
-                type={props.type}
-                id={props.id}
-                name={props.name}
-                placeholder={props.placeholder}
+                type={parameters.type}
+                id={parameters.id}
+                name={parameters.name}
+                placeholder={parameters.placeholder}
                 className='field'
-                maxLength={props.maxLength}
-                minLength={props.minLength}
-                pattern={props.pattern}
-                value={input} onInput={e => setInput(e.target.value)}
+                maxLength={parameters.maxLength}
+                minLength={parameters.minLength}
+                pattern={parameters.pattern}
+                value={value.getState()} onInput={inputHandler}
             />
         </>
     );

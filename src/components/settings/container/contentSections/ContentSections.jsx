@@ -1,28 +1,18 @@
 import '../../../../styles/ContentSections.css';
+import { getSectionStateTemplate } from '../../../stateTemplates/DynamicSection';
 import { Education } from './education/Education';
-import { Experience } from './experience/Experience';
 import { PersonalDetails } from './personalDetails/PersonalDetails';
 
 export const ContentSections = ({ props }) => {
-  //const education = Education();
-  // const experience = Experience();
+  const education = getSectionStateTemplate();
+  const personalDetails = getSectionStateTemplate();
 
-  const education = {
-    states: {
-      open: {},
-      drawnNode: {},
-      fieldsStyles: {}
-    },
-    addedFields: [],
-    removedFields: []
-  }
-
-  Object.assign(props.states, { education });
-
+  Object.assign(props.states, { education, personalDetails });
+  console.log(props)
   return (
     <>
       <div className='content__sections'>
-        <PersonalDetails props={props}></PersonalDetails>
+        <PersonalDetails props={props.states.personalDetails}></PersonalDetails>
         <Education props={props.states.education}></Education>
       </div>
     </>

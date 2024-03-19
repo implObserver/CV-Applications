@@ -3,11 +3,7 @@ import { EducationHead } from './head/EducationHead.jsx';
 import { State } from '../../../../prototypes/toggle/Toggle.jsx';
 
 export const Education = ({ props }) => {
-  const open = State(false, true);
-
   const drawnNode = State('button', 'form');
-  console.log(props)
-  Object.assign(props.states.open, open);
   Object.assign(props.states.drawnNode, drawnNode);
 
   return (

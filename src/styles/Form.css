@@ -1,10 +1,11 @@
 form {
   display: grid;
   border-radius: min(10px, 1vw);
-  padding: min(20px, 2vw);
   overflow: hidden;
+  padding-right: min(20px, 2vw);
+  padding-left: min(20px, 2vw);
   background-color: white;
-  transition: padding 0.3s ease-in-out;
+  transition: padding 0.2s ease-in-out;
 }
 
 ul {
@@ -34,12 +35,8 @@ textarea {
   color: rgb(142, 164, 190);
 }
 
-.unvisible__form {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.visible__form:has(.unvisible__field) {
-  padding-top: 0;
-  padding-bottom: 0;
+.visible__form:has(.visible__field) {
+  padding-top: min(20px, 2vw);
+  padding-bottom: min(20px, 2vw);
+  transition: padding 0.2s ease-in-out;
 }

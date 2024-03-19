@@ -1,5 +1,4 @@
 .buttons {
-    display: grid;
     grid-template-columns: min-content 3fr 1fr;
     column-gap: min(10px, 1vw);
     padding-top: min(10px, 1vw);
@@ -8,14 +7,17 @@
 .save {
     width: min-content;
     justify-self: right;
+    cursor: pointer;
     background-color: rgb(144, 240, 186);
 }
 
 .cancel {
+    display: grid;
     cursor: pointer;
 }
 
 .delete {
+    cursor: pointer;
     background-color: rgb(252, 178, 178);
 }
 

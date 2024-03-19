@@ -8,6 +8,7 @@ li {
   opacity: 0;
   max-height: 0;
   transform: translateX(-1vh);
+  padding-top: 0!important;
   transition: all 0.2s ease-in-out;
 }
 
