@@ -1,16 +1,15 @@
-export const Cancel = () => {
+import { Button } from "../../input/Button";
+import Fields from '../../../../JSON/Fields.json'
+import { ClosePattern } from "../../FormHandler";
+
+export const Cancel = ({ props, id }) => {
+  const clickHandler = async () => {
+    ClosePattern(props);
+  }
+
   return (
     <>
-      <input
-        type='button'
-        id='cancel'
-        name='education__cancel'
-        className='cancel'
-        value='Cancel'
-        onClick={async () => {
-
-        }}
-      />
+      <Button id={id} parameters={Fields.buttons.cancel} onClick={clickHandler}></Button>
     </>
   )
 };

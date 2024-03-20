@@ -1,27 +1,22 @@
-import { useState } from "react";
+import { State } from "../../toggle/Toggle";
 
-export const Area = () => {
-    const [area, setArea] = useState('');
+export const Area = ({ props, parameters }) => {
+    const value = State('');
+    Object.assign(props.inputs, { [parameters.id]: value });
 
-    const getValue = () => {
-        return area;
+    const areaHandler = (e) => {
+        value.setState(e.target.value);
     }
 
-    const setValue = (value) => {
-        setArea(value);
-    }
-
-    const render = (props) => (
+    return (
         <>
             <textarea
-                id={props.id}
-                name={props.name}
+                id={parameters.id}
+                name={parameters.name}
                 className='field'
-                placeholder={props.placeholder}
-                value={area} onInput={e => setArea(e.target.value)}
+                placeholder={parameters.placeholder}
+                value={value.getState()} onInput={areaHandler}
             />
         </>
-    )
-
-    return { render, getValue, setValue };
+    );
 }

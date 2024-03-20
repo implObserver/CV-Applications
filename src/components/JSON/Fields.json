@@ -75,7 +75,8 @@
             "id": "education__form-location",
             "name": "user__location",
             "placeholder": "Enter location",
-            "maxLength": 100
+            "maxLength": 100,
+            "isOptional": true
         },
         "buttons": {
             "id": "Buttons"
@@ -118,17 +119,42 @@
             "id": "experience__form-location",
             "name": "user__location",
             "placeholder": "Enter location",
-            "maxLength": 100
+            "maxLength": 100,
+            "isOptional": true
         },
         "description": {
-            "id": "description",
+            "label": "Description",
+            "id": "experience__form-description",
             "name": "user__description",
-            "placeholder": "Enter Description"
+            "placeholder": "Enter Description",
+            "isOptional": true
         },
         "buttons": {
             "id": "Buttons"
         }
+    },
+
+    "buttons": {
+        "cancel": {
+            "type": "button",
+            "id": "cancel",
+            "name": "cancel",
+            "className": "cancel",
+            "value": "Cancel"
+        },
+        "save": {
+            "type": "button",
+            "id": "save",
+            "name": "save",
+            "className": "save",
+            "value": "Save"
+        },
+        "delete": {
+            "type": "button",
+            "id": "delete",
+            "name": "delete",
+            "className": "delete",
+            "value": "Delete"
+        }
     }
-
-
 }

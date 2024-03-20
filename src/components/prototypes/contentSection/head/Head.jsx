@@ -4,7 +4,9 @@ import { State } from '../../toggle/Toggle';
 
 export const Head = ({ name, props }) => {
   const style = State(false, true);
-  Object.assign(props.states.open, style);
+  const block = State('');
+
+  Object.assign(props.states, { open: style, blockHead: block });
 
   const hundleClick = async () => {
     style.switchState();
@@ -20,7 +22,7 @@ export const Head = ({ name, props }) => {
 
   return (
     <>
-      <button className={`section__head ${style}`}
+      <button className={`section__head ${block.getState()}`}
         onClick={hundleClick}>
         <h2>{name}</h2>
         <Arrow state={props.states.open.getState()}></Arrow>

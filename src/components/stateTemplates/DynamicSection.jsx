@@ -8,6 +8,8 @@ export const getSectionStateTemplate = () => {
         addedFields: [],
         removedFields: [],
         inputs: {},
+        places: [],
+        activePlace: 'new',
     }
 
     return section;

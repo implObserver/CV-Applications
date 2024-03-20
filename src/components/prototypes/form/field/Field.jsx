@@ -1,23 +1,12 @@
-import { Input } from '../input/Input';
+import { ImaginaryInput } from './imaginaryInput/ImaginaryInput';
+import { ImaginaryLabel } from './imaginaryLabel/ImaginaryLabel';
 
-export const Field = ({ props, parameters }) => {
+export const Field = ({ props, parameters, id }) => {
   return (
     <>
       <li className={props.states.fieldsStyles[parameters.id].getState()}>
-        <label htmlFor={parameters.id}>
-          {parameters.label}
-          {(() => {
-            if (parameters.isRequied) {
-              return <span aria-label='required'>*</span>
-            }
-            if (parameters.isRecommended) {
-              return <span className='recommended__text'> recommended</span>
-            }
-          })()}
-        </label>
-
-        <Input props={props} parameters={parameters}></Input>
-
+        <ImaginaryLabel parameters={parameters}></ImaginaryLabel>
+        <ImaginaryInput props={props} parameters={parameters} id={id}></ImaginaryInput>
         <span className='error' aria-live='polite'></span>
       </li>
     </>

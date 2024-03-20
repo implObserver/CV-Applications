@@ -1,24 +1,17 @@
-import { CompanyName } from './fields/CompanyName';
-import { EndDate } from './fields/EndDate';
-import { Location } from './fields/Location';
-import { PositionTitle } from './fields/PositionTitle';
-import { StartDate } from './fields/StartDate';
-import { Buttons } from './fields/Buttons';
 import { DynamicForm } from '../../prototypes/form/DynamicForm';
-import { Description } from './fields/Description';
+import Fields from '../../JSON/Fields.json'
 
-export const ExperienceForm = () => {
-  const fields = [
-    CompanyName(),
-    PositionTitle(),
-    StartDate(),
-    EndDate(),
-    Location(),
-    //Description(),
-    //Buttons(),
-  ];
+const fields = [
+  Fields.experienceForm.companyName,
+  Fields.experienceForm.positionTitle,
+  Fields.experienceForm.startDate,
+  Fields.experienceForm.endDate,
+  Fields.experienceForm.location,
+  Fields.experienceForm.description,
+  Fields.experienceForm.buttons,
+];
 
-  const prototype = DynamicForm('experience__form', fields);
-
-  return Object.assign(prototype);
+export const ExperienceForm = ({ props }) => {
+  const id = 'experience__form';
+  return <DynamicForm props={props} id={id} fields={fields}></DynamicForm>;
 };

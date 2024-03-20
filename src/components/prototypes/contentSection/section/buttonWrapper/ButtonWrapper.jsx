@@ -3,7 +3,6 @@ import { State } from '../../../toggle/Toggle';
 import { FormAddButton } from './button/Button';
 
 export const ButtonWrapper = ({ props, name }) => {
-  console.log('aagagagagaga')
   const style = State('unvisible__button-wrapper', 'visible__button-wrapper');
   Object.assign(props.states, { buttonStyle: style });
   return (

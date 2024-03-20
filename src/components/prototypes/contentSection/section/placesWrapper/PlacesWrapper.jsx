@@ -1,23 +1,22 @@
-import { useState } from "react";
 import { Place } from "./place/Place";
 import { State } from "../../../toggle/Toggle";
 
 export const PlacesWrapper = ({ props }) => {
-    const [places] = useState([Place[0]]);
     const style = State('unvisible__places-wrapper', 'visible__places-wrapper');
-    Object.assign(props.states, { placesStyle: style });
-
+    const places = Object.entries(props.places);
+    Object.assign(props.states, { placesStyle: style, places: places });
     return (
         <>
             <div className={`places__wrapper ${style.getState()} ${props.states.drawnNode.getState() === 'form' ? 'disabled' : ''}`}>
                 {(() => {
+                    console.log(places)
                     return (
                         <>
                             {
                                 places.map((place) => {
                                     return (
                                         <>
-                                            {place}
+                                            <Place props={props} parameters={place[1]}></Place>
                                         </>
                                     )
                                 })

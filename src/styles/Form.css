@@ -29,7 +29,7 @@ textarea {
   resize: vertical;
 }
 
-.recommended__text {
+.recommended__text, .optional__text {
   padding-left: min(10px, 1vw);
   font-size: 0.8rem;
   color: rgb(142, 164, 190);

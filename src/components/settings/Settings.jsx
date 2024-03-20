@@ -6,6 +6,7 @@ import '../../styles/Icons.css';
 import '../../styles/Buttons.css';
 
 export const Settings = ({ props }) => {
+
   return (
     <>
       <div className='settings'>

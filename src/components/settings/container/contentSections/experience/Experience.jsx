@@ -1,20 +1,18 @@
+import { State } from "../../../../prototypes/toggle/Toggle";
+import { EducationHead } from "../education/head/EducationHead";
+import { EducationSection } from "../education/section/EducationSection";
 
+export const Experience = ({ props }) => {
+  const drawnNode = State('button', 'form');
+  Object.assign(props.states.drawnNode, drawnNode);
 
-export const Experience = () => {
-  //const head = ExperienceHead();
-  //const section = ExperienceSection();
-  //const form = ExperienceForm();
+  return (
+    <>
+      <div className='experience'>
+        <EducationHead name='Experience' props={props}></EducationHead>
+        <EducationSection name='Experience' props={props}></EducationSection>
+      </div>
+    </>
+  );
 
-  const render = () => {
-    //return (
-      //<>
-        //<div className='experience'>
-          //{head.render(section, form)}
-          //{section.render(form)}
-        //</div>
-     // </>
-   // )
-  }
-
-  return { render }
 };
