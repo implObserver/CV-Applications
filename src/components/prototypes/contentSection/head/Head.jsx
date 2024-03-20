@@ -11,7 +11,6 @@ export const Head = ({ name, props }) => {
   const hundleClick = async () => {
     style.switchState();
     if (props.states.drawnNode.getState() === 'form') {
-      console.log(props)
       const key = !props.states.open.getState();
       FieldsHandler.changeVisibleFields(props, key);
     } else {
