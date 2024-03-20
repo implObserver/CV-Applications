@@ -1,4 +1,4 @@
-import { Resume } from './components/resume/Resume';
+
 import './App.css';
 import { Settings } from './components/settings/Settings';
 
