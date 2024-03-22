@@ -1,10 +1,12 @@
+import { ResumeUpdater } from "../../../resume/ResumeUpdater";
 import { State } from "../../toggle/Toggle";
 
 export const Input = ({ props, parameters }) => {
     const value = State('');
     Object.assign(props.inputs, { [parameters.id]: value });
-    
+
     const inputHandler = (e) => {
+        ResumeUpdater[parameters.id].setState(e.target.value);
         value.setState(e.target.value);
     }
 

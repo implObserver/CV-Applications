@@ -1,5 +1,6 @@
 
 import './App.css';
+import { Resume } from './components/resume/Resume';
 import { Settings } from './components/settings/Settings';
 
 export const App = () => {
@@ -10,6 +11,7 @@ export const App = () => {
   return (
     <>
       <Settings props={props}></Settings>
+      <Resume props={props}></Resume>
     </>
   );
 }

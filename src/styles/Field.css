@@ -17,11 +17,3 @@ li {
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
-
-.unvisible__field:nth-child(even) {
-  
-}
-
-.unvisible__field:nth-child(odd) {
-  
-}

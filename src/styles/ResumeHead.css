@@ -1,0 +1,43 @@
+.resume__head {
+    display: grid;
+    border-radius: min(20px, 2vw) min(20px, 2vw) 0 0;
+    background-color: orange;
+    width: 55vw;
+    min-width: 300px;
+    max-width: 800px;
+}
+
+.personal__info {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    padding: min(30px, 3vw);
+    width: 55vw;
+    min-width: 300px;
+    max-width: 800px;
+}
+
+.full__name>h1 {
+    display: grid;
+    font-size: 2.4rem;
+}
+
+.full__name,
+.contact__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    row-gap: 1vw;
+}
+
+.contact__info {
+    padding: min(10px, 1vw);
+    column-gap: min(20px, 2vw);
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+.address {
+    display: grid;
+}

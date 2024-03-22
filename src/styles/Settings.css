@@ -2,6 +2,7 @@
   display: grid;
   max-width: 576px;
   gap: min(10px, 1vw);
+  width: 100%;
 }
 
 @media screen and (min-aspect-ratio: 0.9/1) {
@@ -10,8 +11,3 @@
   }
 }
 
-@media screen and (max-aspect-ratio: 0.9/1) {
-  .settings {
-    grid-template-rows: 1fr 6fr;
-  }
-}

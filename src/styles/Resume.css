@@ -1,5 +1,13 @@
 .resume {
   display: grid;
+  grid-template-rows: 1fr 7fr;
   background-color: white;
   border-radius: min(20px, 2vw);
+  background-color: white;
+  justify-content: center;
+  width: 55vw;
+  min-width: 200px;
+  max-width: 800px;
+  justify-items: center;
+  height: 98vh;
 }

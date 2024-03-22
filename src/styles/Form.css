@@ -21,7 +21,7 @@ input,
 textarea {
   display: grid;
   background-color: rgb(232, 242, 255);
-  padding: min(10px, 2vw);
+  padding: min(10px, 1vw);
   border-radius: min(10px, 1vw);
 }
 
