@@ -23,9 +23,12 @@ a:hover {
 }
 
 body {
-  margin: 0;
   display: flex;
   place-items: center;
+  min-height: 100vh;
+  height: 100%;
+  background-color: rgb(232, 242, 255);
+  min-width: min-content;
 }
 
 h1 {

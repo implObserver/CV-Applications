@@ -1,7 +1,10 @@
-export const educationHead = () => {
+import { generateKey } from "../../../../helper/KeyGenerator";
+import { ResumeSection } from "../../../../prototypes/resume/section/Section"
+
+export const ResumeEducation = ({ props }) => {
     return (
         <>
-            <section className="resume__education__info"></section>
+            <ResumeSection id='education' props={props}></ResumeSection>
         </>
     )
 }

@@ -1,4 +1,28 @@
 .resume__body {
     display: grid;
+    padding: min(10px, 1vw);
+}
 
+.resume__education__info {
+    display: grid;
+    justify-content: center;
+}
+
+.resume__section__head {
+    display: grid;
+    background-color: aliceblue;
+    justify-content: center;
+}
+
+.resume__place {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: min(30px, 3vw);
+    padding: min(10px, 1vw);
+}
+
+.resume__place__left-section,
+.resume__place__right-section {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }

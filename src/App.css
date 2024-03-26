@@ -8,10 +8,10 @@
   box-sizing: border-box;
 }
 
-body {
-  display: grid;
-  justify-content: center;
-  background-color: rgb(232, 242, 255);
+@media screen and (min-aspect-ratio: 0.9/1) {
+  body {
+    justify-content: center;
+  }
 }
 
 #root {

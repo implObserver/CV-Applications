@@ -1,13 +1,10 @@
 .resume {
   display: grid;
-  grid-template-rows: 1fr 7fr;
   background-color: white;
   border-radius: min(20px, 2vw);
   background-color: white;
   justify-content: center;
-  width: 55vw;
-  min-width: 200px;
-  max-width: 800px;
+  width: max(max-content, min-content);
+  max-width: 1000px;
   justify-items: center;
-  height: 98vh;
 }
