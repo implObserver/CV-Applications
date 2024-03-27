@@ -1,3 +1,4 @@
+import { ResumeUpdater } from "../../../resume/ResumeUpdater";
 import { State } from "../../toggle/Toggle";
 
 export const Area = ({ props, parameters }) => {
@@ -5,6 +6,7 @@ export const Area = ({ props, parameters }) => {
     Object.assign(props.inputs, { [parameters.id]: value });
 
     const areaHandler = (e) => {
+        ResumeUpdater[props.id][props.activePlace.getKey()][parameters.index].setState(e.target.value);
         value.setState(e.target.value);
     }
 

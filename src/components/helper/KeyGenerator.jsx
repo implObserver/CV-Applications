@@ -1,3 +1,3 @@
 export const generateKey = (pre) => {
-    return `${pre}_${new Date().getMilliseconds()}`;
+    return `${pre}_${new Date().getTime()}`;
 }

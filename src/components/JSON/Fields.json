@@ -7,7 +7,8 @@
             "name": "user__full-name",
             "placeholder": "Enter full name...",
             "maxLength": 50,
-            "isRequied": true
+            "isRequied": true,
+            "index": "fullName"
         },
         "email": {
             "label": "Email",
@@ -17,7 +18,8 @@
             "placeholder": "Add email...",
             "maxLength": 200,
             "minLength": 8,
-            "isRecommended": true
+            "isRecommended": true,
+            "index": "mail"
         },
         "phoneNumber": {
             "label": "PhoneNumber",
@@ -25,7 +27,8 @@
             "id": "phone__number",
             "placeholder": "Enter '+' and phone number...",
             "pattern": "^\\+((?:9[679]|8[035789]|6[789]|5[90]|42|3[578]|2[1-689])|9[0-58]|8[1246]|6[0-6]|5[1-8]|4[013-9]|3[0-469]|2[70]|7|1)(?:\\W*\\d){0,13}\\d$",
-            "isRecommended": true
+            "isRecommended": true,
+            "index": "numberPhone"
         },
         "address": {
             "label": "Address",
@@ -35,7 +38,8 @@
             "placeholder": "City, Country",
             "maxLength": 200,
             "minLength": 8,
-            "isRecommended": true
+            "isRecommended": true,
+            "index": "address"
         }
     },
     "educationForm": {
@@ -45,7 +49,8 @@
             "id": "school",
             "name": "user__school",
             "placeholder": "Enter school / university",
-            "maxLength": 100
+            "maxLength": 100,
+            "index": "place"
         },
         "degree": {
             "label": "Degree",
@@ -53,21 +58,24 @@
             "id": "degree",
             "name": "user__degree",
             "placeholder": "Enter degree / Field of study",
-            "maxLength": 200
+            "maxLength": 200,
+            "index": "info"
         },
         "startDate": {
             "label": "StartDate",
             "type": "date",
             "id": "education__form-start__date",
             "name": "user__start-date",
-            "placeholder": "Enter start date"
+            "placeholder": "Enter start date",
+            "index": "startDate"
         },
         "endDate": {
             "label": "EndDate",
             "type": "date",
             "id": "education__form-end__date",
             "name": "user__end-date",
-            "placeholder": "Enter end date"
+            "placeholder": "Enter end date",
+            "index": "endDate"
         },
         "location": {
             "label": "Location",
@@ -76,7 +84,8 @@
             "name": "user__location",
             "placeholder": "Enter location",
             "maxLength": 100,
-            "isOptional": true
+            "isOptional": true,
+            "index": "location"
         },
         "buttons": {
             "id": "Buttons"
@@ -89,7 +98,8 @@
             "id": "company__name",
             "name": "user__company-name",
             "placeholder": "Enter Company Name",
-            "maxLength": "100"
+            "maxLength": "100",
+            "index": "place"
         },
         "positionTitle": {
             "label": "PositionTitle",
@@ -97,21 +107,24 @@
             "id": "position__title",
             "name": "user__position-title",
             "placeholder": "Enter Position Title",
-            "maxLength": "100"
+            "maxLength": "100",
+            "index": "info"
         },
         "startDate": {
             "label": "StartDate",
             "type": "date",
             "id": "experience__form-start__date",
             "name": "user__start-date",
-            "placeholder": "Enter start date"
+            "placeholder": "Enter start date",
+            "index": "startDate"
         },
         "endDate": {
             "label": "EndDate",
             "type": "date",
             "id": "experience__form-end__date",
             "name": "user__end-date",
-            "placeholder": "Enter end date"
+            "placeholder": "Enter end date",
+            "index": "endDate"
         },
         "location": {
             "label": "Location",
@@ -120,20 +133,21 @@
             "name": "user__location",
             "placeholder": "Enter location",
             "maxLength": 100,
-            "isOptional": true
+            "isOptional": true,
+            "index": "location"
         },
         "description": {
             "label": "Description",
             "id": "experience__form-description",
             "name": "user__description",
             "placeholder": "Enter Description",
-            "isOptional": true
+            "isOptional": true,
+            "index": "description"
         },
         "buttons": {
             "id": "Buttons"
         }
     },
-
     "buttons": {
         "cancel": {
             "type": "button",

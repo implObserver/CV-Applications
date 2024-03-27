@@ -5,8 +5,11 @@ export const Input = ({ props, parameters }) => {
     const value = State('');
     Object.assign(props.inputs, { [parameters.id]: value });
 
+
+
     const inputHandler = (e) => {
-        ResumeUpdater[parameters.id]?.setState(e.target.value);
+        console.log(ResumeUpdater[props.id][props.activePlace.getKey()][parameters.index])
+        ResumeUpdater[props.id][props.activePlace.getKey()][parameters.index].setState(e.target.value);
         value.setState(e.target.value);
     }
 

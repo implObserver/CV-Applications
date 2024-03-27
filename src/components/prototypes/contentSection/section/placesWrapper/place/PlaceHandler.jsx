@@ -1,6 +1,9 @@
+import { ResumeUpdater } from "../../../../../resume/ResumeUpdater";
+
 export const DeletePlace = (props) => {
     const index = filter(props);
     props.places.splice(index, 1);
+    ResumeUpdater[props.id].trigger.switchState();
 }
 
 const filter = (props) => {

@@ -7,14 +7,18 @@ import defaultPlaces from '../../../JSON/DefaultPlaces.json'
 import { IdealPlace } from '../../../prototypes/contentSection/section/placesWrapper/place/IdealPlace';
 
 export const ContentSections = ({ props }) => {
-  const personalDetails = getSectionStateTemplate();
-  const education = getSectionStateTemplate();
-  const experience = getSectionStateTemplate();
+  const personalDetails = getSectionStateTemplate('personal');
+  const education = getSectionStateTemplate('education');
+  const experience = getSectionStateTemplate('experience');
 
   Object.assign(props.states, { personalDetails, education, experience });
 
+  const personalPlaces = Object.entries(defaultPlaces.personal);
   const educationPlaces = Object.entries(defaultPlaces.education);
   const experiencePlaces = Object.entries(defaultPlaces.experience);
+  console.log(personalPlaces[0][1])
+
+  props.states.personalDetails.activePlace = IdealPlace(props.states.personalDetails, personalPlaces[0][1]);
 
   educationPlaces.forEach(place => {
     Object.assign(props.states.education.places.push(IdealPlace(props.states.education, place[1])));

@@ -1,8 +1,10 @@
 import { generateKey } from "../../../../../helper/KeyGenerator";
 
 export const IdealPlace = (props, defaultPlace = '') => {
+    console.log(defaultPlace)
+    props.placeCounter++;
     const inputs = Object.entries(props.inputs);
-    const key = generateKey('place')
+    const key = generateKey(`${props.id}-${props.placeCounter}`)
 
     const setValues = (inputs) => {
         const values = [];
@@ -14,7 +16,6 @@ export const IdealPlace = (props, defaultPlace = '') => {
     }
 
     let values = defaultPlace === '' ? setValues(inputs) : defaultPlace;
-    console.log(values)
 
     const update = () => {
         const inputs = Object.entries(props.inputs);

@@ -1,5 +1,6 @@
-export const getSectionStateTemplate = () => {
+export const getSectionStateTemplate = (id) => {
     const section = {
+        id: id,
         states: {
             open: {},
             drawnNode: {},
@@ -9,7 +10,9 @@ export const getSectionStateTemplate = () => {
         removedFields: [],
         inputs: {},
         places: [],
+        resumeSections: [],
         activePlace: 'new',
+        placeCounter: 0,
     }
 
     return section;

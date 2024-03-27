@@ -1,6 +1,8 @@
 .resume__head {
     display: grid;
     border-radius: min(20px, 2vw) min(20px, 2vw) 0 0;
+    width: 100%;
+    max-width: inherit;
     background-color: orange;
 }
 
@@ -12,7 +14,7 @@
 }
 
 .full__name>h1 {
-    display: grid;
+    display: flex;
     font-size: 2.4rem;
 }
 

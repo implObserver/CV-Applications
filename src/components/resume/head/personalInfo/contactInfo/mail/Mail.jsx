@@ -1,10 +1,10 @@
 import { State } from "../../../../../prototypes/toggle/Toggle";
-import { DefaultResume, ResumeUpdater } from "../../../../ResumeUpdater";
-import Fields from '../../../../../JSON/Fields.json'
+import { ResumeUpdater } from "../../../../ResumeUpdater";
 
-export const Mail = () => {
-    const update = State(DefaultResume.email);
-    Object.assign(ResumeUpdater, { [Fields.detailsForm.email.id]: update });
+export const Mail = ({ props }) => {
+    const activePlace = props.states.personalDetails.activePlace;
+    const update = State(activePlace.getValues()[1]);
+    Object.assign(ResumeUpdater[props.states.personalDetails.id][activePlace.getKey()], { mail: update });
 
     return (
         <>

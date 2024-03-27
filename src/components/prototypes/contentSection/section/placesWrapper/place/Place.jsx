@@ -2,7 +2,6 @@ import { FieldsHandler } from "../../../../form/fieldsHandler/FieldsHandler";
 import '../../../../../../styles/PlacesWrapper.css'
 
 export const Place = ({ props, parameters }) => {
-    console.log(parameters.getKey())
     const values = parameters.getValues();
 
     const clickHandler = () => {
@@ -19,14 +18,13 @@ export const Place = ({ props, parameters }) => {
     const fillForm = () => {
         const inputs = Object.entries(props.inputs);
         for (let i = 0; i < inputs.length; i++) {
-            console.log(inputs[i][1])
             inputs[i][1].setState(values[i])
         }
     }
 
     return (
         <>
-            <div key={parameters.getKey()} className="place" onClick={clickHandler}>
+            <div className="place" onClick={clickHandler}>
                 <span>{values[0]}</span>
             </div>
         </>

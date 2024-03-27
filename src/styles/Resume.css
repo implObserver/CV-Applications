@@ -7,4 +7,5 @@
   width: max(max-content, min-content);
   max-width: 1000px;
   justify-items: center;
+  word-break: break-all;
 }

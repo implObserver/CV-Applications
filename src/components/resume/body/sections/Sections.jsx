@@ -6,7 +6,7 @@ export const ResumeSections = ({ props }) => {
         <>
             <div className="resume__sections">
                 <ResumeEducation props={props}></ResumeEducation>
-               
+                <ResumeExperience props={props}></ResumeExperience>
             </div>
         </>
     )

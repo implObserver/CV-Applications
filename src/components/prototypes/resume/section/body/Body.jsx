@@ -1,12 +1,16 @@
 import { generateKey } from "../../../../helper/KeyGenerator";
-import { later } from "../../../../helper/Timeout";
+import { ResumeUpdater } from "../../../../resume/ResumeUpdater";
+import { State } from "../../../toggle/Toggle";
 import { ResumePlacesWrapper } from "../../placesWrapper/PlacesWrapper"
 
 export const ResumeSectionBody = ({ id, props }) => {
-    const sections = props.states.education.places;
-
+    const trigger = State();
+    Object.assign(ResumeUpdater, { [id]: { trigger: trigger } });
+    console.log(id)
+    const sections = props.states[id].places;
+    console.log(ResumeUpdater)
     const fill = sections.map((section) => {
-        return <ResumePlacesWrapper key={`${generateKey(section.getKey())}`} id={id}></ResumePlacesWrapper>;
+        return <ResumePlacesWrapper key={section.getKey()} id={id} props={props} section={section}></ResumePlacesWrapper>;
     })
 
     return (
