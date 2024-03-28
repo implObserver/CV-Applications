@@ -1,3 +1,4 @@
+import { FieldParametersContext } from "../../../../dataManagments/context/FieldParametersContext";
 import { usePropsContext } from "../../../../dataManagments/context/PropsContext";
 import { Props } from "../../../../dataManagments/props/Global";
 import { State } from "../../../state/State";
@@ -11,7 +12,11 @@ export const ResumeSectionBody = () => {
 
     const sections = props.places;
     const fill = sections.map((section) => {
-        return <ResumePlacesWrapper key={section.getKey()} section={section}></ResumePlacesWrapper>;
+        return (
+            <FieldParametersContext.Provider key={section.getKey()} value={section}>
+                <ResumePlacesWrapper section={section}></ResumePlacesWrapper>
+            </FieldParametersContext.Provider>
+        );
     })
 
     return (

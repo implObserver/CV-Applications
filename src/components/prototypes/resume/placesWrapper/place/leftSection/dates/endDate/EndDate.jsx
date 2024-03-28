@@ -1,8 +1,10 @@
+import { useFieldContext } from "../../../../../../../dataManagments/context/FieldParametersContext";
 import { usePropsContext } from "../../../../../../../dataManagments/context/PropsContext";
 import { Props } from "../../../../../../../dataManagments/props/Global";
 import { State } from "../../../../../../state/State";
 
-export const EndDate = ({ section }) => {
+export const EndDate = () => {
+    const section = useFieldContext();
     const udpate = State(section.getValues()[3]);
     const props = usePropsContext();
 

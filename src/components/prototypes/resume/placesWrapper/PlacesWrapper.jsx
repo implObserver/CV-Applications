@@ -1,10 +1,10 @@
 import { ResumePlace } from "./place/ResumePlace"
 
-export const ResumePlacesWrapper = ({ section }) => {
+export const ResumePlacesWrapper = () => {
     return (
         <>
             <div className="resume__places__wrapper">
-                <ResumePlace section={section}></ResumePlace>
+                <ResumePlace></ResumePlace>
             </div>
         </>
     )
