@@ -1,4 +1,4 @@
-import { ResumeUpdater } from "../../../../resume/ResumeUpdater";
+import { ResumeUpdater } from "../../../../dataManagments/stateTemplates/ResumeUpdater";
 import { LeftSection } from "./leftSection/LeftSection"
 import { RightSection } from "./rightSection/RightSection"
 

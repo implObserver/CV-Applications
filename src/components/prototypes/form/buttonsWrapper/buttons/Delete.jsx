@@ -1,6 +1,6 @@
 import { Button } from "../../input/Button";
-import Fields from '../../../../JSON/Fields.json'
-import { DeletePlace } from "../../../contentSection/section/placesWrapper/place/PlaceHandler";
+import Fields from '../../../../dataManagments/JSON/Fields.json'
+import { DeletePlace } from "../../../settings/container/contentSection/section/placesWrapper/place/PlaceHandler";
 import { ClosePattern } from "../../FormHandler";
 
 export const Delete = ({ props, id }) => {

@@ -1,7 +1,7 @@
 
 import './App.css';
-import { Resume } from './components/resume/Resume';
-import { Settings } from './components/settings/Settings';
+import { Settings } from './components/originals/settings/Settings';
+import { Resume } from './components/originals/resume/Resume';
 
 export const App = () => {
   const props = {

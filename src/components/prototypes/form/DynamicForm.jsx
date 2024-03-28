@@ -1,7 +1,7 @@
-import { State } from '../toggle/Toggle';
-import { generateKey } from '../../helper/KeyGenerator';
+import { State } from '../state/State';
 import '../../../styles/Field.css'
 import { ImaginaryField } from './field/ImaginaryField';
+import { generateKey } from '../../../helper/KeyGenerator';
 
 export const DynamicForm = ({ props, id, fields }) => {
     const toggle = State(true, false);

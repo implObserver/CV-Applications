@@ -1,7 +1,7 @@
-import { ResumeUpdater } from "../../../../../../resume/ResumeUpdater";
-import { State } from "../../../../../toggle/Toggle";
+import { ResumeUpdater } from "../../../../../../dataManagments/stateTemplates/ResumeUpdater";
+import { State } from "../../../../../state/State";
 
-export const AddressField = ({ id, props, section }) => {
+export const AddressField = ({ id, section }) => {
     const udpate = State(section.getValues()[4]);
     Object.assign(ResumeUpdater[id][section.getKey()], { location: udpate });
     return (

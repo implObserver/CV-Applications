@@ -1,5 +1,5 @@
-import { ResumeUpdater } from "../../../resume/ResumeUpdater";
-import { State } from "../../toggle/Toggle";
+import { ResumeUpdater } from "../../../dataManagments/stateTemplates/ResumeUpdater";
+import { State } from "../../state/State";
 
 export const Area = ({ props, parameters }) => {
     const value = State('');

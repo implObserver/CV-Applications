@@ -1,7 +1,7 @@
-import { ResumeUpdater } from "../../../../../../../resume/ResumeUpdater";
-import { State } from "../../../../../../toggle/Toggle";
+import { ResumeUpdater } from "../../../../../../../dataManagments/stateTemplates/ResumeUpdater";
+import { State } from "../../../../../../state/State";
 
-export const StartDate = ({ id, props, section }) => {
+export const StartDate = ({ id, section }) => {
     const udpate = State(section.getValues()[2]);
     Object.assign(ResumeUpdater[id][section.getKey()], { startDate: udpate });
 

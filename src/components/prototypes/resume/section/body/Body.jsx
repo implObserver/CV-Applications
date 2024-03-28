@@ -1,6 +1,5 @@
-import { generateKey } from "../../../../helper/KeyGenerator";
-import { ResumeUpdater } from "../../../../resume/ResumeUpdater";
-import { State } from "../../../toggle/Toggle";
+import { ResumeUpdater } from "../../../../dataManagments/stateTemplates/ResumeUpdater";
+import { State } from "../../../state/State";
 import { ResumePlacesWrapper } from "../../placesWrapper/PlacesWrapper"
 
 export const ResumeSectionBody = ({ id, props }) => {

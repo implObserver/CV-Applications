@@ -1,6 +1,6 @@
-import Fields from '../../../../JSON/Fields.json'
-import { ResumeUpdater } from '../../../../resume/ResumeUpdater';
-import { IdealPlace } from '../../../contentSection/section/placesWrapper/place/IdealPlace';
+import Fields from '../../../../dataManagments/JSON/Fields.json'
+import { ResumeUpdater } from '../../../../dataManagments/stateTemplates/ResumeUpdater';
+import { IdealPlace } from '../../../settings/container/contentSection/section/placesWrapper/place/IdealPlace';
 import { ClosePattern } from '../../FormHandler';
 import { Button } from '../../input/Button';
 

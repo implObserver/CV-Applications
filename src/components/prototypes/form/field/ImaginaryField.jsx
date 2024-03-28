@@ -1,4 +1,4 @@
-import { State } from "../../toggle/Toggle";
+import { State } from "../../state/State";
 import { ButtonsWrapper } from "../buttonsWrapper/ButtonsWrapper";
 import { Field } from "./Field";
 

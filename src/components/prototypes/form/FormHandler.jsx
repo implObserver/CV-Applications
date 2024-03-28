@@ -1,4 +1,4 @@
-import { later } from "../../helper/Timeout";
+import { later } from "../../../helper/Timeout";
 import { FieldsHandler } from "./fieldsHandler/FieldsHandler";
 
 export const ClosePattern = async (props) => {

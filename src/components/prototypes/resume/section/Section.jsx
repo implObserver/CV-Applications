@@ -1,6 +1,6 @@
 import { ResumeSectionBody } from "./body/Body"
 import { ResumeSectionHead } from "./head/Head"
-import Sections from '../../../JSON/Sections.json'
+import Sections from '../../../dataManagments/JSON/Sections.json'
 
 export const ResumeSection = ({ id, props }) => {
     const name = Sections[id].head;

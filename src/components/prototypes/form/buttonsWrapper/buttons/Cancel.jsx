@@ -1,5 +1,5 @@
 import { Button } from "../../input/Button";
-import Fields from '../../../../JSON/Fields.json'
+import Fields from '../../../../dataManagments/JSON/Fields.json'
 import { ClosePattern } from "../../FormHandler";
 
 export const Cancel = ({ props, id }) => {
