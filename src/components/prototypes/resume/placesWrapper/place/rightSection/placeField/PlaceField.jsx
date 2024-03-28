@@ -1,7 +1,7 @@
 import { ResumeUpdater } from "../../../../../../dataManagments/stateTemplates/ResumeUpdater";
 import { State } from "../../../../../state/State";
 
-export const PlaceField = ({ id, props, section }) => {
+export const PlaceField = ({ id, section }) => {
     const udpate = State(section.getValues()[0]);
     Object.assign(ResumeUpdater[id][section.getKey()], { place: udpate });
 

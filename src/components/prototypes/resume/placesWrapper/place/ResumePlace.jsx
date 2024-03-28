@@ -2,13 +2,13 @@ import { ResumeUpdater } from "../../../../dataManagments/stateTemplates/ResumeU
 import { LeftSection } from "./leftSection/LeftSection"
 import { RightSection } from "./rightSection/RightSection"
 
-export const ResumePlace = ({ id, props, section }) => {
+export const ResumePlace = ({ id, section }) => {
     Object.assign(ResumeUpdater[id], { [section.getKey()]: {} });
     return (
         <>
             <div className="resume__place">
-                <LeftSection id={id} props={props} section={section}></LeftSection>
-                <RightSection id={id} props={props} section={section}></RightSection>
+                <LeftSection id={id} section={section}></LeftSection>
+                <RightSection id={id} section={section}></RightSection>
             </div>
         </>
     )
