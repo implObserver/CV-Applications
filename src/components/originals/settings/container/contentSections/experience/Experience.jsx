@@ -1,16 +1,18 @@
+import { Props } from "../../../../../dataManagments/props/Global";
 import { State } from "../../../../../prototypes/state/State";
 import { EducationHead } from "../education/head/EducationHead";
 import { EducationSection } from "../education/section/EducationSection";
 
-export const Experience = ({ props }) => {
+export const Experience = () => {
   const drawnNode = State('button', 'form');
-  Object.assign(props.states.drawnNode, drawnNode);
+
+  Object.assign(Props.states.experience.states.drawnNode, drawnNode);
 
   return (
     <>
       <div className='experience'>
-        <EducationHead name='Experience' props={props}></EducationHead>
-        <EducationSection name='Experience' props={props}></EducationSection>
+        <EducationHead id='experience'></EducationHead>
+        <EducationSection id='experience'></EducationSection>
       </div>
     </>
   );

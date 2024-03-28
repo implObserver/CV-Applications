@@ -1,25 +1,29 @@
 import { State } from '../state/State';
 import '../../../styles/Field.css'
-import { ImaginaryField } from './field/ImaginaryField';
+import { ImaginaryField } from './field/imaginaryField/ImaginaryField';
 import { generateKey } from '../../../helper/KeyGenerator';
+import { Props } from '../../dataManagments/props/Global';
 
-export const DynamicForm = ({ props, id, fields }) => {
+export const DynamicForm = ({ formId, fields, id }) => {
     const toggle = State(true, false);
+    const props = Props.states[id];
+
     Object.assign(props.states, { formStyle: toggle });
+
     const fill = fields.map((field) => {
-        return <ImaginaryField key={generateKey(field.id)} props={props} parameters={field} id={id}></ImaginaryField>;
+        return <ImaginaryField key={generateKey(field.id)} parameters={field} id={id}></ImaginaryField>;
     })
 
     return (
         <>
             <form
                 className={`${toggle.getState() ? 'visible__form' : 'unvisible__form'} ${props.states.drawnNode.getState() === 'button' ? 'disabled' : ''}`}
-                id={id}
+                id={formId}
                 action='#'
                 method='post'
             >
                 {(() => {
-                    if (id === 'details__form') {
+                    if (formId === 'details__form') {
                         return (
                             <>
                                 <h2>Personal Details</h2>

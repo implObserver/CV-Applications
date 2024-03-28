@@ -1,15 +1,17 @@
-import { ResumeUpdater } from "../../../../dataManagments/stateTemplates/ResumeUpdater";
+import { Props } from "../../../../dataManagments/props/Global";
 import { State } from "../../../state/State";
 import { ResumePlacesWrapper } from "../../placesWrapper/PlacesWrapper"
 
-export const ResumeSectionBody = ({ id, props }) => {
+export const ResumeSectionBody = ({ id }) => {
+    const props = Props.states[id];
     const trigger = State();
-    Object.assign(ResumeUpdater, { [id]: { trigger: trigger } });
     console.log(id)
-    const sections = props.states[id].places;
-    console.log(ResumeUpdater)
+
+    Object.assign(Props.states.resumeUpdater, { [id]: { trigger: trigger } });
+
+    const sections = props.places;
     const fill = sections.map((section) => {
-        return <ResumePlacesWrapper key={section.getKey()} id={id} props={props} section={section}></ResumePlacesWrapper>;
+        return <ResumePlacesWrapper key={section.getKey()} id={id} section={section}></ResumePlacesWrapper>;
     })
 
     return (

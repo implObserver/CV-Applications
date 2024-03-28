@@ -1,14 +1,17 @@
 import { DetailsForm } from '../../../../forms/detailsForm/DetailsForm';
 import '../../../../../../styles/PersonalDetails.css';
 import { State } from '../../../../../prototypes/state/State';
+import { Props } from '../../../../../dataManagments/props/Global';
 
-export const PersonalDetails = ({ props }) => {
+export const PersonalDetails = () => {
   const drawnNode = State('form', 'button');
-  Object.assign(props.states.drawnNode, drawnNode);
+  
+  Object.assign(Props.states.personalDetails.states.drawnNode, drawnNode);
+  
   return (
     <>
       <div className='personal__details'>
-        <DetailsForm props={props}></DetailsForm>
+        <DetailsForm id={'personalDetails'}></DetailsForm>
       </div>
     </>
   );

@@ -1,15 +1,17 @@
-import { Button } from "../../input/Button";
+import { Button } from "../../field/input/inputTypes/Button";
 import Fields from '../../../../dataManagments/JSON/Fields.json'
 import { DeletePlace } from "../../../settings/container/contentSection/section/placesWrapper/place/PlaceHandler";
-import { ClosePattern } from "../../FormHandler";
+import { ClosePattern } from "../../handlers/formHandler/FormHandler";
+import { Props } from "../../../../dataManagments/props/Global";
 
-export const Delete = ({ props, id }) => {
+export const Delete = ({ id }) => {
+    const props = Props.states[id];
     const clickHandler = async () => {
         const activePlace = props.activePlace;
         if (activePlace !== 'new') {
-            DeletePlace(props);
+            DeletePlace(id);
         }
-        ClosePattern(props);
+        ClosePattern(id);
     }
 
     return (

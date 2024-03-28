@@ -2,12 +2,12 @@ import '../../../styles/Resume.css';
 import { ResumeBody } from './body/Body';
 import { ResumeHead } from './head/Head';
 
-export const Resume = ({ props }) => {
+export const Resume = () => {
   return (
     <>
       <div className='resume'>
-        <ResumeHead props={props}></ResumeHead>
-        <ResumeBody props={props}></ResumeBody>
+        <ResumeHead></ResumeHead>
+        <ResumeBody></ResumeBody>
       </div>
     </>
   )

@@ -8,8 +8,8 @@ const fields = [
   Fields.detailsForm.address,
 ];
 
-export const DetailsForm = ({ props }) => {
-  const id = 'details__form';
+export const DetailsForm = ({ props, id }) => {
+  const formId = 'details__form';
 
-  return <DynamicForm props={props} id={id} fields={fields}></DynamicForm>;
+  return <DynamicForm props={props} formId={formId} fields={fields} id={id}></DynamicForm>;
 };

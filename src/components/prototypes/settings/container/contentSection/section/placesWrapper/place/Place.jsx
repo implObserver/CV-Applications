@@ -1,7 +1,9 @@
-import { FieldsHandler } from "../../../../../../form/fieldsHandler/FieldsHandler";
+import { FieldsHandler } from "../../../../../../form/handlers/fieldsHandler/FieldsHandler";
 import '../../../../../../../../styles/PlacesWrapper.css'
+import { Props } from "../../../../../../../dataManagments/props/Global";
 
-export const Place = ({ props, parameters }) => {
+export const Place = ({ parameters, id }) => {
+    const props = Props.states[id];
     const values = parameters.getValues();
 
     const clickHandler = () => {

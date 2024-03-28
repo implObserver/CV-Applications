@@ -1,15 +1,18 @@
-import { ResumeUpdater } from "../../../dataManagments/stateTemplates/ResumeUpdater";
-import { State } from "../../state/State";
+import { Props } from "../../../../../dataManagments/props/Global";
+import { State } from "../../../../state/State";
 
-export const Input = ({ props, parameters }) => {
+export const Input = ({ parameters, id }) => {
     const value = State('');
+    const props = Props.states[id];
+
     Object.assign(props.inputs, { [parameters.id]: value });
 
-
-
     const inputHandler = (e) => {
-        console.log(ResumeUpdater[props.id][props.activePlace.getKey()][parameters.index])
-        ResumeUpdater[props.id][props.activePlace.getKey()][parameters.index].setState(e.target.value);
+        console.log(Props.states.resumeUpdater)
+        console.log(props.id)
+        console.log(props.activePlace.getKey())
+        console.log(parameters.index)
+        Props.states.resumeUpdater[props.id][props.activePlace.getKey()][parameters.index].setState(e.target.value);
         value.setState(e.target.value);
     }
 

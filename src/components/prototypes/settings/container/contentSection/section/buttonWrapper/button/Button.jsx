@@ -1,6 +1,8 @@
-import { FieldsHandler } from "../../../../../../form/fieldsHandler/FieldsHandler";
+import { Props } from "../../../../../../../dataManagments/props/Global";
+import { FieldsHandler } from "../../../../../../form/handlers/fieldsHandler/FieldsHandler";
 
-export const FormAddButton = ({ props, name }) => {
+export const FormAddButton = ({ id }) => {
+  const props = Props.states[id];
   const style =
     props.states.buttonStyle.getState() === 'visible__button-wrapper'
       ? 'open__button'
@@ -19,7 +21,7 @@ export const FormAddButton = ({ props, name }) => {
         className={`add__button ${style}`}
         onClick={hundleClick}
       >
-        <span>+ {name}</span>
+        <span>+ {id}</span>
       </button>
     </>
   );

@@ -2,12 +2,12 @@ import '../../../../styles/Container.css';
 import { ContentSections } from './contentSections/ContentSections';
 import { TemplateLoader } from './templateLoader/TemplateLoader';
 
-export const Container = ({ props }) => {
+export const Container = () => {
   return (
     <>
       <div className='container'>
-        <TemplateLoader props={props}></TemplateLoader>
-        <ContentSections props={props}></ContentSections>
+        <TemplateLoader></TemplateLoader>
+        <ContentSections></ContentSections>
       </div>
     </>
   )

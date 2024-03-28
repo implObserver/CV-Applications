@@ -1,9 +1,10 @@
-import { ResumeUpdater } from "../../../../../../../dataManagments/stateTemplates/ResumeUpdater";
+import { Props } from "../../../../../../../dataManagments/props/Global";
 
-export const DeletePlace = (props) => {
+export const DeletePlace = (id) => {
+    const props = Props.states[id];
     const index = filter(props);
     props.places.splice(index, 1);
-    ResumeUpdater[props.id].trigger.switchState();
+    Props.states.resumeUpdater[props.id].trigger.switchState();
 }
 
 const filter = (props) => {

@@ -1,15 +1,17 @@
+import { Props } from "../../../dataManagments/props/Global";
 import { Cancel } from "./buttons/Cancel";
 import { Delete } from "./buttons/Delete";
 import { Save } from "./buttons/Save";
 
-export const ButtonsWrapper = ({ props, parameters, id }) => {
+export const ButtonsWrapper = ({ parameters, id }) => {
+    const props = Props.states[id];
     console.log(props)
     return (
         <>
             <li className={`${props.states.fieldsStyles[parameters.id].getState()} buttons`}>
-                <Delete props={props} id={id}></Delete>
-                <Save props={props} id={id}></Save>
-                <Cancel props={props} id={id}></Cancel>
+                <Delete id={id}></Delete>
+                <Save id={id}></Save>
+                <Cancel id={id}></Cancel>
             </li>
         </>
     );

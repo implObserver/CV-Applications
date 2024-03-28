@@ -2,17 +2,14 @@
 import './App.css';
 import { Settings } from './components/originals/settings/Settings';
 import { Resume } from './components/originals/resume/Resume';
+import { FillDefaultDatas } from './components/dataManagments/dataFill/fillSections';
 
 export const App = () => {
-  const props = {
-    states: {}
-
-  }
-  console.log(props)
+  FillDefaultDatas
   return (
     <>
-      <Settings props={props}></Settings>
-      <Resume props={props}></Resume>
+      <Settings></Settings>
+      <Resume></Resume>
     </>
   );
 }

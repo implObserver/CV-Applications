@@ -1,10 +1,10 @@
-import { Button } from "../../input/Button";
+import { Button } from "../../field/input/inputTypes/Button";
 import Fields from '../../../../dataManagments/JSON/Fields.json'
-import { ClosePattern } from "../../FormHandler";
+import { ClosePattern } from "../../handlers/formHandler/FormHandler";
 
-export const Cancel = ({ props, id }) => {
+export const Cancel = ({ id }) => {
   const clickHandler = async () => {
-    ClosePattern(props);
+    ClosePattern(id);
   }
 
   return (

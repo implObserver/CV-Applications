@@ -1,10 +1,12 @@
 import { State } from "../../../../../../prototypes/state/State";
-import { ResumeUpdater } from "../../../../../../dataManagments/stateTemplates/ResumeUpdater";
+import { Props } from "../../../../../../dataManagments/props/Global";
 
-export const NumberPhone = ({ props }) => {
-    const activePlace = props.states.personalDetails.activePlace;
+export const NumberPhone = () => {
+    const props = Props.states.personalDetails;
+    const activePlace = props.activePlace;
     const update = State(activePlace.getValues()[2]);
-    Object.assign(ResumeUpdater[props.states.personalDetails.id][activePlace.getKey()], { numberPhone: update });
+
+    Object.assign(Props.states.resumeUpdater[props.id][activePlace.getKey()], { numberPhone: update });
 
     return (
         <>

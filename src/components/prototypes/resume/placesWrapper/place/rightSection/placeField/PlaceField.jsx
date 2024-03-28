@@ -1,9 +1,10 @@
-import { ResumeUpdater } from "../../../../../../dataManagments/stateTemplates/ResumeUpdater";
+import { Props } from "../../../../../../dataManagments/props/Global";
 import { State } from "../../../../../state/State";
 
 export const PlaceField = ({ id, section }) => {
     const udpate = State(section.getValues()[0]);
-    Object.assign(ResumeUpdater[id][section.getKey()], { place: udpate });
+
+    Object.assign(Props.states.resumeUpdater[id][section.getKey()], { place: udpate });
 
     return (
         <>

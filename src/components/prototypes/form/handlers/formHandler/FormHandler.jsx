@@ -1,7 +1,10 @@
-import { later } from "../../../helper/Timeout";
-import { FieldsHandler } from "./fieldsHandler/FieldsHandler";
+import { later } from "../../../../../helper/Timeout";
+import { Props } from "../../../../dataManagments/props/Global";
+import { FieldsHandler } from "../fieldsHandler/FieldsHandler";
 
-export const ClosePattern = async (props) => {
+export const ClosePattern = async (id) => {
+    console.log(id)
+    const props = Props.states[id];
     props.states.blockHead.setState('block');
     FieldsHandler.changeVisibleFields(props, false);
     await later(500).promise;

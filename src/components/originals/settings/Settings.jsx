@@ -5,13 +5,13 @@ import '../../../styles/Form.css';
 import '../../../styles/Icons.css';
 import '../../../styles/Buttons.css';
 
-export const Settings = ({ props }) => {
+export const Settings = () => {
 
   return (
     <>
       <div className='settings'>
-        <Sidebar props={props}></Sidebar>
-        <Container props={props}></Container>
+        <Sidebar></Sidebar>
+        <Container></Container>
       </div>
     </>
   )

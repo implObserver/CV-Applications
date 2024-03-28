@@ -1,19 +1,21 @@
 import Fields from '../../../../dataManagments/JSON/Fields.json'
-import { ResumeUpdater } from '../../../../dataManagments/stateTemplates/ResumeUpdater';
+import { Props } from '../../../../dataManagments/props/Global';
 import { IdealPlace } from '../../../settings/container/contentSection/section/placesWrapper/place/IdealPlace';
-import { ClosePattern } from '../../FormHandler';
-import { Button } from '../../input/Button';
+import { ClosePattern } from '../../handlers/formHandler/FormHandler';
+import { Button } from '../../field/input/inputTypes/Button';
 
-export const Save = ({ props, id }) => {
+export const Save = ({ id }) => {
+  const props = Props.states[id];
+
   const clickHandler = async () => {
     if (props.activePlace === 'new') {
-      const place = IdealPlace(props);
+      const place = IdealPlace(id);
       props.places.push(place);
-      ResumeUpdater[props.id].trigger.switchState();
+      Props.states.resumeUpdater[props.id].trigger.switchState();
     } else {
       props.activePlace.update();
     }
-    ClosePattern(props);
+    ClosePattern(id);
   }
 
   return (

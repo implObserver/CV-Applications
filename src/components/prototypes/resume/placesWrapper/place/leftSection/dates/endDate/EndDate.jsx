@@ -1,10 +1,12 @@
-import { ResumeUpdater } from "../../../../../../../dataManagments/stateTemplates/ResumeUpdater";
+import { Props } from "../../../../../../../dataManagments/props/Global";
 import { State } from "../../../../../../state/State";
 
 export const EndDate = ({ id, section }) => {
     const udpate = State(section.getValues()[3]);
     console.log(section.getValues())
-    Object.assign(ResumeUpdater[id][section.getKey()], { endDate: udpate });
+
+    Object.assign(Props.states.resumeUpdater[id][section.getKey()], { endDate: udpate });
+
     return (
         <>
             <span>{udpate.getState()}</span>

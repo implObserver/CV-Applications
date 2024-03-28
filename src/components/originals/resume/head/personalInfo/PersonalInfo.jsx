@@ -1,15 +1,17 @@
-import { ResumeUpdater } from "../../../../dataManagments/stateTemplates/ResumeUpdater";
+import { Props } from "../../../../dataManagments/props/Global";
 import { ContactInfo } from "./contactInfo/ContactInfo"
 import { FullName } from "./fullName/FullName"
 
-export const PersonalInfo = ({ props }) => {
+export const PersonalInfo = () => {
+    console.log(Props)
+    const props = Props.states.personalDetails;
+    Object.assign(Props.states.resumeUpdater[props.id], { [props.activePlace.getKey()]: {} });
 
-    Object.assign(ResumeUpdater[props.states.personalDetails.id], { [props.states.personalDetails.activePlace.getKey()]: {} });
     return (
         <>
             <div className="personal__info">
-                <FullName props={props}></FullName>
-                <ContactInfo props={props}></ContactInfo>
+                <FullName></FullName>
+                <ContactInfo></ContactInfo>
             </div>
         </>
     )

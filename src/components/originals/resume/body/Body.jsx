@@ -1,11 +1,11 @@
 import '../../../../styles/ResumeBody.css'
 import { ResumeSections } from './sections/Sections'
 
-export const ResumeBody = ({ props }) => {
+export const ResumeBody = () => {
     return (
         <>
             <section className="resume__body">
-                <ResumeSections props={props}></ResumeSections>
+                <ResumeSections></ResumeSections>
             </section>
         </>
     )

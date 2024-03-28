@@ -1,9 +1,12 @@
-import { ResumeUpdater } from "../../../../dataManagments/stateTemplates/ResumeUpdater";
+import { Props } from "../../../../dataManagments/props/Global";
 import { LeftSection } from "./leftSection/LeftSection"
 import { RightSection } from "./rightSection/RightSection"
 
 export const ResumePlace = ({ id, section }) => {
-    Object.assign(ResumeUpdater[id], { [section.getKey()]: {} });
+    console.log(id)
+    
+    Object.assign(Props.states.resumeUpdater[id], { [section.getKey()]: {} });
+
     return (
         <>
             <div className="resume__place">

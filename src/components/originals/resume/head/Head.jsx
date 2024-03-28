@@ -1,14 +1,21 @@
 import { PersonalInfo } from "./personalInfo/PersonalInfo"
 import '../../../../styles/ResumeHead.css'
-import { ResumeUpdater } from "../../../dataManagments/stateTemplates/ResumeUpdater"
 
-export const ResumeHead = ({ props }) => {
+import { Props } from "../../../dataManagments/props/Global"
+
+export const ResumeHead = () => {
+    const props = Props.states.personalDetails;
     console.log(props)
-    Object.assign(ResumeUpdater, { [props.states.personalDetails.id]: {} });
+    console.log(Props)
+
+    //
+    Object.assign(Props.states.resumeUpdater, { [props.id]: {} });
+    //
+
     return (
         <>
             <section className="resume__head">
-                <PersonalInfo props={props}></PersonalInfo>
+                <PersonalInfo></PersonalInfo>
             </section>
         </>
     )

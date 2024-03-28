@@ -1,9 +1,9 @@
 import { ResumeSection } from "../../../../../prototypes/resume/section/Section"
 
-export const ResumeExperience = ({ props }) => {
+export const ResumeExperience = () => {
     return (
         <>
-            <ResumeSection id='experience' props={props}></ResumeSection>
+            <ResumeSection id='experience'></ResumeSection>
         </>
     )
 }

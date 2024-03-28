@@ -1,8 +1,10 @@
+import { Props } from '../../../../../dataManagments/props/Global';
 import { Arrow } from '../../../../details/arrow/Arrow';
-import { FieldsHandler } from '../../../../form/fieldsHandler/FieldsHandler';
+import { FieldsHandler } from '../../../../form/handlers/fieldsHandler/FieldsHandler';
 import { State } from '../../../../state/State';
 
-export const Head = ({ name, props }) => {
+export const Head = ({ id }) => {
+  const props = Props.states[id];
   const style = State(false, true);
   const block = State('');
 
@@ -23,7 +25,7 @@ export const Head = ({ name, props }) => {
     <>
       <button className={`section__head ${block.getState()}`}
         onClick={hundleClick}>
-        <h2>{name}</h2>
+        <h2>{id}</h2>
         <Arrow state={props.states.open.getState()}></Arrow>
       </button>
     </>

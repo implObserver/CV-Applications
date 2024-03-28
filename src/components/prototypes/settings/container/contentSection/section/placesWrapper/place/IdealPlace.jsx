@@ -1,6 +1,8 @@
 import { generateKey } from "../../../../../../../../helper/KeyGenerator";
+import { Props } from "../../../../../../../dataManagments/props/Global";
 
-export const IdealPlace = (props, defaultPlace = '') => {
+export const IdealPlace = (id, defaultPlace = '') => {
+    const props = Props.states[id];
     console.log(defaultPlace)
     props.placeCounter++;
     const inputs = Object.entries(props.inputs);
