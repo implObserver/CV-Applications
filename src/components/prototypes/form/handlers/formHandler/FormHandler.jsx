@@ -3,7 +3,6 @@ import { Props } from "../../../../dataManagments/props/Global";
 import { FieldsHandler } from "../fieldsHandler/FieldsHandler";
 
 export const ClosePattern = async (id) => {
-    console.log(id)
     const props = Props.states[id];
     props.states.blockHead.setState('block');
     FieldsHandler.changeVisibleFields(props, false);

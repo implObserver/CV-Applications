@@ -2,21 +2,22 @@ import { Button } from "../../field/input/inputTypes/Button";
 import Fields from '../../../../dataManagments/JSON/Fields.json'
 import { DeletePlace } from "../../../settings/container/contentSection/section/placesWrapper/place/PlaceHandler";
 import { ClosePattern } from "../../handlers/formHandler/FormHandler";
-import { Props } from "../../../../dataManagments/props/Global";
+import { usePropsContext } from "../../../../dataManagments/context/PropsContext";
 
-export const Delete = ({ id }) => {
-    const props = Props.states[id];
+export const Delete = () => {
+    const props = usePropsContext();
+
     const clickHandler = async () => {
         const activePlace = props.activePlace;
         if (activePlace !== 'new') {
-            DeletePlace(id);
+            DeletePlace(props.id);
         }
-        ClosePattern(id);
+        ClosePattern(props.id);
     }
 
     return (
         <>
-            <Button id={id} parameters={Fields.buttons.delete} onClick={clickHandler}></Button>
+            <Button parameters={Fields.buttons.delete} onClick={clickHandler}></Button>
         </>
     )
 };

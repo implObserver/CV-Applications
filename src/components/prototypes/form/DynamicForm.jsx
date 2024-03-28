@@ -1,18 +1,25 @@
 import { State } from '../state/State';
 import '../../../styles/Field.css'
 import { ImaginaryField } from './field/imaginaryField/ImaginaryField';
+import { usePropsContext } from '../../dataManagments/context/PropsContext';
+import { FieldParametersContext } from '../../dataManagments/context/FieldParametersContext';
 import { generateKey } from '../../../helper/KeyGenerator';
-import { Props } from '../../dataManagments/props/Global';
+import { useId } from 'react';
 
-export const DynamicForm = ({ formId, fields, id }) => {
+export const DynamicForm = ({ formId, fields }) => {
     const toggle = State(true, false);
-    const props = Props.states[id];
-
+    const props = usePropsContext();
     Object.assign(props.states, { formStyle: toggle });
 
-    const fill = fields.map((field) => {
-        return <ImaginaryField key={generateKey(field.id)} parameters={field} id={id}></ImaginaryField>;
-    })
+    const fill = () => {
+        return fields.map((field) => {
+            return (
+                <FieldParametersContext.Provider key={generateKey(field.id)} value={field} >
+                    <ImaginaryField ></ImaginaryField>
+                </FieldParametersContext.Provider>
+            )
+        })
+    }
 
     return (
         <>
@@ -32,7 +39,7 @@ export const DynamicForm = ({ formId, fields, id }) => {
                     }
                 })()}
                 <ul>
-                    {fill}
+                    {fill()}
                 </ul>
             </form>
         </>

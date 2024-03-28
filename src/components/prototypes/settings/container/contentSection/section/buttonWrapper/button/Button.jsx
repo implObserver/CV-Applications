@@ -1,8 +1,9 @@
-import { Props } from "../../../../../../../dataManagments/props/Global";
+import { capitalizeFirstLetter } from "../../../../../../../../helper/stringHelper";
+import { usePropsContext } from "../../../../../../../dataManagments/context/PropsContext";
 import { FieldsHandler } from "../../../../../../form/handlers/fieldsHandler/FieldsHandler";
 
-export const FormAddButton = ({ id }) => {
-  const props = Props.states[id];
+export const FormAddButton = () => {
+  const props = usePropsContext();
   const style =
     props.states.buttonStyle.getState() === 'visible__button-wrapper'
       ? 'open__button'
@@ -21,7 +22,7 @@ export const FormAddButton = ({ id }) => {
         className={`add__button ${style}`}
         onClick={hundleClick}
       >
-        <span>+ {id}</span>
+        <span>+ {capitalizeFirstLetter(props.id)}</span>
       </button>
     </>
   );

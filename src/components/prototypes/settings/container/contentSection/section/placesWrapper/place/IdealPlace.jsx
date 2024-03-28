@@ -3,7 +3,6 @@ import { Props } from "../../../../../../../dataManagments/props/Global";
 
 export const IdealPlace = (id, defaultPlace = '') => {
     const props = Props.states[id];
-    console.log(defaultPlace)
     props.placeCounter++;
     const inputs = Object.entries(props.inputs);
     const key = generateKey(`${props.id}-${props.placeCounter}`)

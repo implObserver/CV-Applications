@@ -1,3 +1,4 @@
+import { PropsContext } from "../../../../../dataManagments/context/PropsContext";
 import { Props } from "../../../../../dataManagments/props/Global";
 import { State } from "../../../../../prototypes/state/State";
 import { EducationHead } from "../education/head/EducationHead";
@@ -11,8 +12,10 @@ export const Experience = () => {
   return (
     <>
       <div className='experience'>
-        <EducationHead id='experience'></EducationHead>
-        <EducationSection id='experience'></EducationSection>
+        <PropsContext.Provider value={Props.states.experience}>
+          <EducationHead></EducationHead>
+          <EducationSection></EducationSection>
+        </PropsContext.Provider>
       </div>
     </>
   );

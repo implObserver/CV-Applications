@@ -9,6 +9,6 @@ export const Props = (() => {
             resumeUpdater: {},
         },
     }
-
+    console.log(props)
     return props;
 })();

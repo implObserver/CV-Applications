@@ -1,4 +1,8 @@
-export const ImaginaryLabel = ({ parameters }) => {
+import { useFieldContext } from "../../../../../dataManagments/context/FieldParametersContext";
+
+export const ImaginaryLabel = () => {
+    const parameters = useFieldContext();
+
     return (
         <>
             <label htmlFor={parameters.id}>

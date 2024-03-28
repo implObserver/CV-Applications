@@ -1,15 +1,16 @@
-import { Props } from '../../../dataManagments/props/Global';
+import { useFieldContext } from '../../../dataManagments/context/FieldParametersContext';
+import { usePropsContext } from '../../../dataManagments/context/PropsContext';
 import { ImaginaryInput } from './input/imaginaryInput/ImaginaryInput';
 import { ImaginaryLabel } from './label/imaginaryLabel/ImaginaryLabel';
 
-export const Field = ({ parameters, id }) => {
-  const props = Props.states[id];
-
+export const Field = () => {
+  const props = usePropsContext();
+  const parameters = useFieldContext();
   return (
     <>
       <li className={props.states.fieldsStyles[parameters.id].getState()}>
-        <ImaginaryLabel parameters={parameters}></ImaginaryLabel>
-        <ImaginaryInput parameters={parameters} id={id}></ImaginaryInput>
+        <ImaginaryLabel></ImaginaryLabel>
+        <ImaginaryInput></ImaginaryInput>
         <span className='error' aria-live='polite'></span>
       </li>
     </>

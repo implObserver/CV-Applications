@@ -11,7 +11,7 @@ const fields = [
   Fields.experienceForm.buttons,
 ];
 
-export const ExperienceForm = ({ id }) => {
+export const ExperienceForm = () => {
   const formId = 'experience__form';
-  return <DynamicForm formId={formId} fields={fields} id={id}></DynamicForm>;
+  return <DynamicForm formId={formId} fields={fields}></DynamicForm>;
 };

@@ -8,7 +8,6 @@ export const FullName = () => {
 
     Object.assign(Props.states.resumeUpdater[props.id][activePlace.getKey()], { fullName: update });
 
-    console.log(update.getState())
     return (
         <>
             <div className="full__name">

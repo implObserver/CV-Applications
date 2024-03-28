@@ -1,13 +1,15 @@
-import { Props } from "../../../../dataManagments/props/Global";
+import { useFieldContext } from "../../../../dataManagments/context/FieldParametersContext";
+import { usePropsContext } from "../../../../dataManagments/context/PropsContext";
 import { State } from "../../../state/State";
 import { ButtonsWrapper } from "../../buttonsWrapper/ButtonsWrapper";
 import { Field } from "../Field";
 
-export const ImaginaryField = ({ parameters, id }) => {
-    const props = Props.states[id];
+export const ImaginaryField = () => {
+    const props = usePropsContext();
+    const parameters = useFieldContext();
 
     const style =
-        id === 'personalDetails'
+        props.id === 'personalDetails'
             ? State('visible__field', 'unvisible__field')
             : State('unvisible__field', 'visible__field');
 
@@ -17,9 +19,9 @@ export const ImaginaryField = ({ parameters, id }) => {
         <>
             {(() => {
                 if (parameters.id === 'Buttons') {
-                    return <ButtonsWrapper parameters={parameters} id={id}></ButtonsWrapper>
+                    return <ButtonsWrapper></ButtonsWrapper>
                 } else {
-                    return <Field parameters={parameters} id={id}></Field>;
+                    return <Field></Field>;
                 }
             })()}
         </>

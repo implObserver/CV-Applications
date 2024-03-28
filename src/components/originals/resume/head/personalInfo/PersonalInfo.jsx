@@ -3,7 +3,6 @@ import { ContactInfo } from "./contactInfo/ContactInfo"
 import { FullName } from "./fullName/FullName"
 
 export const PersonalInfo = () => {
-    console.log(Props)
     const props = Props.states.personalDetails;
     Object.assign(Props.states.resumeUpdater[props.id], { [props.activePlace.getKey()]: {} });
 

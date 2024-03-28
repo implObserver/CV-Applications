@@ -1,11 +1,12 @@
+import { usePropsContext } from "../../../../../../../dataManagments/context/PropsContext";
 import { Props } from "../../../../../../../dataManagments/props/Global";
 import { State } from "../../../../../../state/State";
 
-export const EndDate = ({ id, section }) => {
+export const EndDate = ({ section }) => {
     const udpate = State(section.getValues()[3]);
-    console.log(section.getValues())
+    const props = usePropsContext();
 
-    Object.assign(Props.states.resumeUpdater[id][section.getKey()], { endDate: udpate });
+    Object.assign(Props.states.resumeUpdater[props.id][section.getKey()], { endDate: udpate });
 
     return (
         <>

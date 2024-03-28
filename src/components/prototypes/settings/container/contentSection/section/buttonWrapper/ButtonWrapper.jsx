@@ -1,11 +1,11 @@
 import '../../../../../../../styles/ButtonWrapper.css';
-import { Props } from '../../../../../../dataManagments/props/Global';
+import { usePropsContext } from '../../../../../../dataManagments/context/PropsContext';
 import { State } from '../../../../../state/State';
 import { FormAddButton } from './button/Button';
 
 export const ButtonWrapper = ({ id }) => {
   const style = State('unvisible__button-wrapper', 'visible__button-wrapper');
-  const props = Props.states[id];
+  const props = usePropsContext();
 
   Object.assign(props.states, { buttonStyle: style });
 

@@ -5,13 +5,9 @@ import { Props } from "../../../dataManagments/props/Global"
 
 export const ResumeHead = () => {
     const props = Props.states.personalDetails;
-    console.log(props)
-    console.log(Props)
 
-    //
     Object.assign(Props.states.resumeUpdater, { [props.id]: {} });
-    //
-
+    
     return (
         <>
             <section className="resume__head">

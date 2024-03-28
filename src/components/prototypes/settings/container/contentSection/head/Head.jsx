@@ -1,10 +1,11 @@
-import { Props } from '../../../../../dataManagments/props/Global';
+import { capitalizeFirstLetter } from '../../../../../../helper/stringHelper';
+import { usePropsContext } from '../../../../../dataManagments/context/PropsContext';
 import { Arrow } from '../../../../details/arrow/Arrow';
 import { FieldsHandler } from '../../../../form/handlers/fieldsHandler/FieldsHandler';
 import { State } from '../../../../state/State';
 
-export const Head = ({ id }) => {
-  const props = Props.states[id];
+export const Head = () => {
+  const props = usePropsContext();
   const style = State(false, true);
   const block = State('');
 
@@ -25,7 +26,7 @@ export const Head = ({ id }) => {
     <>
       <button className={`section__head ${block.getState()}`}
         onClick={hundleClick}>
-        <h2>{id}</h2>
+        <h2>{capitalizeFirstLetter(props.id)}</h2>
         <Arrow state={props.states.open.getState()}></Arrow>
       </button>
     </>

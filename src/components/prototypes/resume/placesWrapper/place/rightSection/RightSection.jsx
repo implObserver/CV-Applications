@@ -1,16 +1,19 @@
+import { usePropsContext } from "../../../../../dataManagments/context/PropsContext";
 import { DescriptionField } from "./description/Description"
 import { InfoField } from "./info/InfoField"
 import { PlaceField } from "./placeField/PlaceField"
 
-export const RightSection = ({ id, section }) => {
+export const RightSection = ({ section }) => {
+    const props = usePropsContext();
+    
     return (
         <>
             <div className="resume__place__right-section">
-                <PlaceField id={id} section={section}></PlaceField>
-                <InfoField id={id} section={section}></InfoField>
+                <PlaceField section={section}></PlaceField>
+                <InfoField section={section}></InfoField>
                 {(() => {
-                    if (id === 'experience') {
-                        return <DescriptionField id={id} section={section}></DescriptionField>
+                    if (props.id === 'experience') {
+                        return <DescriptionField section={section}></DescriptionField>
                     }
                 })()}
             </div>

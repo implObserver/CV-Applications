@@ -1,10 +1,12 @@
+import { usePropsContext } from "../../../../../../dataManagments/context/PropsContext";
 import { Props } from "../../../../../../dataManagments/props/Global";
 import { State } from "../../../../../state/State";
 
-export const InfoField = ({ id, section }) => {
+export const InfoField = ({ section }) => {
     const udpate = State(section.getValues()[1]);
+    const props = usePropsContext();
 
-    Object.assign(Props.states.resumeUpdater[id][section.getKey()], { info: udpate });
+    Object.assign(Props.states.resumeUpdater[props.id][section.getKey()], { info: udpate });
 
     return (
         <>

@@ -1,16 +1,16 @@
 import { Place } from "./place/Place";
 import { State } from "../../../../../state/State";
-import { Props } from "../../../../../../dataManagments/props/Global";
+import { usePropsContext } from "../../../../../../dataManagments/context/PropsContext";
 
-export const PlacesWrapper = ({ id }) => {
-    const props = Props.states[id];
+export const PlacesWrapper = () => {
+    const props = usePropsContext();
     const style = State('unvisible__places-wrapper', 'visible__places-wrapper');
     const places = Object.entries(props.places);
 
     Object.assign(props.states, { placesStyle: style, places: places })
 
     const fill = places.map((place) => {
-        return <Place key={place[1].getKey()} parameters={place[1]} id={id}></Place>
+        return <Place key={place[1].getKey()} parameters={place[1]}></Place>
     })
 
     return (

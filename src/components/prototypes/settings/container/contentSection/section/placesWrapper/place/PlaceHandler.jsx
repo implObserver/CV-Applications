@@ -1,5 +1,6 @@
 import { Props } from "../../../../../../../dataManagments/props/Global";
 
+
 export const DeletePlace = (id) => {
     const props = Props.states[id];
     const index = filter(props);

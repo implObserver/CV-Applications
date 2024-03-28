@@ -1,14 +1,17 @@
+import { useFieldContext } from "../../../../../dataManagments/context/FieldParametersContext";
+import { usePropsContext } from "../../../../../dataManagments/context/PropsContext";
 import { Props } from "../../../../../dataManagments/props/Global";
 import { State } from "../../../../state/State";
 
-export const Area = ({ parameters, id }) => {
+export const Area = () => {
     const value = State('');
-    const props = Props.states[id];
+    const props = usePropsContext();
+    const parameters = useFieldContext();
 
     Object.assign(props.inputs, { [parameters.id]: value });
 
     const areaHandler = (e) => {
-        Props.ResumeUpdater[props.id][props.activePlace.getKey()][parameters.index].setState(e.target.value);
+        Props.states.resumeUpdater[props.id][props.activePlace.getKey()][parameters.index].setState(e.target.value);
         value.setState(e.target.value);
     }
 

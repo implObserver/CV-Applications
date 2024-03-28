@@ -1,4 +1,9 @@
+import { generateKey } from "../../../helper/KeyGenerator";
+
+let counter = 0;
+
 export const getSectionStateTemplate = (id) => {
+    counter++;
     const section = {
         id: id,
         states: {
@@ -13,6 +18,8 @@ export const getSectionStateTemplate = (id) => {
         resumeSections: [],
         activePlace: 'new',
         placeCounter: 0,
+        counter: counter,
+        key: generateKey(counter),
     }
 
     return section;

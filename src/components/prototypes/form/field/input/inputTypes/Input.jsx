@@ -1,17 +1,16 @@
+import { useFieldContext } from "../../../../../dataManagments/context/FieldParametersContext";
+import { usePropsContext } from "../../../../../dataManagments/context/PropsContext";
 import { Props } from "../../../../../dataManagments/props/Global";
 import { State } from "../../../../state/State";
 
-export const Input = ({ parameters, id }) => {
+export const Input = () => {
     const value = State('');
-    const props = Props.states[id];
+    const props = usePropsContext();
+    const parameters = useFieldContext();
 
     Object.assign(props.inputs, { [parameters.id]: value });
 
     const inputHandler = (e) => {
-        console.log(Props.states.resumeUpdater)
-        console.log(props.id)
-        console.log(props.activePlace.getKey())
-        console.log(parameters.index)
         Props.states.resumeUpdater[props.id][props.activePlace.getKey()][parameters.index].setState(e.target.value);
         value.setState(e.target.value);
     }

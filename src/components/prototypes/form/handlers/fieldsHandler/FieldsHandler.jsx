@@ -9,13 +9,11 @@ export const FieldsHandler = (() => {
     }
 
     const changeVisibleFields = async (props, key) => {
-        console.log('START')
         timer.cancel();
         key ? addFields(props) : removeFields(props);
     };
 
     const addFields = async (props) => {
-        console.log('START-open')
         await pause(1);
         const fieldsStyles = Object.entries(props.states.fieldsStyles);
         const addedFields = props.addedFields;
@@ -26,11 +24,9 @@ export const FieldsHandler = (() => {
                 await pause(50);
             }
         }
-        console.log('END')
     };
 
     const removeFields = async (props) => {
-        console.log('START-close')
         const fieldsStyles = Object.entries(props.states.fieldsStyles).reverse();
         const addedFields = props.addedFields;
         for (const style of fieldsStyles) {
@@ -40,7 +36,6 @@ export const FieldsHandler = (() => {
                 await pause(50);
             }
         }
-        console.log('END')
     }
 
     return { changeVisibleFields }
