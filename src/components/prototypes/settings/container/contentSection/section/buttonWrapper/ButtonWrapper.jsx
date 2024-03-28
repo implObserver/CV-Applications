@@ -12,7 +12,7 @@ export const ButtonWrapper = ({ id }) => {
   return (
     <>
       <div className={`button__wrapper ${style.getState()} ${props.states.drawnNode.getState() === 'form' ? 'disabled' : ''}`}>
-        <FormAddButton props={props} id={id}></FormAddButton>
+        <FormAddButton id={id}></FormAddButton>
       </div>
     </>
   );

@@ -10,7 +10,7 @@ const fields = [
   Fields.educationForm.buttons,
 ];
 
-export const EducationForm = ({ props, id }) => {
+export const EducationForm = ({ id }) => {
   const formId = 'education__form';
-  return <DynamicForm props={props} formId={formId} fields={fields} id={id}></DynamicForm>;
+  return <DynamicForm formId={formId} fields={fields} id={id}></DynamicForm>;
 };

@@ -13,16 +13,16 @@ export const Section = ({ id }) => {
         {(() => {
           if (props.states.drawnNode.getState() === 'form') {
             if (id === 'education') {
-              return <EducationForm props={props} id={id}></EducationForm>
+              return <EducationForm id={id}></EducationForm>
             }
             if (id === 'experience') {
-              return <ExperienceForm props={props} id={id}></ExperienceForm>
+              return <ExperienceForm id={id}></ExperienceForm>
             }
           } else {
             return (
               <>
-                <PlacesWrapper props={props} id={id}></PlacesWrapper>
-                <ButtonWrapper props={props} id={id}></ButtonWrapper>
+                <PlacesWrapper id={id}></PlacesWrapper>
+                <ButtonWrapper id={id}></ButtonWrapper>
               </>
             )
           }

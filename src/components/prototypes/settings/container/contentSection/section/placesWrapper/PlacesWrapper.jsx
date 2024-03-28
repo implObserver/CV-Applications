@@ -10,7 +10,7 @@ export const PlacesWrapper = ({ id }) => {
     Object.assign(props.states, { placesStyle: style, places: places })
 
     const fill = places.map((place) => {
-        return <Place key={place[1].getKey()} props={props} parameters={place[1]} id={id}></Place>
+        return <Place key={place[1].getKey()} parameters={place[1]} id={id}></Place>
     })
 
     return (
