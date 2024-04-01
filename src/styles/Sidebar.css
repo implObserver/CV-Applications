@@ -15,6 +15,14 @@
   padding: min(10px, 1vw);
 }
 
+.sidebar>.content {
+  cursor: pointer;
+}
+
+.sidebar>.customize {
+  cursor: pointer;
+}
+
 @media screen and (min-aspect-ratio: 0.9/1) {
   .sidebar {
     grid-template-rows: 1fr 1fr;

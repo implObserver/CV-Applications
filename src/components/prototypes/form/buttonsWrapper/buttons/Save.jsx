@@ -9,12 +9,12 @@ export const Save = () => {
   const props = usePropsContext();
 
   const clickHandler = async () => {
-    if (props.activePlace === 'new') {
+    if (props.objects.activePlace === 'new') {
       const place = IdealPlace(props.id);
-      props.places.push(place);
+      props.objects.places.push(place);
       Props.states.resumeUpdater[props.id].trigger.switchState();
     } else {
-      props.activePlace.update();
+      props.objects.activePlace.update();
     }
     ClosePattern(props.id);
   }

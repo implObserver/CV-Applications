@@ -8,7 +8,7 @@ export const Delete = () => {
     const props = usePropsContext();
 
     const clickHandler = async () => {
-        const activePlace = props.activePlace;
+        const activePlace = props.objects.activePlace;
         if (activePlace !== 'new') {
             DeletePlace(props.id);
         }

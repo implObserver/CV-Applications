@@ -7,7 +7,7 @@ export const Place = ({ parameters }) => {
     const values = parameters.getValues();
 
     const clickHandler = () => {
-        props.activePlace = parameters;
+        props.objects.activePlace = parameters;
         props.states.drawnNode.setState('form');
         const key = props.states.open.getState();
         FieldsHandler.changeVisibleFields(props, key);
@@ -18,7 +18,7 @@ export const Place = ({ parameters }) => {
     }
 
     const fillForm = () => {
-        const inputs = Object.entries(props.inputs);
+        const inputs = Object.entries(props.objects.inputs);
         for (let i = 0; i < inputs.length; i++) {
             inputs[i][1].setState(values[i])
         }

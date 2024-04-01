@@ -5,7 +5,7 @@ import { EducationHead } from "../education/head/EducationHead";
 import { EducationSection } from "../education/section/EducationSection";
 
 export const Experience = () => {
-  const drawnNode = State('button', 'form');
+  const drawnNode = State('button', 'form', Props.states.experience.defaultStates.drawnNode);
 
   Object.assign(Props.states.experience.states.drawnNode, drawnNode);
 

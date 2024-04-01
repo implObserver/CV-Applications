@@ -11,7 +11,7 @@ export const ImaginaryField = () => {
     const style =
         props.id === 'personalDetails'
             ? State('visible__field', 'unvisible__field')
-            : State('unvisible__field', 'visible__field');
+            : State('unvisible__field', 'visible__field', props.defaultStates.field);
 
     Object.assign(props.states.fieldsStyles, { [parameters.id]: style });
 

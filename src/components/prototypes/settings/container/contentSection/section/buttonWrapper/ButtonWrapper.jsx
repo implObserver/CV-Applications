@@ -3,16 +3,16 @@ import { usePropsContext } from '../../../../../../dataManagments/context/PropsC
 import { State } from '../../../../../state/State';
 import { FormAddButton } from './button/Button';
 
-export const ButtonWrapper = ({ id }) => {
-  const style = State('unvisible__button-wrapper', 'visible__button-wrapper');
+export const ButtonWrapper = () => {
   const props = usePropsContext();
-
+  const style = State('unvisible__button-wrapper', 'visible__button-wrapper', props.defaultStates.buttonStyle);
+  console.log(props)
   Object.assign(props.states, { buttonStyle: style });
 
   return (
     <>
       <div className={`button__wrapper ${style.getState()} ${props.states.drawnNode.getState() === 'form' ? 'disabled' : ''}`}>
-        <FormAddButton id={id}></FormAddButton>
+        <FormAddButton></FormAddButton>
       </div>
     </>
   );

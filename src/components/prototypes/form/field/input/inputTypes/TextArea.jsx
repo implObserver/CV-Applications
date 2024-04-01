@@ -8,10 +8,12 @@ export const Area = () => {
     const props = usePropsContext();
     const parameters = useFieldContext();
 
-    Object.assign(props.inputs, { [parameters.id]: value });
+    Object.assign(props.objects.inputs, { [parameters.id]: value });
 
     const areaHandler = (e) => {
-        Props.states.resumeUpdater[props.id][props.activePlace.getKey()][parameters.index].setState(e.target.value);
+        if (props.objects.activePlace !== 'new') {
+            Props.states.resumeUpdater[props.id][props.objects.activePlace.getKey()][parameters.index].setState(e.target.value);
+        }
         value.setState(e.target.value);
     }
 

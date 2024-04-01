@@ -5,7 +5,7 @@ import { Props } from '../../../../../dataManagments/props/Global.jsx';
 import { PropsContext } from '../../../../../dataManagments/context/PropsContext.ts';
 
 export const Education = () => {
-  const drawnNode = State('button', 'form');
+  const drawnNode = State('button', 'form', Props.states.education.defaultStates.drawnNode)
   Object.assign(Props.states.education.states.drawnNode, drawnNode);
 
   return (

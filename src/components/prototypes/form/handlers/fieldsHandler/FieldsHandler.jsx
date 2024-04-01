@@ -10,16 +10,16 @@ export const FieldsHandler = (() => {
 
     const changeVisibleFields = async (props, key) => {
         timer.cancel();
-        key ? addFields(props) : removeFields(props);
+        return key ? addFields(props) : removeFields(props);
     };
 
     const addFields = async (props) => {
         await pause(1);
         const fieldsStyles = Object.entries(props.states.fieldsStyles);
-        const addedFields = props.addedFields;
+        const addedFields = props.objects.addedFields;
         for (const style of fieldsStyles) {
             if (!addedFields.includes(style[0])) {
-                props.addedFields.push(style[0])
+                addedFields.push(style[0])
                 style[1].switchState();
                 await pause(50);
             }
@@ -28,10 +28,10 @@ export const FieldsHandler = (() => {
 
     const removeFields = async (props) => {
         const fieldsStyles = Object.entries(props.states.fieldsStyles).reverse();
-        const addedFields = props.addedFields;
+        const addedFields = props.objects.addedFields;
         for (const style of fieldsStyles) {
             if (addedFields.includes(style[0])) {
-                props.addedFields.pop(style[0])
+                addedFields.pop(style[0])
                 style[1].switchState();
                 await pause(50);
             }

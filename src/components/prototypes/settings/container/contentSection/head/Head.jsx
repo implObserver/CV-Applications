@@ -6,10 +6,9 @@ import { State } from '../../../../state/State';
 
 export const Head = () => {
   const props = usePropsContext();
-  const style = State(false, true);
-  const block = State('');
+  const style = State(false, true, props.defaultStates.open);
 
-  Object.assign(props.states, { open: style, blockHead: block });
+  Object.assign(props.states, { open: style });
 
   const hundleClick = async () => {
     style.switchState();
@@ -24,7 +23,7 @@ export const Head = () => {
 
   return (
     <>
-      <button className={`section__head ${block.getState()}`}
+      <button className={`section__head`}
         onClick={hundleClick}>
         <h2>{capitalizeFirstLetter(props.id)}</h2>
         <Arrow state={props.states.open.getState()}></Arrow>

@@ -4,7 +4,7 @@ import { Props } from "../../../../../../../dataManagments/props/Global";
 export const IdealPlace = (id, defaultPlace = '') => {
     const props = Props.states[id];
     props.placeCounter++;
-    const inputs = Object.entries(props.inputs);
+    const inputs = Object.entries(props.objects.inputs);
     const key = generateKey(`${props.id}-${props.placeCounter}`)
 
     const setValues = (inputs) => {
@@ -19,7 +19,7 @@ export const IdealPlace = (id, defaultPlace = '') => {
     let values = defaultPlace === '' ? setValues(inputs) : defaultPlace;
 
     const update = () => {
-        const inputs = Object.entries(props.inputs);
+        const inputs = Object.entries(props.objects.inputs);
         values = setValues(inputs);
     }
 

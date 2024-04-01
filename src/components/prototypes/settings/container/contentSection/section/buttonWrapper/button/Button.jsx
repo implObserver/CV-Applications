@@ -10,10 +10,11 @@ export const FormAddButton = () => {
       : 'close__button';
 
   const hundleClick = () => {
-    props.activePlace = 'new';
+    props.objects.activePlace = 'new';
     props.states.drawnNode.setState('form');
     const key = props.states.open.getState();
     FieldsHandler.changeVisibleFields(props, key);
+    console.log(props)
   }
 
   return (

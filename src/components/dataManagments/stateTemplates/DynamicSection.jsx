@@ -1,25 +1,27 @@
-import { generateKey } from "../../../helper/KeyGenerator";
-
-let counter = 0;
-
 export const getSectionStateTemplate = (id) => {
-    counter++;
     const section = {
         id: id,
+        placeCounter: 0,
         states: {
             open: {},
             drawnNode: {},
-            fieldsStyles: {}
+            fieldsStyles: {},
+            placesStyle: '',
         },
-        addedFields: [],
-        removedFields: [],
-        inputs: {},
-        places: [],
-        resumeSections: [],
-        activePlace: 'new',
-        placeCounter: 0,
-        counter: counter,
-        key: generateKey(counter),
+        objects: {
+            activePlace: 'new',
+            addedFields: [],
+            inputs: {},
+            places: [],
+        },
+        defaultStates: {
+            open: { value: false },
+            drawnNode: { value: 'button' },
+            fieldsStyles: { value: {} },
+            placesStyle: { value: 'unvisible__places-wrapper' },
+            buttonStyle: { value: 'unvisible__button-wrapper' },
+            field: { value: 'unvisible__field' },
+        }
     }
 
     return section;

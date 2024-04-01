@@ -4,7 +4,7 @@ import { FullName } from "./fullName/FullName"
 
 export const PersonalInfo = () => {
     const props = Props.states.personalDetails;
-    Object.assign(Props.states.resumeUpdater[props.id], { [props.activePlace.getKey()]: {} });
+    Object.assign(Props.states.resumeUpdater[props.id], { [props.objects.activePlace.getKey()]: {} });
 
     return (
         <>

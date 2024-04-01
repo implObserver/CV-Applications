@@ -4,10 +4,10 @@ import { usePropsContext } from "../../../../../../dataManagments/context/PropsC
 
 export const PlacesWrapper = () => {
     const props = usePropsContext();
-    const style = State('unvisible__places-wrapper', 'visible__places-wrapper');
-    const places = Object.entries(props.places);
+    const style = State('unvisible__places-wrapper', 'visible__places-wrapper', props.defaultStates.placesStyle);
+    Object.assign(props.states, { placesStyle: style })
 
-    Object.assign(props.states, { placesStyle: style, places: places })
+    const places = Object.entries(props.objects.places);
 
     const fill = places.map((place) => {
         return <Place key={place[1].getKey()} parameters={place[1]}></Place>
