@@ -7,7 +7,6 @@ import { PersonalDetails } from './personalDetails/PersonalDetails';
 
 export const ContentSections = () => {
   const drawnNode = State('content', 'customize');
-  console.log(drawnNode.getState())
   Object.assign(Props.states.sections.states.drawnNode, drawnNode)
 
   return (

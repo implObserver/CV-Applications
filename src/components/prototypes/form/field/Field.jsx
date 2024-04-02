@@ -8,7 +8,7 @@ export const Field = () => {
   const parameters = useFieldContext();
   return (
     <>
-      <li className={props.states.fieldsStyles[parameters.id].getState()}>
+      <li className={props.objects.fields[parameters.id].getState()}>
         <ImaginaryLabel></ImaginaryLabel>
         <ImaginaryInput></ImaginaryInput>
         <span className='error' aria-live='polite'></span>

@@ -16,6 +16,7 @@
 .unvisible__places-wrapper {
     max-height: 0;
     padding: 0;
+    pointer-events: none;
 }
 
 .visible__places-wrapper {
@@ -28,7 +29,6 @@
 }
 
 .unvisible__places-wrapper>.place {
-    opacity: 0;
     max-height: 0;
     padding: 0;
 }
@@ -37,4 +37,19 @@
     display: grid;
     max-height: 0;
     padding: min(30px, 3vw);
+}
+
+.visible__place {
+    display: grid;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.unvisible__place {
+    display: grid;
+    opacity: 0;
+    max-height: 0;
+    transform: translateX(-1vh);
+    padding-top: 0 !important;
+    transition: all 0.2s ease-in-out;
 }

@@ -11,9 +11,9 @@ export const Input = () => {
         ? ''
         : props.objects.activePlace === 'new'
             ? ''
-            : props.objects.inputs[parameters.id].getState();
+            : props.objects.inputs[parameters.id];
 
-    const value = State(defaultValue);
+    const value = State(defaultValue === '' ? defaultValue : defaultValue.getState());
 
     Object.assign(props.objects.inputs, { [parameters.id]: value });
 

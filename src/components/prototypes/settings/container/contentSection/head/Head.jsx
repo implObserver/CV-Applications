@@ -3,6 +3,7 @@ import { usePropsContext } from '../../../../../dataManagments/context/PropsCont
 import { Arrow } from '../../../../details/arrow/Arrow';
 import { FieldsHandler } from '../../../../form/handlers/fieldsHandler/FieldsHandler';
 import { State } from '../../../../state/State';
+import { PlacesHandler } from '../section/handlers/PlacesHandler';
 
 export const Head = () => {
   const props = usePropsContext();
@@ -11,11 +12,12 @@ export const Head = () => {
   Object.assign(props.states, { open: style });
 
   const hundleClick = async () => {
+    const key = !props.states.open.getState();
     style.switchState();
     if (props.states.drawnNode.getState() === 'form') {
-      const key = !props.states.open.getState();
       FieldsHandler.changeVisibleFields(props, key);
     } else {
+      PlacesHandler.changeVisiblePlaces(props, key)
       props.states.placesStyle.switchState();
       props.states.buttonStyle.switchState();
     }

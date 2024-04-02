@@ -7,14 +7,14 @@ import { Field } from "../Field";
 export const ImaginaryField = () => {
     const props = usePropsContext();
     const parameters = useFieldContext();
-
+    console.log(props)
+    
     const style =
         props.id === 'personalDetails'
             ? State('visible__field', 'unvisible__field')
             : State('unvisible__field', 'visible__field', props.defaultStates.field);
-
-    Object.assign(props.states.fieldsStyles, { [parameters.id]: style });
-
+    
+    Object.assign(props.objects.fields, { [parameters.id]: style });
     return (
         <>
             {(() => {

@@ -9,7 +9,6 @@ export const DynamicForm = ({ formId, fields }) => {
     const toggle = State(true, false);
     const props = usePropsContext();
     Object.assign(props.states, { formStyle: toggle });
-    console.log(props)
 
     const fill = () => {
         return fields.map((field) => {

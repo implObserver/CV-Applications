@@ -1,6 +1,6 @@
 import { Button } from "../../field/input/inputTypes/Button";
 import Fields from '../../../../dataManagments/JSON/Fields.json'
-import { DeletePlace } from "../../../settings/container/contentSection/section/placesWrapper/place/PlaceHandler";
+import { DeletePlace } from "../../../settings/container/contentSection/section/handlers/PlaceHandler";
 import { ClosePattern } from "../../handlers/formHandler/FormHandler";
 import { usePropsContext } from "../../../../dataManagments/context/PropsContext";
 

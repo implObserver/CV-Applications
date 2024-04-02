@@ -6,7 +6,7 @@ import '../../../styles/Icons.css';
 import '../../../styles/Buttons.css';
 
 export const Settings = () => {
-
+  
   return (
     <>
       <div className='settings'>

@@ -1,20 +1,26 @@
 import { FieldsHandler } from "../../../../../../form/handlers/fieldsHandler/FieldsHandler";
 import '../../../../../../../../styles/PlacesWrapper.css'
 import { usePropsContext } from "../../../../../../../dataManagments/context/PropsContext";
+import { State } from "../../../../../../state/State";
 
 export const Place = ({ parameters }) => {
     const props = usePropsContext();
     const values = parameters.getValues();
+    console.log('place')
+    const style = State('unvisible__place', 'visible__place', props.defaultStates.place);
+
+    Object.assign(props.objects.placesStyles, { [parameters.getKey()]: style });
 
     const clickHandler = () => {
         props.objects.activePlace = parameters;
+        props.states.placesStyle.switchState();
+        props.states.buttonStyle.switchState();
         props.states.drawnNode.setState('form');
         const key = props.states.open.getState();
         FieldsHandler.changeVisibleFields(props, key);
         setTimeout(() => {
             fillForm();
         }, 1);
-
     }
 
     const fillForm = () => {
@@ -26,7 +32,7 @@ export const Place = ({ parameters }) => {
 
     return (
         <>
-            <div className="place" onClick={clickHandler}>
+            <div className={`place ${style.getState()}`} onClick={clickHandler}>
                 <span>{values[0]}</span>
             </div>
         </>

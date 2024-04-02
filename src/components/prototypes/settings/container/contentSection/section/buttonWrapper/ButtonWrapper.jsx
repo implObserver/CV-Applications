@@ -6,7 +6,6 @@ import { FormAddButton } from './button/Button';
 export const ButtonWrapper = () => {
   const props = usePropsContext();
   const style = State('unvisible__button-wrapper', 'visible__button-wrapper', props.defaultStates.buttonStyle);
-  console.log(props)
   Object.assign(props.states, { buttonStyle: style });
 
   return (

@@ -10,7 +10,7 @@ export const ButtonsWrapper = () => {
 
     return (
         <>
-            <li className={`${props.states.fieldsStyles[parameters.id].getState()} buttons`}>
+            <li className={`${props.objects.fields[parameters.id].getState()} buttons`}>
                 <Delete></Delete>
                 <Save></Save>
                 <Cancel></Cancel>

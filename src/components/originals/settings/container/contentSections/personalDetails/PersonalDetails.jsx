@@ -8,7 +8,7 @@ export const PersonalDetails = () => {
   const drawnNode = State('form', 'button');
 
   Object.assign(Props.states.personalDetails.states.drawnNode, drawnNode);
-
+  
   return (
     <>
       <div className='personal__details'>
