@@ -1,19 +1,82 @@
 li {
-  opacity: 0;
+  height: min-content;
+  opacity: 1;
+  background-color: white;
+  font-size: 1rem;
+  transition: all 0.1s ease-in-out;
+}
+
+li>label {
   max-height: 100vh;
+  transition: all 0.1s ease-in-out;
+}
+
+li>label>span {
+  max-height: 100vh;
+  transition: all 0.1s ease-in-out;
+}
+
+#education__form>ul>li,
+#experience__form>ul>li {
+  padding: min(10px, 1vw) min(20px, 2vw) 0 min(20px, 2vw);
+  gap: 0;
+}
+
+#education__form>ul>li:first-child,
+#experience__form>ul>li:first-child {
+  padding: min(20px, 2vw) min(20px, 2vw) 0 min(20px, 2vw);
+}
+
+#education__form>ul>li:last-child,
+#experience__form>ul>li:last-child {
+  padding: 0 min(20px, 2vw) min(20px, 2vw) min(20px, 2vw);
+}
+
+#education__form>ul>li>input,
+#experience__form>ul>li>input,
+#experience__form>ul>li>textarea {
+  max-height: 100vh;
+  margin-top: min(10px, 1vw);
+  transition: all 0.1s ease-in-out;
+}
+
+li>span {
+  max-height: 100vh;
+  transition: all 0.1s ease-in-out;
 }
 
 .unvisible__field {
-  display: grid;
-  opacity: 0;
-  max-height: 0;
-  transform: translateX(-1vh);
-  padding-top: 0!important;
-  transition: all 0.2s ease-in-out;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
-.visible__field {
-  display: grid;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
+.unvisible__field>label {
+  opacity: 0;
+  font-size: 0;
+  max-height: 0;
+  transform: translateX(-2vw);
 }
+
+.unvisible__field>label>span {
+  opacity: 0;
+  font-size: 0;
+  max-height: 0;
+}
+
+.unvisible__field>input,
+.unvisible__field>textarea {
+  opacity: 0;
+  font-size: 0;
+  max-height: 0 !important;
+  padding: 0;
+  margin: 0 !important;
+  transform: translateX(-2vw);
+}
+
+.unvisible__field>span {
+  opacity: 0;
+  font-size: 0;
+  max-height: 0;
+}
+
+.visible__field {}

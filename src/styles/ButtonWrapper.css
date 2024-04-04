@@ -1,6 +1,6 @@
 .button__wrapper {
   display: grid;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   background-color: white;
   border-radius: 0 0 min(10px, 1vw) min(10px, 1vw);
 }

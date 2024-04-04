@@ -5,12 +5,11 @@ import { FieldsHandler } from "../fieldsHandler/FieldsHandler";
 
 export const ClosePattern = async (id) => {
     const props = Props.states[id];
-    console.log('ddd')
-    FieldsHandler.changeVisibleFields(props, false);
-    //PlacesHandler.changeVisiblePlaces(props, true);
+    FieldsHandler.fillOfFields(props, false);
     await later(500).promise;
     props.states.drawnNode.setState('button');
     await later(10).promise;
+    PlacesHandler.fillOfPlaces(props, true);
     props.states.placesStyle.switchState();
     props.states.buttonStyle.switchState();
 }

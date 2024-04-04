@@ -2,13 +2,18 @@ import contentIcon from '../../../../../assets/content.svg';
 import '../../../../../styles/Content.css';
 import { Props } from '../../../../dataManagments/props/Global';
 import { Wrapper } from '../../../../prototypes/details/wrapper/Wrapper';
+import { ParametersHandler } from '../../../../prototypes/settings/container/handlers/ParametersHandler';
+import { SectionHandler } from '../../../../prototypes/settings/container/handlers/SectionsHandler';
 
 export const Content = () => {
   const sectionsProps = Props.states.sections.states;
 
-  const clickHandler = () => {
-    console.log('ddd')
-    sectionsProps.drawnNode.setState('content');
+  const clickHandler = async () => {
+    if (sectionsProps.drawnNode.getState() !== 'content') {
+      await ParametersHandler.fillOfParameters(false);
+      sectionsProps.drawnNode.setState('content');
+      await SectionHandler.fillOfSections(true);
+    }
   }
 
   return (

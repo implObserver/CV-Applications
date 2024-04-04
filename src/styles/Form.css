@@ -2,14 +2,18 @@ form {
   display: grid;
   border-radius: min(10px, 1vw);
   overflow: hidden;
-  padding-right: min(20px, 2vw);
-  padding-left: min(20px, 2vw);
-  background-color: white;
-  transition: padding 0.2s ease-in-out;
+  padding: min(20px, 2vw);
+  max-height: 100vh;
+}
+
+#education__form,
+#experience__form {
+  padding: 0;
 }
 
 ul {
   list-style: none;
+  height: min-content;
 }
 
 li {
@@ -29,14 +33,11 @@ textarea {
   resize: vertical;
 }
 
-.recommended__text, .optional__text {
+.recommended__text,
+.optional__text {
   padding-left: min(10px, 1vw);
   font-size: 0.8rem;
   color: rgb(142, 164, 190);
 }
 
-.visible__form:has(.visible__field) {
-  padding-top: min(20px, 2vw);
-  padding-bottom: min(20px, 2vw);
-  transition: padding 0.2s ease-in-out;
-}
+.visible__form:has(.visible__field) {}

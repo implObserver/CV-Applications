@@ -22,7 +22,8 @@
   justify-items: center;
   gap: min(10px, 1vw);
   padding: min(10px, 1vw);
-
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .span__wrapper {

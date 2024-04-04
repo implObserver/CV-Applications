@@ -2,6 +2,8 @@ import { FieldsHandler } from "../../../../../../form/handlers/fieldsHandler/Fie
 import '../../../../../../../../styles/PlacesWrapper.css'
 import { usePropsContext } from "../../../../../../../dataManagments/context/PropsContext";
 import { State } from "../../../../../../state/State";
+import { PlacesHandler } from "../../handlers/PlacesHandler";
+
 
 export const Place = ({ parameters }) => {
     const props = usePropsContext();
@@ -16,8 +18,8 @@ export const Place = ({ parameters }) => {
         props.states.placesStyle.switchState();
         props.states.buttonStyle.switchState();
         props.states.drawnNode.setState('form');
-        const key = props.states.open.getState();
-        FieldsHandler.changeVisibleFields(props, key);
+        PlacesHandler.fillOfPlaces(props, false);
+        FieldsHandler.fillOfFields(props, true);
         setTimeout(() => {
             fillForm();
         }, 1);

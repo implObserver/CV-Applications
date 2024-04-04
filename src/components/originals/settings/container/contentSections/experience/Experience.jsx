@@ -6,12 +6,14 @@ import { EducationSection } from "../education/section/EducationSection";
 
 export const Experience = () => {
   const drawnNode = State('button', 'form', Props.states.experience.defaultStates.drawnNode);
+  const isVisible = State('visible__section', 'unvisible__section', Props.states.sections.defaultStates.sectionVisible);
 
   Object.assign(Props.states.experience.states.drawnNode, drawnNode);
-
+  Object.assign(Props.states.sections.objects.sectionsStyles.experience, isVisible);
+  
   return (
     <>
-      <div className='experience'>
+      <div className={`experience ${isVisible.getState()}`}>
         <PropsContext.Provider value={Props.states.experience}>
           <EducationHead></EducationHead>
           <EducationSection></EducationSection>

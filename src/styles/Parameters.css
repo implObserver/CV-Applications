@@ -1,0 +1,29 @@
+.visible__parameter {
+    background-color: red;
+    margin-top: min(10px, 1vw);
+}
+
+.unvisible__parameter {
+    opacity: 0;
+    max-height: 0;
+}
+
+.layout,
+.color,
+.fonts {
+    transition: all 2s ease-in-out;
+}
+
+.layout {
+    height: 30vh;
+}
+
+.fonts {
+    background-color: blue;
+    height: 30vh;
+}
+
+.color {
+    background-color: green;
+    height: 30vh;
+}

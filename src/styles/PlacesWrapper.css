@@ -1,8 +1,8 @@
 .places__wrapper {
     display: grid;
     font-size: 1em;
-    row-gap: 1vw;
     transition: all 0.2s ease-in-out;
+    padding: 0 0 min(10px, 1vw) 0;
 }
 
 .place {
@@ -13,43 +13,27 @@
     background-color: white;
 }
 
+.place>span {
+    transition: all 0.2s ease-in-out;
+}
+
 .unvisible__places-wrapper {
-    max-height: 0;
+    row-gap: 0;
     padding: 0;
-    pointer-events: none;
 }
 
-.visible__places-wrapper {
-    max-height: 100vh;
-}
+.visible__places-wrapper {}
 
-.visible__places-wrapper:has(.place) {
+.visible__place {
     margin-top: min(10px, 1vw);
-    margin-bottom: min(10px, 1vw);
-}
-
-.unvisible__places-wrapper>.place {
-    max-height: 0;
-    padding: 0;
-}
-
-.visible__places-wrapper>.place {
-    display: grid;
-    max-height: 0;
     padding: min(30px, 3vw);
 }
 
-.visible__place {
-    display: grid;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
+.unvisible__place>span {
+    opacity: 0;
+    font-size: 0;
 }
 
 .unvisible__place {
-    display: grid;
     opacity: 0;
-    max-height: 0;
-    transform: translateX(-1vh);
-    padding-top: 0 !important;
-    transition: all 0.2s ease-in-out;
 }

@@ -1,4 +1,4 @@
-import { capitalizeFirstLetter } from '../../../../../../helper/stringHelper';
+import { capitalizeFirstLetter } from '../../../../../../helper/StringHelper';
 import { usePropsContext } from '../../../../../dataManagments/context/PropsContext';
 import { Arrow } from '../../../../details/arrow/Arrow';
 import { FieldsHandler } from '../../../../form/handlers/fieldsHandler/FieldsHandler';
@@ -15,9 +15,9 @@ export const Head = () => {
     const key = !props.states.open.getState();
     style.switchState();
     if (props.states.drawnNode.getState() === 'form') {
-      FieldsHandler.changeVisibleFields(props, key);
+      FieldsHandler.fillOfFields(props, key);
     } else {
-      PlacesHandler.changeVisiblePlaces(props, key)
+      PlacesHandler.fillOfPlaces(props, key)
       props.states.placesStyle.switchState();
       props.states.buttonStyle.switchState();
     }

@@ -1,6 +1,7 @@
 import '../../../../../styles/ContentSections.css';
 import { Props } from '../../../../dataManagments/props/Global';
 import { State } from '../../../../prototypes/state/State';
+import { Parameters } from '../parameters/Parameters';
 import { Education } from './education/Education';
 import { Experience } from './experience/Experience';
 import { PersonalDetails } from './personalDetails/PersonalDetails';
@@ -22,10 +23,9 @@ export const ContentSections = () => {
               </>
             )
           } else if (drawnNode.getState() === 'customize') {
-            return <></>
+            return <Parameters></Parameters>
           }
         })()}
-
       </div>
     </>
   )
