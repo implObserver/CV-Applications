@@ -1,7 +1,8 @@
 export const getParametersStatesTemplate = () => {
     const parameters = {
         states: {
-
+            color: {},
+            layoutColor: {},
         },
         objects: {
             parametersStyles: {
@@ -13,6 +14,7 @@ export const getParametersStatesTemplate = () => {
         },
         defaultStates: {
             parameterVisible: { value: 'unvisible__parameter' },
+            color: '#000000',
         }
 
     }

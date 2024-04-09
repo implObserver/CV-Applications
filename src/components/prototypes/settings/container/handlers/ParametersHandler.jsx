@@ -8,7 +8,7 @@ export const ParametersHandler = (() => {
         await later(1).promise
         const sectionsStyles = Object.entries(Props.states.parameters.objects.parametersStyles);
         const addedSections = Props.states.parameters.objects.addedParameters;
-        prototype.setElements(sectionsStyles, addedSections,1000);
+        prototype.setElements(sectionsStyles, addedSections);
         return prototype.changeVisibleElements(key);
     }
 

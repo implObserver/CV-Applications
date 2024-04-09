@@ -5,21 +5,21 @@ import { State } from "../../../../state/State";
 
 export const Input = () => {
     const props = usePropsContext();
-    const parameters = useFieldContext();
+    const fieldParameters = useFieldContext();
 
-    const defaultValue = props.objects.inputs[parameters.id] === undefined
+    const defaultValue = props.objects.inputs[fieldParameters.id] === undefined
         ? ''
         : props.objects.activePlace === 'new'
             ? ''
-            : props.objects.inputs[parameters.id];
+            : props.objects.inputs[fieldParameters.id];
 
     const value = State(defaultValue === '' ? defaultValue : defaultValue.getState());
 
-    Object.assign(props.objects.inputs, { [parameters.id]: value });
+    Object.assign(props.objects.inputs, { [fieldParameters.id]: value });
 
     const inputHandler = (e) => {
         if (props.objects.activePlace !== 'new') {
-            Props.states.resumeUpdater[props.id][props.objects.activePlace.getKey()][parameters.index].setState(e.target.value);
+            Props.states.resumeUpdater[props.id][props.objects.activePlace.getKey()][fieldParameters.index].setState(e.target.value);
         }
         value.setState(e.target.value);
     }
@@ -27,14 +27,14 @@ export const Input = () => {
     return (
         <>
             <input
-                type={parameters.type}
-                id={parameters.id}
-                name={parameters.name}
-                placeholder={parameters.placeholder}
+                type={fieldParameters.type}
+                id={fieldParameters.id}
+                name={fieldParameters.name}
+                placeholder={fieldParameters.placeholder}
                 className='field'
-                maxLength={parameters.maxLength}
-                minLength={parameters.minLength}
-                pattern={parameters.pattern}
+                maxLength={fieldParameters.maxLength}
+                minLength={fieldParameters.minLength}
+                pattern={fieldParameters.pattern}
                 value={value.getState()} onInput={inputHandler}
             />
         </>

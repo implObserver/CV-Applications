@@ -1,4 +1,5 @@
 import contentIcon from '../../../../../assets/content.svg';
+import { later } from '../../../../../helper/Timeout';
 import '../../../../../styles/Content.css';
 import { Props } from '../../../../dataManagments/props/Global';
 import { Wrapper } from '../../../../prototypes/details/wrapper/Wrapper';
@@ -11,6 +12,7 @@ export const Content = () => {
   const clickHandler = async () => {
     if (sectionsProps.drawnNode.getState() !== 'content') {
       await ParametersHandler.fillOfParameters(false);
+      await later(500).promise
       sectionsProps.drawnNode.setState('content');
       await SectionHandler.fillOfSections(true);
     }

@@ -6,6 +6,8 @@
   background-color: #ffffff;
   padding: min(10px, 1vw);
   font-size: min(12px, 2vw);
+  position: sticky;
+  top: 0;
 }
 
 @media screen and (min-aspect-ratio: 0.9/1) {

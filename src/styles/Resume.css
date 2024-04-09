@@ -8,4 +8,6 @@
   max-width: 1000px;
   justify-items: center;
   word-break: break-all;
+  position: sticky;
+  top: 0;
 }

@@ -6,6 +6,8 @@
   border-radius: min(20px, 2vw);
   padding: min(10px, 1vw);
   font-size: min(16px, 3vw);
+  position: sticky;
+  top: 0;
 }
 
 .svg__wrapper {
