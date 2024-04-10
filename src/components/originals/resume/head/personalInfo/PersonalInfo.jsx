@@ -4,7 +4,6 @@ import { FullName } from "./fullName/FullName"
 
 export const PersonalInfo = () => {
     const props = Props.states.personalDetails;
-    console.log(Props.states.resumeUpdater.colorTheme.head.getState())
     Object.assign(Props.states.resumeUpdater[props.id], { [props.objects.activePlace.getKey()]: {} });
     return (
         <>

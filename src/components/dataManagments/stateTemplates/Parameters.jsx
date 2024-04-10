@@ -3,6 +3,7 @@ export const getParametersStatesTemplate = () => {
         states: {
             color: {},
             layoutColor: {},
+            fontsContainerColor: {},
         },
         objects: {
             parametersStyles: {

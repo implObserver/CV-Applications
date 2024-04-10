@@ -8,7 +8,6 @@ import { PlacesHandler } from "../../handlers/PlacesHandler";
 export const Place = ({ parameters }) => {
     const props = usePropsContext();
     const values = parameters.getValues();
-    console.log('place')
     const style = State('unvisible__place', 'visible__place', props.defaultStates.place);
 
     Object.assign(props.objects.placesStyles, { [parameters.getKey()]: style });

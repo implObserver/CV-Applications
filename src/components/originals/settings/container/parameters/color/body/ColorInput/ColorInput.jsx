@@ -16,6 +16,7 @@ export const ColorInput = () => {
         Props.states.parameters.states.layoutColor.top.setState(e.target.value);
         Props.states.parameters.states.layoutColor.left.setState(e.target.value);
         Props.states.parameters.states.layoutColor.right.setState(e.target.value);
+        Props.states.parameters.states.fontsContainerColor.setState(e.target.value);
     }
 
     return (

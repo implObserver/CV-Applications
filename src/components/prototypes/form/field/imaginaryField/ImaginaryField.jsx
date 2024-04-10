@@ -7,7 +7,6 @@ import { Field } from "../Field";
 export const ImaginaryField = () => {
     const props = usePropsContext();
     const parameters = useFieldContext();
-    console.log(props)
     
     const style =
         props.id === 'personalDetails'

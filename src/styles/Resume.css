@@ -4,10 +4,43 @@
   border-radius: min(20px, 2vw);
   background-color: white;
   justify-content: center;
-  width: max(max-content, min-content);
-  max-width: 1000px;
   justify-items: center;
+  width: max(max-content, min-content);
+  max-width: 800px;
+  min-height: 1100px;
   word-break: break-all;
   position: sticky;
   top: 0;
+}
+
+.top__layout__areas {
+  grid-template-areas:
+    'head'
+    'body';
+  align-content: start;
+
+}
+
+.left__layout__areas {
+  grid-template-areas:
+    'head body';
+  min-width: 750px;
+}
+
+.right__layout__areas {
+  grid-template-areas:
+    'body head';
+  min-width: 750px;
+}
+
+.font__family__serif {
+  font-family: serif;
+}
+
+.font__family__sans {
+  font-family: sans-serif;
+}
+
+.font__family__mono {
+  font-family: monospace;
 }

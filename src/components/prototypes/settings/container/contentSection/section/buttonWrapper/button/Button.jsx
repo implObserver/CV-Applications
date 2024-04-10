@@ -12,7 +12,6 @@ export const FormAddButton = () => {
 
   const hundleClick = () => {
     props.objects.activePlace = 'new';
-    console.log(props.objects.placesStyles)
     props.states.placesStyle.switchState();
     props.states.buttonStyle.switchState();
     props.states.drawnNode.setState('form');

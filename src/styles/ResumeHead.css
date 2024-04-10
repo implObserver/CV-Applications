@@ -1,9 +1,22 @@
 .resume__head {
     display: grid;
-    border-radius: min(20px, 2vw) min(20px, 2vw) 0 0;
     width: 100%;
     max-width: inherit;
-   
+    grid-area: head;
+}
+
+.top__layout__areas>.resume__head {
+    border-radius: min(20px, 2vw) min(20px, 2vw) 0 0;
+}
+
+.right__layout__areas>.resume__head {
+    border-radius: 0 min(20px, 2vw) min(20px, 2vw) 0;
+    height: 100%;
+}
+
+.left__layout__areas>.resume__head {
+    border-radius: min(20px, 2vw) 0 0 min(20px, 2vw);
+    height: 100%;
 }
 
 .personal__info {

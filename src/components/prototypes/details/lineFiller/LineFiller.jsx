@@ -28,7 +28,6 @@ export const LineFiller = () => {
         for (const style of elementsStyles) {
             if (!addedElements.includes(style[0])) {
                 addedElements.push(style[0])
-                console.log(style[0])
                 style[1].switchState();
                 await pause(speed);
             }
@@ -41,7 +40,6 @@ export const LineFiller = () => {
         elementsStyles.reverse()
         for (const style of elementsStyles) {
             if (addedElements.includes(style[0])) {
-                console.log(style[0])
                 addedElements.pop(style[0])
                 style[1].switchState();
                 await pause(speed);

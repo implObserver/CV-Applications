@@ -5,7 +5,7 @@ import { Resume } from './components/originals/resume/Resume';
 import { FillDefaultDatas } from './components/dataManagments/dataFill/fillSections';
 
 export const App = () => {
-  FillDefaultDatas
+  //FillDefaultDatas
   return (
     <>
       <Settings></Settings>

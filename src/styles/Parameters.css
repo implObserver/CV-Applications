@@ -36,10 +36,16 @@
     column-gap: min(10px, 1vw);
 }
 
+.layout__type__wrapper>div:hover,
+.fonts__body>button:hover {
+    box-shadow: 0 2px 6px #959da5;
+}
+
 .layout__type__wrapper {
     display: grid;
     justify-content: center;
     justify-items: center;
+    cursor: pointer;
 }
 
 .top__layout,
@@ -93,11 +99,46 @@
     grid-area: white-side;
 }
 
-.fonts {
-    height: 30vh;
+.fonts__body {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: min(10px, 1vw);
 }
 
-.color {}
+.fonts__body>button {
+    display: grid;
+    appearance: none;
+    background-color: white;
+    border: 1px black solid;
+    grid-template-rows: repeat(2, min-content);
+    height: min(75px, 10vw);
+    width: min(75px, 10vw);
+    justify-content: center;
+    align-content: center;
+    font-size: min(1rem, 3vw);
+}
+
+.fonts__body>button:focus {
+    background-color: var(--focusBackgroundColor);
+    color: var(--focusFontColor);
+}
+
+.fonts__body>button>span:first-child {
+    font-size: min(1.5rem, 5vw);
+}
+
+.serif {
+    font-family: serif;
+}
+
+.sans {
+    font-family: sans-serif;
+}
+
+.mono {
+    font-family: monospace;
+}
 
 .color__body {
     display: grid;
@@ -107,8 +148,8 @@
 }
 
 .color__input__wrapper {
-    height: min(40px, 5vw);
-    width: min(40px, 5vw);
+    height: min(40px, 4vw);
+    width: min(40px, 4vw);
     display: grid;
     overflow: hidden;
     border-radius: 100%;
