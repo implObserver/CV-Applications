@@ -1,6 +1,6 @@
 import { Button } from "../../field/input/inputTypes/Button";
 import Fields from '../../../../dataManagments/JSON/Fields.json'
-import { DeletePlace } from "../../../settings/container/contentSection/section/handlers/PlaceHandler";
+import { deleteActivePlace } from "../../../settings/container/contentSection/section/handlers/PlaceHandler";
 import { ClosePattern } from "../../handlers/formHandler/FormHandler";
 import { usePropsContext } from "../../../../dataManagments/context/PropsContext";
 
@@ -10,7 +10,7 @@ export const Delete = () => {
     const clickHandler = async () => {
         const activePlace = props.objects.activePlace;
         if (activePlace !== 'new') {
-            DeletePlace(props.id);
+            deleteActivePlace(props.id);
         }
         ClosePattern(props.id);
     }

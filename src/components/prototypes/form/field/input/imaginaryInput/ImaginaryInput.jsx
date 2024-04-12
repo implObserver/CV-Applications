@@ -9,7 +9,7 @@ export const ImaginaryInput = () => {
     return (
         <>
             {(() => {
-                if (parameters.id.match(description)) {
+                if (parameters.field.id.match(description)) {
                     return <Area></Area>
                 } else {
                     return <Input></Input>

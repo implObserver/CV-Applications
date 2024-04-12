@@ -10,6 +10,5 @@ const fields = [
 
 export const DetailsForm = () => {
   const formId = 'details__form';
-
   return <DynamicForm formId={formId} fields={fields}></DynamicForm>;
 };

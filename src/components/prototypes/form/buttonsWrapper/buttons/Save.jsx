@@ -4,14 +4,15 @@ import { IdealPlace } from '../../../settings/container/contentSection/section/p
 import { ClosePattern } from '../../handlers/formHandler/FormHandler';
 import { Button } from '../../field/input/inputTypes/Button';
 import { usePropsContext } from '../../../../dataManagments/context/PropsContext';
+import { useFieldContext } from '../../../../dataManagments/context/FieldParametersContext';
 
 export const Save = () => {
   const props = usePropsContext();
-
+  const parameters = useFieldContext();
   const clickHandler = async () => {
     if (props.objects.activePlace === 'new') {
-      const place = IdealPlace(props.id);
-      props.objects.places.push(place);
+      const place = IdealPlace(props.id, parameters.formId);
+      props.dropdownLists[`${props.id}__places`].objects.elements.push(place);
       Props.states.resumeUpdater[props.id].trigger.switchState();
     } else {
       props.objects.activePlace.update();

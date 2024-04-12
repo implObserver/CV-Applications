@@ -7,10 +7,9 @@ import { Save } from "./buttons/Save";
 export const ButtonsWrapper = () => {
     const props = usePropsContext();
     const parameters = useFieldContext();
-
     return (
         <>
-            <li className={`${props.objects.fields[parameters.id].getState()} buttons`}>
+            <li className={`${props.forms[parameters.formId].objects.fields[parameters.field.id].getState()} buttons`}>
                 <Delete></Delete>
                 <Save></Save>
                 <Cancel></Cancel>

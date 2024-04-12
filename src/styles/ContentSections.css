@@ -4,6 +4,7 @@
   gap: min(10px, 1vw);
 }
 
+.personal__details,
 .experience,
 .education {
   display: grid;

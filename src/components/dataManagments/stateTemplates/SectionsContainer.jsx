@@ -9,7 +9,7 @@ export const getSectionsContainer = () => {
                 education: {},
                 experience: {},
             },
-            addedSections: []
+            addedSections: ['personalDetails', 'education', 'experience'],
         },
         defaultStates: {
             sectionVisible: { value: 'visible__section' },

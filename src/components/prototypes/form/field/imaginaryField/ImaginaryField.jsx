@@ -7,17 +7,15 @@ import { Field } from "../Field";
 export const ImaginaryField = () => {
     const props = usePropsContext();
     const parameters = useFieldContext();
-    
-    const style =
-        props.id === 'personalDetails'
-            ? State('visible__field', 'unvisible__field')
-            : State('unvisible__field', 'visible__field', props.defaultStates.field);
-    
-    Object.assign(props.objects.fields, { [parameters.id]: style });
+    console.log(props.forms[parameters.formId].defaultStates.field)
+    const style = State('unvisible__field', 'visible__field', props.forms[parameters.formId].defaultStates.field);
+
+    Object.assign(props.forms[parameters.formId].objects.fields, { [parameters.field.id]: style });
+
     return (
         <>
             {(() => {
-                if (parameters.id === 'Buttons') {
+                if (parameters.field.id === 'Buttons') {
                     return <ButtonsWrapper></ButtonsWrapper>
                 } else {
                     return <Field></Field>;

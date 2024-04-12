@@ -4,16 +4,30 @@ import { ImaginaryField } from './field/imaginaryField/ImaginaryField';
 import { usePropsContext } from '../../dataManagments/context/PropsContext';
 import { FieldParametersContext } from '../../dataManagments/context/FieldParametersContext';
 import { generateKey } from '../../../helper/KeyGenerator';
+import { FormHandlers } from '../handlerFabric/formHandlers/FormHandlers';
+import { useEffect } from 'react';
 
 export const DynamicForm = ({ formId, fields }) => {
     const toggle = State(true, false);
     const props = usePropsContext();
     Object.assign(props.states, { formStyle: toggle });
+    useEffect(() => {
+        props.functions.addForm(formId, ['unvisible__field']);
+    }, [])
+    Object.assign(props.forms[formId].states, { formStyle: toggle });
+    FormHandlers.functions.addFieldsHandler(formId, props.forms[formId]);
+
+    useEffect(() => {
+        FormHandlers.fieldsHandlers[formId].switchVisible(true);
+    }, [formId])
 
     const fill = () => {
         return fields.map((field) => {
             return (
-                <FieldParametersContext.Provider key={generateKey(field.id)} value={field} >
+                <FieldParametersContext.Provider key={generateKey(field.id)} value={{
+                    formId: formId,
+                    field: field,
+                }} >
                     <ImaginaryField ></ImaginaryField>
                 </FieldParametersContext.Provider>
             )
@@ -28,15 +42,6 @@ export const DynamicForm = ({ formId, fields }) => {
                 action='#'
                 method='post'
             >
-                {(() => {
-                    if (formId === 'details__form') {
-                        return (
-                            <>
-                                <h2>Personal Details</h2>
-                            </>
-                        )
-                    }
-                })()}
                 <ul>
                     {fill()}
                 </ul>

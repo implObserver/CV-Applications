@@ -1,7 +1,6 @@
 import { capitalizeFirstLetter } from "../../../../../../../../helper/StringHelper";
 import { usePropsContext } from "../../../../../../../dataManagments/context/PropsContext";
-import { FieldsHandler } from "../../../../../../form/handlers/fieldsHandler/FieldsHandler";
-import { PlacesHandler } from "../../handlers/PlacesHandler";
+import { DropdownListsHandlers } from "../../../../../../handlerFabric/dropdownListsHandlers/DropdownListsHandlers";
 
 export const FormAddButton = () => {
   const props = usePropsContext();
@@ -10,13 +9,10 @@ export const FormAddButton = () => {
       ? 'open__button'
       : 'close__button';
 
-  const hundleClick = () => {
+  const hundleClick = async () => {
     props.objects.activePlace = 'new';
-    props.states.placesStyle.switchState();
-    props.states.buttonStyle.switchState();
+    await DropdownListsHandlers.placesHandlers[`${props.id}__places`].switchVisible(false);
     props.states.drawnNode.setState('form');
-    PlacesHandler.fillOfPlaces(props, false)
-    FieldsHandler.fillOfFields(props, true);
   }
 
   return (

@@ -6,6 +6,7 @@ form {
   max-height: 100vh;
 }
 
+#details__form,
 #education__form,
 #experience__form {
   padding: 0;

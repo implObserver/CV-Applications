@@ -8,11 +8,11 @@ export const Area = () => {
     const props = usePropsContext();
     const parameters = useFieldContext();
 
-    Object.assign(props.objects.inputs, { [parameters.id]: value });
+    Object.assign(props.forms[parameters.formId].objects.inputs, { [parameters.field.id]: value });
 
     const areaHandler = (e) => {
-        if (props.objects.activePlace !== 'new') {
-            Props.states.resumeUpdater[props.id][props.objects.activePlace.getKey()][parameters.index].setState(e.target.value);
+        if (props.forms[parameters.formId].objects.activePlace !== 'new') {
+            Props.states.resumeUpdater[props.id][props.objects.activePlace.getKey()][parameters.field.index].setState(e.target.value);
         }
         value.setState(e.target.value);
     }
@@ -20,10 +20,10 @@ export const Area = () => {
     return (
         <>
             <textarea
-                id={parameters.id}
-                name={parameters.name}
+                id={parameters.field.id}
+                name={parameters.field.name}
                 className='field'
-                placeholder={parameters.placeholder}
+                placeholder={parameters.field.placeholder}
                 value={value.getState()} onInput={areaHandler}
             />
         </>

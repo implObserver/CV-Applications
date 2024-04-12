@@ -1,3 +1,6 @@
+import { getFormStateTemplate } from "./Form";
+import { getDropDownList } from "./Places";
+
 export const getSectionStateTemplate = (id) => {
     const section = {
         id: id,
@@ -9,15 +12,19 @@ export const getSectionStateTemplate = (id) => {
         },
         objects: {
             activePlace: 'new',
-            addedFields: [],
             addedPlaces: [],
-            inputs: {},
-            fields: {},
             places: [],
             placesStyles: {},
         },
+        forms: {
+
+        },
+        dropdownLists: {
+
+        },
         defaultStates: {
             open: { value: false },
+            personalOpen: { value: true },
             drawnNode: { value: 'button' },
             fieldsStyles: { value: {} },
             placesStyle: { value: 'unvisible__places-wrapper' },
@@ -27,5 +34,15 @@ export const getSectionStateTemplate = (id) => {
         }
     }
 
-    return section;
+    const addForm = (id, defaultValues) => {
+        const form = getFormStateTemplate(id, defaultValues);
+        Object.assign(section.forms, { [id]: form });
+    }
+
+    const addDropDownList = (id, defaultValues) => {
+        const list = getDropDownList(id, defaultValues);
+        Object.assign(section.dropdownLists, { [id]: list });
+    }
+
+    return Object.assign(section, { functions: { addForm, addDropDownList } });
 }

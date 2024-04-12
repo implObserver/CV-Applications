@@ -1,22 +1,22 @@
 import { Props } from "../../../../../../dataManagments/props/Global";
 
 
-export const DeletePlace = (id) => {
+export const deleteActivePlace = (id) => {
     const props = Props.states[id];
-    const index = filter(props);
-    props.objects.places.splice(index, 1);
-    props.objects.addedPlaces.splice(index, 1)
-    Props.states.resumeUpdater[props.id].trigger.switchState();
+    const activePlace = props.objects.activePlace;
+    deletePlace(props, activePlace.getKey());
 }
 
-const filter = (props) => {
-    let places = props.objects.places;
-    const activePlace = props.objects.activePlace;
-    let index = -1;
+export const deletePlace = (props, key) => {
+    console.log(`WTFFF`)
+    let places = props.dropdownLists[`${props.id}__places`].objects.elements;
     for (let i = 0; i < places.length; i++) {
-        if (places[i].getKey() === activePlace.getKey()) {
-            index = i;
+        console.log(`key: ${places[i].getKey()} : keyIn ${key}`)
+        if (places[i].getKey() === key) {
+            props.dropdownLists[`${props.id}__places`].objects.elements.splice(i, 1);
+            props.dropdownLists[`${props.id}__places`].objects.addedElements.splice(i, 1);
+            Props.states.resumeUpdater[props.id].trigger.switchState();
+            delete props.dropdownLists[`${props.id}__places`].objects.elementsStyles[key];
         }
     }
-    return index;
 }

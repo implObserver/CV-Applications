@@ -5,16 +5,16 @@ export const ImaginaryLabel = () => {
 
     return (
         <>
-            <label htmlFor={parameters.id}>
-                {parameters.label}
+            <label htmlFor={parameters.field.id}>
+                {parameters.field.label}
                 {(() => {
-                    if (parameters.isRequied) {
+                    if (parameters.field.isRequied) {
                         return <span aria-label='required'>*</span>
                     }
-                    if (parameters.isRecommended) {
+                    if (parameters.field.isRecommended) {
                         return <span className='recommended__text'> recommended</span>
                     }
-                    if (parameters.isOptional) {
+                    if (parameters.field.isOptional) {
                         return <span className='optional__text'> optional</span>
                     }
                 })()}

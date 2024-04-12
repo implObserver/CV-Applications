@@ -7,9 +7,17 @@ export const FieldsHandler = (() => {
         await later(1).promise
         const fieldsStyles = Object.entries(props.objects.fields);
         const addedFields = props.objects.addedFields;
-        prototype.setElements(fieldsStyles, addedFields,50);
+        prototype.setElements(fieldsStyles, addedFields, 50);
         prototype.changeVisibleElements(key);
     }
 
     return { fillOfFields };
 })();
+
+export const FieldsHandl = (props) => {
+    const elementsStyles = Object.entries(props.objects.fields);
+    const addedElements = props.objects.addedFields;
+    const prototype = LineFiller(elementsStyles, addedElements);
+
+    return Object.assign(prototype);
+}

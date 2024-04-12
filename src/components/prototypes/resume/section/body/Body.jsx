@@ -10,7 +10,7 @@ export const ResumeSectionBody = () => {
 
     Object.assign(Props.states.resumeUpdater, { [props.id]: { trigger: trigger } });
 
-    const sections = props.objects.places;
+    const sections = props.dropdownLists[`${props.id}__places`].objects.elements;
     const fill = sections.map((section) => {
         return (
             <FieldParametersContext.Provider key={section.getKey()} value={section}>

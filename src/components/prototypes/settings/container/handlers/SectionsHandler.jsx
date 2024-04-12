@@ -9,7 +9,7 @@ export const SectionHandler = (() => {
         const sectionsStyles = Object.entries(Props.states.sections.objects.sectionsStyles);
         const addedSections = Props.states.sections.objects.addedSections;
         prototype.setElements(sectionsStyles, addedSections);
-        return prototype.changeVisibleElements(key);
+   
     }
 
     return { fillOfSections };

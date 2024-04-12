@@ -10,6 +10,7 @@ export const Customize = () => {
 
   const clickHandler = async () => {
     if (sectionsProps.drawnNode.getState() !== 'customize') {
+      console.log(Props.states.education.forms['education__form'].defaultStates.field)
       await SectionHandler.fillOfSections(false);
       sectionsProps.drawnNode.setState('customize');
       await ParametersHandler.fillOfParameters(true);

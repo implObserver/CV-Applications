@@ -1,8 +1,8 @@
 import contentIcon from '../../../../../assets/content.svg';
-import { later } from '../../../../../helper/Timeout';
 import '../../../../../styles/Content.css';
 import { Props } from '../../../../dataManagments/props/Global';
 import { Wrapper } from '../../../../prototypes/details/wrapper/Wrapper';
+import { FieldsHandler } from '../../../../prototypes/form/handlers/fieldsHandler/FieldsHandler';
 import { ParametersHandler } from '../../../../prototypes/settings/container/handlers/ParametersHandler';
 import { SectionHandler } from '../../../../prototypes/settings/container/handlers/SectionsHandler';
 
@@ -11,10 +11,9 @@ export const Content = () => {
 
   const clickHandler = async () => {
     if (sectionsProps.drawnNode.getState() !== 'content') {
-      await ParametersHandler.fillOfParameters(false);
-      await later(500).promise
-      sectionsProps.drawnNode.setState('content');
-      await SectionHandler.fillOfSections(true);
+      //await ParametersHandler.fillOfParameters(false);
+      //sectionsProps.drawnNode.setState('content');
+      //await SectionHandler.fillOfSections(true);
     }
   }
 
