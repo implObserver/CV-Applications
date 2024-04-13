@@ -1,6 +1,6 @@
+import { appModel } from "../../../main";
 import { DropdownListsHandlers } from "../../prototypes/handlerFabric/dropdownListsHandlers/DropdownListsHandlers";
 import { deletePlace } from "../../prototypes/settings/container/contentSection/section/handlers/PlaceHandler";
-import { Props } from "../props/Global"
 
 export const removeSections = () => {
     const sections = ['education', 'experience'];
@@ -12,10 +12,9 @@ export const removeSections = () => {
 }
 
 const deletePlaces = (id) => {
-
-    const placesKeys = Object.keys(Props.states[id].dropdownLists[`${id}__places`].objects.elementsStyles);
+    const placesKeys = Object.keys(appModel.settings.container.sections[id].dropdownLists[`${id}__places`].objects.elementsStyles);
     placesKeys.forEach(key => {
         console.log(key)
-        deletePlace(Props.states[id], key);
+        deletePlace(appModel.settings.container.sections[id], key);
     })
 }

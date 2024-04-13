@@ -10,12 +10,6 @@ export const getSectionStateTemplate = (id) => {
             drawnNode: {},
             placesStyle: '',
         },
-        objects: {
-            activePlace: 'new',
-            addedPlaces: [],
-            places: [],
-            placesStyles: {},
-        },
         forms: {
 
         },

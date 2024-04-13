@@ -1,16 +1,16 @@
-import { later } from "../../../../../helper/Timeout";
-import { Props } from "../../../../dataManagments/props/Global";
-import { LineFiller } from "../../../details/lineFiller/LineFiller";
+import { appModel } from "../../../../../main";
+import { LineFillerV2 } from "../../../details/lineFiller/LineFiller";
 
 export const ParametersHandler = (() => {
-    const prototype = LineFiller();
+    const prototype = LineFillerV2();
     const fillOfParameters = async (key) => {
-        await later(1).promise;
-        const sectionsStyles = Object.entries(Props.states.parameters.objects.parametersStyles);
-        const addedSections = Props.states.parameters.objects.addedParameters;
-        prototype.setElements(sectionsStyles, addedSections);
-        await prototype.changeVisibleElements(key);
+        const elementsStyles = Object.entries(appModel.settings.container.dropdownLists.parameters.objects.elementsStyles);
+        const addedElements = appModel.settings.container.dropdownLists.parameters.objects.addedElements;
+        prototype.updateParameters(elementsStyles, addedElements)
+        return await prototype.changeVisibleElements(key);
     }
 
     return { fillOfParameters };
+
+    
 })();

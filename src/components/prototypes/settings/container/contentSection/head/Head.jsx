@@ -7,8 +7,10 @@ import { State } from '../../../../state/State';
 
 export const Head = () => {
   const props = usePropsContext();
-  const defaultState = props.id === 'personalDetails' ? props.defaultStates.personalOpen : props.defaultStates.open;
-  const style = State(false, true, defaultState);
+  if (props.id === 'personalDetails') {
+    props.defaultStates.open.value = true
+  }
+  const style = State(false, true, props.defaultStates.open);
 
   Object.assign(props.states, { open: style });
 
@@ -22,7 +24,6 @@ export const Head = () => {
       props.dropdownLists[`${props.id}__places`].states.elementsStyle.switchState();
       props.states.buttonStyle.switchState();
     }
-    console.log(`STOOOOOOOOOOOOOOOOOOOOOOOOOP`)
   }
 
   return (

@@ -4,9 +4,11 @@ form {
   overflow: hidden;
   padding: min(20px, 2vw);
   max-height: 100vh;
+  transition: opacity 0.5s ease-in-out;
+  opacity: inherit;
 }
 
-#details__form,
+#personalDetails__form,
 #education__form,
 #experience__form {
   padding: 0;

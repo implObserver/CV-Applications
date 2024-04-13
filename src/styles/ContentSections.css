@@ -8,20 +8,15 @@
 .experience,
 .education {
   display: grid;
-  transition: all 0.2s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .visible__section {
   opacity: 1;
-  max-height: 100%;
 }
 
 .unvisible__section {
-  display: grid;
   opacity: 0;
-  max-height: 0;
-  transform: translateX(-1vh);
-  padding-top: 0 !important;
 }
 
 .section__head {
@@ -45,7 +40,7 @@
   display: grid;
   height: min-content;
   border-radius: 0 0 min(10px, 1vw) min(10px, 1vw);
-  transition: 1s all ease-in-out;
+  opacity: inherit;
 }
 
 .block {

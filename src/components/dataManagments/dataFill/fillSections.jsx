@@ -1,5 +1,5 @@
 import { fillTemplates } from "./FillTemplates"
 
-export const FillDefaultDatas = (() => {
+export const FillDefaultDatas = () => {
     fillTemplates();
-})()
+}

@@ -8,7 +8,8 @@ export const Delete = () => {
     const props = usePropsContext();
 
     const clickHandler = async () => {
-        const activePlace = props.objects.activePlace;
+        const activePlace = props.dropdownLists[`${props.id}__places`].objects.activeElement;
+        console.log(activePlace)
         if (activePlace !== 'new') {
             deleteActivePlace(props.id);
         }

@@ -1,8 +1,8 @@
 import { generateKey } from "../../../../../../../../helper/KeyGenerator";
-import { Props } from "../../../../../../../dataManagments/props/Global";
+import { appModel } from "../../../../../../../../main";
 
 export const IdealPlace = (id, formId, defaultPlace = '') => {
-    const props = Props.states[id];
+    const props = appModel.settings.container.sections[id];
     const form = props.forms[formId];
     props.placeCounter++;
     const inputs = Object.entries(form.objects.inputs);
@@ -20,7 +20,7 @@ export const IdealPlace = (id, formId, defaultPlace = '') => {
     let values = defaultPlace === '' ? setValues(inputs) : defaultPlace;
 
     const update = () => {
-        const inputs = Object.entries(form.objects.inputs);
+        const inputs = Object.entries(props.forms[formId].objects.inputs);
         values = setValues(inputs);
     }
 

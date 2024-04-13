@@ -5,7 +5,7 @@ export const getFieldsHandler = (props) => {
     const switchVisible = async (key) => {
         const elementsStyles = Object.entries(props.objects.fields);
         const addedElements = props.objects.addedFields;
-        prototype.updateParameters(elementsStyles, addedElements)
+        prototype.updateParameters(elementsStyles, addedElements, 50)
         return await prototype.changeVisibleElements(key);
     }
     return Object.assign(prototype, { switchVisible });

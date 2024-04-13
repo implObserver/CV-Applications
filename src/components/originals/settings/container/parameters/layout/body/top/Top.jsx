@@ -1,10 +1,10 @@
-import { Props } from "../../../../../../../dataManagments/props/Global"
+import { appModel } from "../../../../../../../../main"
 import { ColorSide } from "../../../../../../../prototypes/settings/container/parameters/ColorSide"
 import { WhiteSide } from "../../../../../../../prototypes/settings/container/parameters/WhiteSide"
 
 export const Top = () => {
     const clickHandler = () => {
-        Props.states.resumeUpdater.resumeLayout.setState('top__layout__areas');
+        appModel.resume.styles.layout.setState('top__layout__areas');
     }
 
     return (

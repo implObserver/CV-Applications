@@ -10,7 +10,7 @@ export const FormAddButton = () => {
       : 'close__button';
 
   const hundleClick = async () => {
-    props.objects.activePlace = 'new';
+    props.dropdownLists[`${props.id}__places`].objects.activeElement = 'new';
     await DropdownListsHandlers.placesHandlers[`${props.id}__places`].switchVisible(false);
     props.states.drawnNode.setState('form');
   }

@@ -1,6 +1,6 @@
+import { appModel } from "../../../../../../main";
 import { useFieldContext } from "../../../../../dataManagments/context/FieldParametersContext";
 import { usePropsContext } from "../../../../../dataManagments/context/PropsContext";
-import { Props } from "../../../../../dataManagments/props/Global";
 import { State } from "../../../../state/State";
 
 export const Area = () => {
@@ -9,10 +9,10 @@ export const Area = () => {
     const parameters = useFieldContext();
 
     Object.assign(props.forms[parameters.formId].objects.inputs, { [parameters.field.id]: value });
-
     const areaHandler = (e) => {
-        if (props.forms[parameters.formId].objects.activePlace !== 'new') {
-            Props.states.resumeUpdater[props.id][props.objects.activePlace.getKey()][parameters.field.index].setState(e.target.value);
+        if (props.dropdownLists[`${props.id}__places`].objects.activeElement !== 'new') {
+            console.log(appModel.resume.updater[props.id])
+            appModel.resume.updater[props.id][props.dropdownLists[`${props.id}__places`].objects.activeElement.getKey()][parameters.field.index].setState(e.target.value);
         }
         value.setState(e.target.value);
     }

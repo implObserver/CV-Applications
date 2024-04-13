@@ -1,14 +1,15 @@
+import { appModel } from "../../../../../../main";
 import { useFieldContext } from "../../../../../dataManagments/context/FieldParametersContext";
 import { usePropsContext } from "../../../../../dataManagments/context/PropsContext";
-import { Props } from "../../../../../dataManagments/props/Global";
 import { State } from "../../../../state/State";
 
 export const Input = () => {
     const props = usePropsContext();
     const parameters = useFieldContext();
+    console.log(props.forms[parameters.formId].objects.inputs[parameters.field.id] === undefined)
     const defaultValue = props.forms[parameters.formId].objects.inputs[parameters.field.id] === undefined
         ? ''
-        : props.objects.activePlace === 'new'
+        : props.dropdownLists[`${props.id}__places`].objects.activeElement === 'new'
             ? ''
             : props.forms[parameters.formId].objects.inputs[parameters.field.id];
 
@@ -17,8 +18,8 @@ export const Input = () => {
     Object.assign(props.forms[parameters.formId].objects.inputs, { [parameters.field.id]: value });
 
     const inputHandler = (e) => {
-        if (props.objects.activePlace !== 'new') {
-            Props.states.resumeUpdater[props.id][props.objects.activePlace.getKey()][parameters.field.index].setState(e.target.value);
+        if (props.dropdownLists[`${props.id}__places`].objects.activeElement !== 'new') {
+            appModel.resume.updater[props.id][props.dropdownLists[`${props.id}__places`].objects.activeElement.getKey()][parameters.field.index].setState(e.target.value);
         }
         value.setState(e.target.value);
     }

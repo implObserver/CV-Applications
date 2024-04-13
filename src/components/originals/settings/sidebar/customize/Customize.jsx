@@ -1,19 +1,19 @@
 import settingsIcon from '../../../../../assets/settings.svg';
 import { Wrapper } from '../../../../prototypes/details/wrapper/Wrapper';
 import '../../../../../styles/Customize.css';
-import { Props } from '../../../../dataManagments/props/Global';
-import { SectionHandler } from '../../../../prototypes/settings/container/handlers/SectionsHandler';
+import { appModel } from '../../../../../main';
 import { ParametersHandler } from '../../../../prototypes/settings/container/handlers/ParametersHandler';
+import { SectionHandler } from '../../../../prototypes/settings/container/handlers/SectionsHandler';
+import { later } from '../../../../../helper/Timeout';
 
 export const Customize = () => {
-  const sectionsProps = Props.states.sections.states;
 
+  const sectionsProps = appModel.settings.container.sections;
   const clickHandler = async () => {
-    if (sectionsProps.drawnNode.getState() !== 'customize') {
-      console.log(Props.states.education.forms['education__form'].defaultStates.field)
+    if (sectionsProps.states.drawnNode.getState() !== 'customize') {
+      //console.log(Props.states.education.forms['education__form'].defaultStates.field)
       await SectionHandler.fillOfSections(false);
-      sectionsProps.drawnNode.setState('customize');
-      await ParametersHandler.fillOfParameters(true);
+      
     }
   }
 

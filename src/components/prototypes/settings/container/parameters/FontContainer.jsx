@@ -1,5 +1,5 @@
 import { capitalizeFirstLetter } from "../../../../../helper/StringHelper"
-import { Props } from "../../../../dataManagments/props/Global"
+import { appModel } from "../../../../../main";
 
 export const FontContainer = ({ className }) => {
     const blurHandler = (e) => {
@@ -9,7 +9,7 @@ export const FontContainer = ({ className }) => {
     }
 
     const clickHandler = () => {
-        Props.states.resumeUpdater.resumeFont.setState(`font__family__${className}`);
+        appModel.resume.styles.font.setState(`font__family__${className}`);
     }
 
     return (
@@ -19,8 +19,8 @@ export const FontContainer = ({ className }) => {
                 onBlur={blurHandler}
                 onClick={clickHandler}
                 style={{
-                    "--focusBackgroundColor": Props.states.parameters.states.fontsContainerColor.getState(),
-                    "--focusFontColor": `color-contrast(${Props.states.parameters.states.fontsContainerColor.getState()} vs #fff, #000 to AAA)`,
+                    "--focusBackgroundColor": appModel.settings.container.parameters.styles.colors.fontsContainerColor.getState(),
+                    "--focusFontColor": `color-contrast(${appModel.settings.container.parameters.styles.colors.fontsContainerColor.getState()} vs #fff, #000 to AAA)`,
                 }}
             >
                 <span>Aa</span>

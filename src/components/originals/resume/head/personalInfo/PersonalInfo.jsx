@@ -1,13 +1,13 @@
-import { Props } from "../../../../dataManagments/props/Global";
+import { appModel } from "../../../../../main";
 import { ContactInfo } from "./contactInfo/ContactInfo"
 import { FullName } from "./fullName/FullName"
 
 export const PersonalInfo = () => {
-    const props = Props.states.personalDetails;
-    Object.assign(Props.states.resumeUpdater[props.id], { [props.objects.activePlace.getKey()]: {} });
+    const props = appModel.settings.container.sections.personalDetails;
+    Object.assign(appModel.resume.updater[props.id], { [props.dropdownLists[`${props.id}__places`].objects.activeElement.getKey()]: {} })
     return (
         <>
-            <div className="personal__info" style={{ color: `color-contrast(${Props.states.resumeUpdater.colorTheme.head.getState()} vs #fff, #000 to AAA)` }}>
+            <div className="personal__info" style={{ color: `color-contrast(${appModel.resume.styles.colors.head.getState()} vs #fff, #000 to AAA)` }}>
                 <FullName></FullName>
                 <ContactInfo></ContactInfo>
             </div>

@@ -11,9 +11,7 @@ export const DynamicForm = ({ formId, fields }) => {
     const toggle = State(true, false);
     const props = usePropsContext();
     Object.assign(props.states, { formStyle: toggle });
-    useEffect(() => {
-        props.functions.addForm(formId, ['unvisible__field']);
-    }, [])
+    props.functions.addForm(formId, ['unvisible__field']);
     Object.assign(props.forms[formId].states, { formStyle: toggle });
     FormHandlers.functions.addFieldsHandler(formId, props.forms[formId]);
 

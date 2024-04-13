@@ -16,26 +16,26 @@ li>label>span {
   transition: all 0.1s ease-in-out;
 }
 
-#details__form>ul>li,
+#personalDetails__form>ul>li,
 #education__form>ul>li,
 #experience__form>ul>li {
   padding: min(10px, 1vw) min(20px, 2vw) 0 min(20px, 2vw);
   gap: 0;
 }
 
-#details__form>ul>li:first-child,
+#personalDetails__form>ul>li:first-child,
 #education__form>ul>li:first-child,
 #experience__form>ul>li:first-child {
   padding: min(20px, 2vw) min(20px, 2vw) 0 min(20px, 2vw);
 }
 
-#details__form>ul>li:last-child,
+#personalDetails__form>ul>li:last-child,
 #education__form>ul>li:last-child,
 #experience__form>ul>li:last-child {
   padding: 0 min(20px, 2vw) min(20px, 2vw) min(20px, 2vw);
 }
 
-#details__form>ul>li>input,
+#personalDetails__form>ul>li>input,
 #education__form>ul>li>input,
 #experience__form>ul>li>input,
 #experience__form>ul>li>textarea {

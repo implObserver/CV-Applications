@@ -1,11 +1,11 @@
-import { Props } from "../../../../../../dataManagments/props/Global"
+import { appModel } from "../../../../../../../main"
 import { FontContainer } from "../../../../../../prototypes/settings/container/parameters/FontContainer"
 import { State } from "../../../../../../prototypes/state/State"
 
 export const FontsBody = () => {
-    const color = State(Props.states.resumeUpdater.colorTheme.head.getState());
-    Object.assign(Props.states.parameters.states.fontsContainerColor, color);
-    
+    const color = State(appModel.resume.styles.colors.head.getState());
+    Object.assign(appModel.settings.container.parameters.styles.colors, { fontsContainerColor: color });
+
     return (
         <>
             <div className="fonts__body">

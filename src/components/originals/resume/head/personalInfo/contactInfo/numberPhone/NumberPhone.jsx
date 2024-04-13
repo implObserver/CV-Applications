@@ -1,12 +1,12 @@
 import { State } from "../../../../../../prototypes/state/State";
-import { Props } from "../../../../../../dataManagments/props/Global";
+import { appModel } from "../../../../../../../main";
 
 export const NumberPhone = () => {
-    const props = Props.states.personalDetails;
-    const activePlace = props.objects.activePlace;
+    const props = appModel.settings.container.sections.personalDetails;
+    const activePlace = props.dropdownLists[`${props.id}__places`].objects.activeElement;
     const update = State(activePlace.getValues()[2]);
 
-    Object.assign(Props.states.resumeUpdater[props.id][activePlace.getKey()], { numberPhone: update });
+    Object.assign(appModel.resume.updater[props.id][activePlace.getKey()], { numberPhone: update });
 
     return (
         <>
