@@ -9,6 +9,7 @@ export const Container = () => {
             states: {
                 open: {},
                 drawnNode: {},
+                ref: {},
             },
             personalDetails: getSection('personalDetails'),
             education: getSection('education'),
@@ -21,6 +22,7 @@ export const Container = () => {
         parameters: {
             styles: getStyles(),
             states: {
+                ref: {},
                 layoutColor: {},
             },
             defaultStates: {
@@ -31,8 +33,8 @@ export const Container = () => {
     }
     const prototype = Prototype(object);
 
-    prototype.addDropDownList('sections');
-    prototype.addDropDownList('parameters');
+    prototype.addDropDownList('sections', 'visible__section');
+    prototype.addDropDownList('parameters', 'unvisible__parameter');
 
     return Object.assign({ functions: prototype }, object);
 }

@@ -1,20 +1,12 @@
 import settingsIcon from '../../../../../assets/settings.svg';
 import { Wrapper } from '../../../../prototypes/details/wrapper/Wrapper';
 import '../../../../../styles/Customize.css';
-import { appModel } from '../../../../../main';
-import { ParametersHandler } from '../../../../prototypes/settings/container/handlers/ParametersHandler';
-import { SectionHandler } from '../../../../prototypes/settings/container/handlers/SectionsHandler';
-import { later } from '../../../../../helper/Timeout';
+import { DropdownListsHandlers } from '../../../../prototypes/handlerFabric/dropdownListsHandlers/DropdownListsHandlers';
 
 export const Customize = () => {
-
-  const sectionsProps = appModel.settings.container.sections;
   const clickHandler = async () => {
-    if (sectionsProps.states.drawnNode.getState() !== 'customize') {
-      //console.log(Props.states.education.forms['education__form'].defaultStates.field)
-      await SectionHandler.fillOfSections(false);
-      
-    }
+      await DropdownListsHandlers.sectionsHandler.switchVisible(false);
+      await DropdownListsHandlers.parametersHandler.switchVisible(true);
   }
 
   return (

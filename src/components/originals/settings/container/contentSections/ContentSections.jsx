@@ -18,19 +18,10 @@ export const ContentSections = () => {
   return (
     <>
       <div className='content__sections'>
-        {(() => {
-          if (drawnNode.getState() === 'content') {
-            return (
-              <>
-                <PersonalDetails></PersonalDetails>
-                <Education></Education>
-                <Experience></Experience>
-              </>
-            )
-          } else if (drawnNode.getState() === 'customize') {
-            return <Parameters></Parameters>
-          }
-        })()}
+        <PersonalDetails></PersonalDetails>
+        <Education></Education>
+        <Experience></Experience>
+        <Parameters></Parameters>
       </div>
     </>
   )

@@ -8,7 +8,7 @@ export const Field = () => {
   const parameters = useFieldContext();
   return (
     <>
-      <li className={props.forms[parameters.formId].objects.fields[parameters.field.id].getState()}>
+      <li ref={props.forms[parameters.formId].objects.fieldsRefs[parameters.field.id].getRef()}>
         <ImaginaryLabel></ImaginaryLabel>
         <ImaginaryInput></ImaginaryInput>
         <span className='error' aria-live='polite'></span>

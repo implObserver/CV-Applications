@@ -4,11 +4,15 @@
   gap: min(10px, 1vw);
 }
 
+.content__sections:has(.unvisible__section:first-child) {
+  gap: 0;
+}
+
 .personal__details,
 .experience,
 .education {
   display: grid;
-  transition: all 1s ease-in-out;
+  transition: all 0.19s ease-in-out;
 }
 
 .visible__section {
@@ -17,6 +21,10 @@
 
 .unvisible__section {
   opacity: 0;
+  max-height: 0;
+  pointer-events: none;
+  visibility: hidden;
+  gap: 0;
 }
 
 .section__head {

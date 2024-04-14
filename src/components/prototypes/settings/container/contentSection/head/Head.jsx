@@ -17,12 +17,12 @@ export const Head = () => {
   const hundleClick = async () => {
     const key = !props.states.open.getState();
     style.switchState();
-    if (props.states.drawnNode.getState() === 'form' || props.id === 'personalDetails') {
+    if (props.forms[`${props.id}__form`].states.formStyle.getClass() === 'enabled' || props.id === 'personalDetails') {
       await FormHandlers.fieldsHandlers[Object.values(props.forms)[0].id].switchVisible(key);
     } else {
       await DropdownListsHandlers.placesHandlers[`${props.id}__places`].switchVisible(key);
-      props.dropdownLists[`${props.id}__places`].states.elementsStyle.switchState();
-      props.states.buttonStyle.switchState();
+      await props.dropdownLists[`${props.id}__places`].states.containerRef.switchClass();
+      props.states.buttonRef.switchClass();
     }
   }
 

@@ -1,20 +1,12 @@
 import contentIcon from '../../../../../assets/content.svg';
-import { later } from '../../../../../helper/Timeout';
-import { appModel } from '../../../../../main';
 import '../../../../../styles/Content.css';
 import { Wrapper } from '../../../../prototypes/details/wrapper/Wrapper';
-import { ParametersHandler } from '../../../../prototypes/settings/container/handlers/ParametersHandler';
-import { SectionHandler } from '../../../../prototypes/settings/container/handlers/SectionsHandler';
+import { DropdownListsHandlers } from '../../../../prototypes/handlerFabric/dropdownListsHandlers/DropdownListsHandlers';
 
 export const Content = () => {
-  const sectionsProps = appModel.settings.container.sections;
   const clickHandler = async () => {
-    if (sectionsProps.states.drawnNode.getState() !== 'content') {
-      await ParametersHandler.fillOfParameters(false);
-      sectionsProps.states.drawnNode.setState('content');
-      await later(10).promise
-      await SectionHandler.fillOfSections(true);
-    }
+      await DropdownListsHandlers.parametersHandler.switchVisible(false);
+      await DropdownListsHandlers.sectionsHandler.switchVisible(true);
   }
 
   return (

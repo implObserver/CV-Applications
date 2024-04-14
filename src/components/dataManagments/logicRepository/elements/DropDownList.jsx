@@ -1,20 +1,22 @@
 import { Prototype } from "../base/Prototype";
 
-export const getDropDownList = (id) => {
+export const getDropDownList = (id, defaultStyle = '') => {
     const list = {
         id: id,
         elementCounter: 0,
         states: {
             elementsStyle: {},
+            containerRef: {},
         },
         objects: {
             activeElement: 'new',
             addedElements: [],
             elements: [],
             elementsStyles: {},
+            elementsRefs: {},
         },
         defaultStates: {
-            elementStyle: { value: 'unvisible__place' },
+            elementStyle: { value: defaultStyle },
         },
     }
 

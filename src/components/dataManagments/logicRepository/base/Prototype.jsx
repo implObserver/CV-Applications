@@ -7,8 +7,9 @@ export const Prototype = (object) => {
         Object.assign(object.forms, { [id]: form });
     }
 
-    const addDropDownList = (id) => {
-        const list = getDropDownList(id);
+    const addDropDownList = (id, defaultVal = '') => {
+        console.log(defaultVal)
+        const list = getDropDownList(id, defaultVal);
         Object.assign(object.dropdownLists, { [id]: list });
     }
 

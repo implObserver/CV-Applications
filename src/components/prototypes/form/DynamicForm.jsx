@@ -6,13 +6,15 @@ import { FieldParametersContext } from '../../dataManagments/context/FieldParame
 import { generateKey } from '../../../helper/KeyGenerator';
 import { FormHandlers } from '../handlerFabric/formHandlers/FormHandlers';
 import { useEffect } from 'react';
+import { Ref } from '../ref/Ref';
 
 export const DynamicForm = ({ formId, fields }) => {
     const toggle = State(true, false);
     const props = usePropsContext();
+    const ref = Ref(['disabled', 'enabled']);
     Object.assign(props.states, { formStyle: toggle });
     props.functions.addForm(formId, ['unvisible__field']);
-    Object.assign(props.forms[formId].states, { formStyle: toggle });
+    Object.assign(props.forms[formId].states, { formStyle: ref });
     FormHandlers.functions.addFieldsHandler(formId, props.forms[formId]);
 
     useEffect(() => {
@@ -35,6 +37,7 @@ export const DynamicForm = ({ formId, fields }) => {
     return (
         <>
             <form
+                ref={ref.getRef()}
                 className={`${toggle.getState() ? 'visible__form' : 'unvisible__form'} ${props.states.drawnNode.getState() === 'button' ? 'disabled' : ''}`}
                 id={formId}
                 action='#'

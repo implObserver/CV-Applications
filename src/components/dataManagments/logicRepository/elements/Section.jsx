@@ -17,6 +17,6 @@ export const getSection = (id) => {
 
     const prototype = Prototype(section);
     prototype.addForm(`${id}__form`);
-    prototype.addDropDownList(`${id}__places`);
+    prototype.addDropDownList(`${id}__places`, 'unvisibled__place');
     return Object.assign(section, { functions: prototype });
 }

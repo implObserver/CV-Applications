@@ -9,7 +9,7 @@ export const ButtonsWrapper = () => {
     const parameters = useFieldContext();
     return (
         <>
-            <li className={`${props.forms[parameters.formId].objects.fields[parameters.field.id].getState()} buttons`}>
+            <li ref={props.forms[parameters.formId].objects.fieldsRefs[parameters.field.id].getRef()} className={`buttons`}>
                 <Delete></Delete>
                 <Save></Save>
                 <Cancel></Cancel>

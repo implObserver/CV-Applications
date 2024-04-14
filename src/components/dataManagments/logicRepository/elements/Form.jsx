@@ -11,6 +11,7 @@ export const getForm = (id) => {
             addedFields: [],
             inputs: {},
             fields: {},
+            fieldsRefs: {},
         },
         defaultStates: {
             field: { value: 'unvisible__field' },

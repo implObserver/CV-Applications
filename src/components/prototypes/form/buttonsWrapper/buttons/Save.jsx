@@ -18,6 +18,8 @@ export const Save = () => {
       props.dropdownLists[`${props.id}__places`].objects.activeElement.update();
     }
     ClosePattern(props.id);
+
+    props.dropdownLists[`${props.id}__places`].states.containerUpdate.switchState();
   }
 
   return (

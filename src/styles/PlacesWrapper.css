@@ -2,7 +2,6 @@
     display: grid;
     font-size: 1em;
     transition: all 0.2s ease-in-out;
-    padding: 0 0 min(10px, 1vw) 0;
 }
 
 .place {
@@ -22,7 +21,9 @@
     padding: 0;
 }
 
-.visible__places-wrapper {}
+.visible__places-wrapper {
+    padding: 0 0 min(10px, 1vw) 0;
+}
 
 .visible__place {
     margin-top: min(10px, 1vw);
