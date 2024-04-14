@@ -5,12 +5,13 @@ import { ResumeBody } from './body/Body';
 import { ResumeHead } from './head/Head';
 
 export const Resume = () => {
+  const props = appModel.resume.styles;
+  
   const layout = State('top__layout__areas');
   const font = State('font__family__sans');
 
-  Object.assign(appModel.resume.styles.layout, layout);
-  Object.assign(appModel.resume.styles.font, font);
-  console.log(appModel)
+  Object.assign(props.layout, layout);
+  Object.assign(props.font, font);
 
   return (
     <>

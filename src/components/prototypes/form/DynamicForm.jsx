@@ -16,7 +16,7 @@ export const DynamicForm = ({ formId, fields }) => {
     props.functions.addForm(formId, ['unvisible__field']);
     Object.assign(props.forms[formId].states, { formStyle: ref });
     FormHandlers.functions.addFieldsHandler(formId, props.forms[formId]);
-
+    
     useEffect(() => {
         FormHandlers.fieldsHandlers[formId].switchVisible(true);
     }, [formId])

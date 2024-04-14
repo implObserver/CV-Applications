@@ -1,14 +1,14 @@
 import { appModel } from "../../../../../../main";
-import { State } from "../../../../../prototypes/state/State";
+import { Ref } from "../../../../../prototypes/ref/Ref";
 import { ColorBody } from "./body/Body";
 import { ColorHead } from "./head/Head";
 
 export const Color = () => {
-    const isVisible = State('unvisible__parameter', 'visible__parameter', appModel.settings.container.parameters.defaultStates.parameterVisible);
-    Object.assign(appModel.settings.container.dropdownLists.parameters.objects.elementsStyles, { color: isVisible });
-    console.log(isVisible.getState())
+    const ref = Ref(['unvisible__parameter', 'visible__parameter']);
+    Object.assign(appModel.settings.container.dropdownLists.parameters.objects.elementsRefs, { color: ref });
+
     return (
-        <div className={`color ${isVisible.getState()}`}>
+        <div ref={ref.getRef()} className={`color ${ref.getClass()}`}>
             <ColorHead></ColorHead>
             <ColorBody></ColorBody>
         </div>

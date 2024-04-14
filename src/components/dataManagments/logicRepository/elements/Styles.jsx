@@ -4,6 +4,6 @@ export const getStyles = () => {
         font: {},
         layout: {},
     }
-
+    
     return styles;
 }

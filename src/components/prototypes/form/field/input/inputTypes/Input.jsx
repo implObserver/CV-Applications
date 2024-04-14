@@ -6,7 +6,6 @@ import { State } from "../../../../state/State";
 export const Input = () => {
     const props = usePropsContext();
     const parameters = useFieldContext();
-    console.log(props.forms[parameters.formId].objects.inputs[parameters.field.id] === undefined)
     const defaultValue = props.forms[parameters.formId].objects.inputs[parameters.field.id] === undefined
         ? ''
         : props.dropdownLists[`${props.id}__places`].objects.activeElement === 'new'

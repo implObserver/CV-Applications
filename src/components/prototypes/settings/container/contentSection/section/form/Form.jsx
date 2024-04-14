@@ -3,7 +3,6 @@ import { EducationForm } from "../../../../../../originals/forms/educationForm/E
 import { ExperienceForm } from "../../../../../../originals/forms/experienceForm/ExperienceForm"
 
 export const Form = ({ id }) => {
-    console.log(id)
     return (
         <>
             {(() => {

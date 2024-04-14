@@ -1,7 +1,7 @@
-import { LineFillerV2 } from "../../../details/lineFiller/LineFiller";
+import { LineFiller } from "../../../details/lineFiller/LineFiller";
 
 export const getFieldsHandler = (props) => {
-    const prototype = LineFillerV2();
+    const prototype = LineFiller();
     const switchVisible = async (key) => {
         const elementsStyles = Object.entries(props.objects.fieldsRefs);
         const addedElements = props.objects.addedFields;

@@ -14,7 +14,7 @@ export const deletePlace = (props, key) => {
             props.dropdownLists[`${props.id}__places`].objects.elements.splice(i, 1);
             props.dropdownLists[`${props.id}__places`].objects.addedElements.splice(i, 1);
             appModel.resume.updater[props.id].trigger.switchState();
-            delete props.dropdownLists[`${props.id}__places`].objects.elementsStyles[key];
+            delete props.dropdownLists[`${props.id}__places`].objects.elementsRefs[key];
         }
     }
 }

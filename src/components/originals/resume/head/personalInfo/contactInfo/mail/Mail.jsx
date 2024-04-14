@@ -1,12 +1,11 @@
 import { State } from "../../../../../../prototypes/state/State";
-import { appModel } from "../../../../../../../main";
+import { useThisContext } from "../../../../../../dataManagments/context/Context";
 
 export const Mail = () => {
-    const props = appModel.settings.container.sections.personalDetails;
-    const activePlace = props.dropdownLists[`${props.id}__places`].objects.activeElement;
-    const update = State(activePlace.getValues()[1]);
+    const context = useThisContext();
+    const update = State(context.label[1]);
 
-    Object.assign(appModel.resume.updater[props.id][activePlace.getKey()], { mail: update });
+    Object.assign(context.updater, { mail: update });
 
     return (
         <>

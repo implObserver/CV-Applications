@@ -1,16 +1,17 @@
 import { appModel } from "../../../../../../main";
-import { State } from "../../../../../prototypes/state/State";
+import { Ref } from "../../../../../prototypes/ref/Ref";
 import { LayoutBody } from "./body/Body";
 import { LayoutHead } from "./head/Head";
 
 
 export const Layout = () => {
-    const isVisible = State('unvisible__parameter', 'visible__parameter', appModel.settings.container.parameters.defaultStates.parameterVisible);
-    Object.assign(appModel.settings.container.dropdownLists.parameters.objects.elementsStyles, { layout: isVisible });
+    const ref = Ref(['unvisible__parameter', 'visible__parameter']);
+
+    Object.assign(appModel.settings.container.dropdownLists.parameters.objects.elementsRefs, { layout: ref });
 
     return (
         <>
-            <div className={`layout ${isVisible.getState()}`}>
+            <div ref={ref.getRef()} className={`layout ${ref.getClass()}`}>
                 <LayoutHead></LayoutHead>
                 <LayoutBody></LayoutBody>
             </div>

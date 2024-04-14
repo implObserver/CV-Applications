@@ -1,7 +1,6 @@
 import { useRef } from "react";
 
 export const Ref = (classes, memory = { value: classes[0] }) => {
-    console.log(memory.value)
     const ref = useRef();
     let currentClass = memory.value;
 

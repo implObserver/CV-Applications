@@ -2,7 +2,7 @@ import { appModel } from "../../../../../../../../main";
 import { State } from "../../../../../../../prototypes/state/State";
 
 export const ColorInput = () => {
-    const value = State(appModel.resume.styles.colors.head.getState());
+    const value = State('#ffa500');
     Object.assign(appModel.settings.container.parameters.styles.colors, { color: value })
     const inputHandler = (e) => {
         value.setState(e.target.value);

@@ -8,7 +8,6 @@ export const Prototype = (object) => {
     }
 
     const addDropDownList = (id, defaultVal = '') => {
-        console.log(defaultVal)
         const list = getDropDownList(id, defaultVal);
         Object.assign(object.dropdownLists, { [id]: list });
     }

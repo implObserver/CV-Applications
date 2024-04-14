@@ -3,7 +3,7 @@ import { FontContainer } from "../../../../../../prototypes/settings/container/p
 import { State } from "../../../../../../prototypes/state/State"
 
 export const FontsBody = () => {
-    const color = State(appModel.resume.styles.colors.head.getState());
+    const color = State('#ffa500');
     Object.assign(appModel.settings.container.parameters.styles.colors, { fontsContainerColor: color });
 
     return (

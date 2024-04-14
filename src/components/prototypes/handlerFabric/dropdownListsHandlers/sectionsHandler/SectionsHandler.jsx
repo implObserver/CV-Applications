@@ -1,8 +1,8 @@
 import { appModel } from "../../../../../main";
-import { LineFillerV2 } from "../../../details/lineFiller/LineFiller";
+import { LineFiller } from "../../../details/lineFiller/LineFiller";
 
 export const getSectionsHandler = () => {
-    const prototype = LineFillerV2();
+    const prototype = LineFiller();
     const switchVisible = async (key) => {
         const props = appModel.settings.container.dropdownLists.sections;
         const elementsStyles = Object.entries(props.objects.elementsRefs);

@@ -1,9 +1,9 @@
 import { createContext, useContext } from "react";
 
-export const PropsContext = createContext(undefined);
+export const Context = createContext(undefined);
 
-export function usePropsContext() {
-    const props = useContext(PropsContext);
+export function useThisContext() {
+    const props = useContext(Context);
     if (props === undefined) {
         throw new Error('usePropsContext must be used with a propsContext');
     }

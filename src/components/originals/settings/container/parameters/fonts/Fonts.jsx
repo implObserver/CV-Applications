@@ -1,14 +1,14 @@
 import { appModel } from "../../../../../../main";
-import { State } from "../../../../../prototypes/state/State";
+import { Ref } from "../../../../../prototypes/ref/Ref";
 import { FontsBody } from "./body/Body";
 import { FontsHead } from "./head/Head";
 
 export const Fonts = () => {
-    const isVisible = State('unvisible__parameter', 'visible__parameter', appModel.settings.container.parameters.defaultStates.parameterVisible);
-    Object.assign(appModel.settings.container.dropdownLists.parameters.objects.elementsStyles, { fonts: isVisible });
+    const ref = Ref(['unvisible__parameter', 'visible__parameter']);
+    Object.assign(appModel.settings.container.dropdownLists.parameters.objects.elementsRefs, { fonts: ref });
 
     return (
-        <div className={`fonts ${isVisible.getState()}`}>
+        <div ref={ref.getRef()} className={`fonts ${ref.getClass()}`}>
             <FontsHead></FontsHead>
             <FontsBody></FontsBody>
         </div>
