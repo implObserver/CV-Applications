@@ -1,24 +1,27 @@
-import { appModel } from "../../../../../../main";
+import { useThisContext } from "../../../../../dataManagments/context/Context";
 import { PropsContext } from "../../../../../dataManagments/context/PropsContext";
-import { Ref } from "../../../../../prototypes/ref/Ref";
 import { State } from "../../../../../prototypes/state/State";
 import { EducationHead } from "../education/head/EducationHead";
 import { EducationSection } from "../education/section/EducationSection";
 
 export const Experience = () => {
-  const drawnNode = State('button', 'form', appModel.settings.container.sections.experience.defaultStates.drawnNode);
-  const isVisible = State('visible__section', 'unvisible__section', appModel.settings.container.sections.defaultStates.sectionVisible);
-  const ref = Ref(['visible__section', 'unvisible__section']);
+  const props = useThisContext();
+  const sections = props.sections;
+  const section = sections.experience;
+  const list = props.dropdownLists.sections;
 
+  const isVisible = State(
+    'visible__section',
+    'unvisible__section',
+    sections.defaultStates.sectionVisible
+  );
 
-  Object.assign(appModel.settings.container.sections.experience.states.drawnNode, drawnNode);
-  Object.assign(appModel.settings.container.dropdownLists.sections.objects.elementsStyles, { experience: isVisible });
-  Object.assign(appModel.settings.container.dropdownLists.sections.objects.elementsRefs, { experience: ref });
+  Object.assign(list.objects.elementsStyles, { experience: isVisible });
 
   return (
     <>
-      <div ref={ref.getRef()} className={`experience ${isVisible.getState()}`}>
-        <PropsContext.Provider value={appModel.settings.container.sections.experience}>
+      <div className={`experience ${isVisible.getState()}`}>
+        <PropsContext.Provider value={section}>
           <EducationHead></EducationHead>
           <EducationSection></EducationSection>
         </PropsContext.Provider>

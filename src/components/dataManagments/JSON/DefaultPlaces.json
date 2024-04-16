@@ -1,6 +1,6 @@
 {
     "personalDetails": {
-        "place1": [
+        "PeterParker": [
             "Peter Parker",
             "notSpiderMan982@gmail.com",
             "(407) 224-1783",
@@ -8,29 +8,33 @@
         ]
     },
     "education": {
-        "place1": [
-            "Quince school",
-            "based",
-            "1954-09-01",
-            "1965-06-01",
-            "NY Quince"
-        ],
-        "place2": [
-            "Quince university",
-            "Master's Degree in Design",
-            "1965-09-01",
-            "1969-06-01",
-            "NY Quince"
-        ]
+        "PeterParker": {
+            "place1": [
+                "Quince school",
+                "based",
+                "1954-09-01",
+                "1965-06-01",
+                "NY Quince"
+            ],
+            "place2": [
+                "Quince university",
+                "Master's Degree in Design",
+                "1965-09-01",
+                "1969-06-01",
+                "NY Quince"
+            ]
+        }
     },
     "experience": {
-        "place1": [
-            "Daily Bugle",
-            "Photographer",
-            "1970-02-23",
-            "1973-08-11",
-            "NY Quince",
-            "J Jonah Jameson clown"
-        ]
+        "PeterParker": {
+            "place1": [
+                "Daily Bugle",
+                "Photographer",
+                "1970-02-23",
+                "1973-08-11",
+                "NY Quince",
+                "J Jonah Jameson clown"
+            ]
+        }
     }
 }

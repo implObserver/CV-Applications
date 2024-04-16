@@ -4,7 +4,6 @@ import { useThisContext } from "../../../../../dataManagments/context/Context";
 export const FullName = () => {
     const context = useThisContext();
     const update = State(context.label[0]);
-
     Object.assign(context.updater, { fullName: update });
 
     return (

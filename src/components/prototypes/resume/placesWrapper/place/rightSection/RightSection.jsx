@@ -5,7 +5,6 @@ import { PlaceField } from "./placeField/PlaceField"
 
 export const RightSection = () => {
     const props = usePropsContext();
-
     return (
         <>
             <div className="resume__place__right-section">

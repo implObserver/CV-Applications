@@ -5,7 +5,7 @@ export const getParametersHandler = () => {
     const prototype = LineFiller();
     const switchVisible = async (key) => {
         const props = appModel.settings.container.dropdownLists.parameters;
-        const elementsStyles = Object.entries(props.objects.elementsRefs);
+        const elementsStyles = Object.entries(props.objects.elementsStyles);
         const addedElements = props.objects.addedElements;
         prototype.updateParameters(elementsStyles, addedElements)
         return await prototype.changeVisibleElements(key);

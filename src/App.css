@@ -17,9 +17,9 @@
 #root {
   display: grid;
   align-self: self-start;
-  grid-template-columns: 4fr 6fr;
+  grid-template-columns: 1fr 2fr;
   justify-content: center;
-  justify-items: center;
+  justify-self: center;
   gap: min(10px, 1vw);
   padding: min(10px, 1vw);
   -ms-overflow-style: none;

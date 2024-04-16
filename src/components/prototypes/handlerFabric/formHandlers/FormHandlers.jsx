@@ -2,9 +2,7 @@ import { getFieldsHandler } from "./fieldsHandler/FieldsHandler";
 
 export const FormHandlers = (() => {
     const handlers = {
-        fieldsHandlers: {
-
-        },
+        fieldsHandlers: {},
     }
 
     const addFieldsHandler = (formId, props) => {

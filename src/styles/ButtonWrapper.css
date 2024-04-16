@@ -19,5 +19,6 @@
 
 .visible__button-wrapper {
   padding: min(10px, 1vw);
+  margin-top: min(10px, 1vw);
   max-height: 10vh;
 }

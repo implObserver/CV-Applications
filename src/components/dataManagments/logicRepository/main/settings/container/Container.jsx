@@ -32,7 +32,7 @@ export const Container = () => {
         dropdownLists: {},
     }
     const prototype = Prototype(object);
-
+    Object.assign(object.parameters.styles.colors, { layoutColor: {} });
     prototype.addDropDownList('sections', 'visible__section');
     prototype.addDropDownList('parameters', 'unvisible__parameter');
 

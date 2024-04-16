@@ -5,7 +5,7 @@
     background-color: white;
     border-radius: min(10px, 1vw);
     max-height: 100vh;
-    padding: min(30px, 3vw);
+    padding: min(10px, 1vw);
 }
 
 .unvisible__parameter {
@@ -14,14 +14,14 @@
     font-size: 0rem;
     padding-top: 0;
     padding-bottom: 0;
-    opacity: 0!important;
+    opacity: 0 !important;
 }
 
 .unvisible__parameter>.fonts__body>button {
     padding-top: 0;
     padding-bottom: 0;
     font-size: 0rem;
-    opacity: 0!important;
+    opacity: 0 !important;
 }
 
 .unvisible__parameter>.fonts__body>button>span:first-child {
@@ -32,8 +32,8 @@
 .color,
 .fonts {
     display: grid;
-    padding-left: min(30px, 3vw);
-    padding-right: min(30px, 3vw);
+    padding-left: min(10px, 3vw);
+    padding-right: min(10px, 3vw);
     gap: 1vw;
     transition: all 0.1s ease-in-out;
 }
@@ -50,9 +50,9 @@
 
 .layout__body {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: min(20px, 2vw);
     flex-wrap: wrap;
-    column-gap: min(10px, 1vw);
     max-height: inherit;
 }
 
@@ -73,8 +73,8 @@
 .left__layout,
 .right__layout {
     display: grid;
-    height: min(75px, 10vw);
-    width: min(75px, 10vw);
+    height: min(65px, 8vw);
+    width: min(65px, 8vw);
     border-radius: min(10px, 1vw);
     border: 1px black solid;
     overflow: hidden;
@@ -125,9 +125,9 @@
 
 .fonts__body {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: min(20px, 2vw);
     flex-wrap: wrap;
-    gap: min(10px, 1vw);
     max-height: inherit;
 }
 
@@ -137,8 +137,8 @@
     background-color: white;
     border: 1px black solid;
     grid-template-rows: repeat(2, min-content);
-    height: min(75px, 10vw);
-    width: min(75px, 10vw);
+    height: min(65px, 8vw);
+    width: min(65px, 8vw);
     justify-content: center;
     align-content: center;
     font-size: min(1rem, 3vw);

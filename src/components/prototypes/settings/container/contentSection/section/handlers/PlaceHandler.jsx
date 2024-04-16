@@ -3,18 +3,21 @@ import { appModel } from "../../../../../../../main";
 
 export const deleteActivePlace = (id) => {
     const props = appModel.settings.container.sections[id];
-    const activePlace = props.dropdownLists[`${props.id}__places`].objects.activeElement;
+    const list = props.dropdownLists[`${props.id}__places`];
+    const activePlace = list.objects.activeElement;
+
     deletePlace(props, activePlace.getKey());
 }
 
 export const deletePlace = (props, key) => {
-    let places = props.dropdownLists[`${props.id}__places`].objects.elements;
+    const list = props.dropdownLists[`${props.id}__places`];
+    const places = list.objects.elements;
     for (let i = 0; i < places.length; i++) {
         if (places[i].getKey() === key) {
-            props.dropdownLists[`${props.id}__places`].objects.elements.splice(i, 1);
-            props.dropdownLists[`${props.id}__places`].objects.addedElements.splice(i, 1);
+            list.objects.elements.splice(i, 1);
+            list.objects.addedElements.splice(i, 1);
             appModel.resume.updater[props.id].trigger.switchState();
-            delete props.dropdownLists[`${props.id}__places`].objects.elementsRefs[key];
+            delete list.objects.elementsStyles[key];
         }
     }
 }

@@ -1,8 +1,6 @@
 export const later = (delay, value) => {
   let timer = 0;
-  let reject = null;
-  const promise = new Promise((resolve, _reject) => {
-    reject = _reject;
+  const promise = new Promise((resolve) => {
     timer = setTimeout(resolve, delay, value);
   });
   return {
@@ -11,8 +9,6 @@ export const later = (delay, value) => {
       if (timer) {
         clearTimeout(timer);
         timer = 0;
-        reject();
-        reject = null;
       }
     }
   };

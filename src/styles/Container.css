@@ -1,4 +1,5 @@
 .container {
   display: grid;
+ 
   gap: min(10px, 1vw);
 }

@@ -9,17 +9,20 @@ import { appModel } from '../../../../../main';
 export const Save = () => {
   const props = usePropsContext();
   const parameters = useFieldContext();
+  const list = props.dropdownLists[`${props.id}__places`];
+  const form = props.forms[parameters.formId];
+
   const clickHandler = async () => {
-    if (props.dropdownLists[`${props.id}__places`].objects.activeElement === 'new') {
-      const place = IdealPlace(props.id, parameters.formId);
-      props.dropdownLists[`${props.id}__places`].objects.elements.push(place);
+    if (list.objects.activeElement === 'new') {
+      const place = IdealPlace(list, form);
+      list.objects.elements.push(place);
       appModel.resume.updater[props.id].trigger.switchState();
     } else {
-      props.dropdownLists[`${props.id}__places`].objects.activeElement.update();
+      list.objects.activeElement.update(form);
     }
     ClosePattern(props.id);
 
-    props.dropdownLists[`${props.id}__places`].states.containerUpdate.switchState();
+    list.states.containerUpdate.switchState();
   }
 
   return (

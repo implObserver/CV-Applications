@@ -1,26 +1,27 @@
 import { generateKey } from "../../../../../../../../helper/KeyGenerator";
-import { appModel } from "../../../../../../../../main";
 
-export const IdealPlace = (id, formId, defaultPlace = '') => {
-    const props = appModel.settings.container.sections[id];
-    const form = props.forms[formId];
-    props.placeCounter++;
+export const IdealPlace = (list, form, defaultPlace = '') => {
+    list.elementCounter++;
+    const formId = form.id;
     const inputs = Object.entries(form.objects.inputs);
-    const key = generateKey(`${form.id}-${props.placeCounter}`)
 
+    let key = generateKey(`${formId}-${list.elementCounter}`);
+    if (formId === 'personalDetails__form') {
+        key = 'personalDetails__form-1';
+    }
+    
     const setValues = (inputs) => {
         const values = [];
         inputs.forEach(input => {
             values.push(input[1].getState());
         })
-
         return values;
     }
 
     let values = defaultPlace === '' ? setValues(inputs) : defaultPlace;
 
-    const update = () => {
-        const inputs = Object.entries(props.forms[formId].objects.inputs);
+    const update = (form) => {
+        const inputs = Object.entries(form.objects.inputs);
         values = setValues(inputs);
     }
 

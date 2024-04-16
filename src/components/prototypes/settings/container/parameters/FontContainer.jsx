@@ -2,6 +2,8 @@ import { capitalizeFirstLetter } from "../../../../../helper/StringHelper"
 import { appModel } from "../../../../../main";
 
 export const FontContainer = ({ className }) => {
+    const parametersColors = appModel.settings.container.parameters.styles.colors;
+
     const blurHandler = (e) => {
         if (e.relatedTarget === null || e.relatedTarget.className === 'color__input') {
             e.target.focus();
@@ -19,8 +21,8 @@ export const FontContainer = ({ className }) => {
                 onBlur={blurHandler}
                 onClick={clickHandler}
                 style={{
-                    "--focusBackgroundColor": appModel.settings.container.parameters.styles.colors.fontsContainerColor.getState(),
-                    "--focusFontColor": `color-contrast(${appModel.settings.container.parameters.styles.colors.fontsContainerColor.getState()} vs #fff, #000 to AAA)`,
+                    "--focusBackgroundColor": parametersColors.fontsContainerColor.getState(),
+                    "--focusFontColor": `color-contrast(${parametersColors.fontsContainerColor.getState()} vs #fff, #000 to AAA)`,
                 }}
             >
                 <span>Aa</span>

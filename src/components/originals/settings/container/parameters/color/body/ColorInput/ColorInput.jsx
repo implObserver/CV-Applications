@@ -3,20 +3,24 @@ import { State } from "../../../../../../../prototypes/state/State";
 
 export const ColorInput = () => {
     const value = State('#ffa500');
-    Object.assign(appModel.settings.container.parameters.styles.colors, { color: value })
+    const resumeColors = appModel.resume.styles.colors;
+    const parameters = appModel.settings.container.parameters;
+    const parametersColors = parameters.styles.colors;
+
+    Object.assign(parametersColors, { color: value })
     const inputHandler = (e) => {
         value.setState(e.target.value);
         setColorTheme(e);
     }
 
     const setColorTheme = (e) => {
-        appModel.resume.styles.colors.head.setState(e.target.value);
-        appModel.resume.styles.colors.education.setState(e.target.value);
-        appModel.resume.styles.colors.experience.setState(e.target.value);
-        appModel.settings.container.parameters.states.layoutColor.top.setState(e.target.value);
-        appModel.settings.container.parameters.states.layoutColor.left.setState(e.target.value);
-        appModel.settings.container.parameters.states.layoutColor.right.setState(e.target.value);
-        appModel.settings.container.parameters.styles.colors.fontsContainerColor.setState(e.target.value);
+        resumeColors.head.setState(e.target.value);
+        resumeColors.education.setState(e.target.value);
+        resumeColors.experience.setState(e.target.value);
+        parametersColors.layoutColor.top.setState(e.target.value);
+        parametersColors.layoutColor.left.setState(e.target.value);
+        parametersColors.layoutColor.right.setState(e.target.value);
+        parametersColors.fontsContainerColor.setState(e.target.value);
     }
 
     return (

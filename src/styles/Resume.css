@@ -1,11 +1,9 @@
 .resume {
   display: grid;
   background-color: white;
-  border-radius: min(20px, 2vw);
+  border-radius: min(10px, 1vw);
   background-color: white;
-  justify-content: center;
-  justify-items: center;
-  width: max(max-content, min-content);
+  width: 100%;
   max-width: 800px;
   min-height: 1100px;
   word-break: break-all;
@@ -18,19 +16,25 @@
     'head'
     'body';
   align-content: start;
-
+  min-width: 350px;
 }
 
 .left__layout__areas {
   grid-template-areas:
     'head body';
-  min-width: 750px;
+}
+.right__layout__areas>.resume__body,
+.left__layout__areas>.resume__body {
+  min-width: 350px;
+}
+.right__layout__areas>.resume__head,
+.left__layout__areas>.resume__head {
+  min-width: 300px;
 }
 
 .right__layout__areas {
   grid-template-areas:
     'body head';
-  min-width: 750px;
 }
 
 .font__family__serif {

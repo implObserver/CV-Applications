@@ -16,7 +16,7 @@ export const ResumeHead = () => {
                 style={{
                     backgroundColor: backgroundColor.getState()
                 }}>
-                    
+
                 <PersonalInfo></PersonalInfo>
             </section>
         </>

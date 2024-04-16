@@ -1,23 +1,35 @@
-import { appModel } from "../../../../../../main";
+import { useEffect } from "react";
 import { PropsContext } from "../../../../../dataManagments/context/PropsContext";
-import { Ref } from "../../../../../prototypes/ref/Ref";
 import { State } from "../../../../../prototypes/state/State";
 import { PersonalDetailsHead } from "./head/PersonalDetailsHead";
 import { PersonalDetailsSection } from "./section/PersonalDetailsSection";
+import { FirstRender } from "../../../../../dataManagments/example/FirstRender";
+import { useThisContext } from "../../../../../dataManagments/context/Context";
 
 export const PersonalDetails = () => {
-  const drawnNode = State('form', 'form');
-  const isVisible = State('visible__section', 'unvisible__section', appModel.settings.container.sections.defaultStates.sectionVisible);
-  const ref = Ref(['visible__section', 'unvisible__section'], appModel.settings.container.dropdownLists.sections.defaultStates.elementStyle);
+  const update = State();
+  const props = useThisContext();
+  const sections = props.sections;
+  const section = sections.personalDetails;
+  const list = props.dropdownLists.sections;
 
-  Object.assign(appModel.settings.container.sections.personalDetails.states.drawnNode, drawnNode);
-  Object.assign(appModel.settings.container.dropdownLists.sections.objects.elementsStyles, { personalDetails: isVisible });
-  Object.assign(appModel.settings.container.dropdownLists.sections.objects.elementsRefs, { personalDetails: ref });
+  const isVisible = State(
+    'visible__section',
+    'unvisible__section',
+    sections.defaultStates.sectionVisible
+  );
+
+  Object.assign(section.states, { update: update });
+  Object.assign(list.objects.elementsStyles, { personalDetails: isVisible });
+
+  useEffect(() => {
+    FirstRender.detailsForm();
+  })
 
   return (
     <>
-      <div ref={ref.getRef()} className={`personal__details ${ref.getClass()}`}>
-        <PropsContext.Provider value={appModel.settings.container.sections.personalDetails}>
+      <div className={`personal__details ${isVisible.getState()}`}>
+        <PropsContext.Provider value={section}>
           <PersonalDetailsHead></PersonalDetailsHead>
           <PersonalDetailsSection></PersonalDetailsSection>
         </PropsContext.Provider>

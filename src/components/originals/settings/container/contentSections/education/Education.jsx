@@ -2,22 +2,26 @@ import { EducationSection } from './section/EducationSection.jsx';
 import { EducationHead } from './head/EducationHead.jsx';
 import { State } from '../../../../../prototypes/state/State.jsx';
 import { PropsContext } from '../../../../../dataManagments/context/PropsContext.ts';
-import { appModel } from '../../../../../../main.jsx';
-import { Ref } from '../../../../../prototypes/ref/Ref.jsx';
+import { useThisContext } from '../../../../../dataManagments/context/Context.ts';
 
 export const Education = () => {
-  const drawnNode = State('button', 'form', appModel.settings.container.sections.education.defaultStates.drawnNode);
-  const isVisible = State('visible__section', 'unvisible__section', appModel.settings.container.sections.defaultStates.sectionVisible);
-  const ref = Ref(['visible__section', 'unvisible__section']);
+  const props = useThisContext();
+  const sections = props.sections;
+  const section = sections.education;
+  const list = props.dropdownLists.sections;
 
-  Object.assign(appModel.settings.container.sections.education.states.drawnNode, drawnNode);
-  Object.assign(appModel.settings.container.dropdownLists.sections.objects.elementsStyles, { education: isVisible });
-  Object.assign(appModel.settings.container.dropdownLists.sections.objects.elementsRefs, { education: ref });
+  const isVisible = State(
+    'visible__section',
+    'unvisible__section',
+    sections.defaultStates.sectionVisible
+  );
+
+  Object.assign(list.objects.elementsStyles, { education: isVisible });
 
   return (
     <>
-      <div ref={ref.getRef()} className={`education ${isVisible.getState()}`}>
-        <PropsContext.Provider value={appModel.settings.container.sections.education}>
+      <div className={`education ${isVisible.getState()}`}>
+        <PropsContext.Provider value={section}>
           <EducationHead></EducationHead>
           <EducationSection></EducationSection>
         </PropsContext.Provider>

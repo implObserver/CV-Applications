@@ -1,11 +1,12 @@
 import { Wrapper } from '../../../../../prototypes/details/wrapper/Wrapper';
 import '../../../../../../styles/LoadExample.css';
-import { fillTemplates } from '../../../../../dataManagments/dataFill/FillTemplates';
+import { Load } from '../../../../../dataManagments/example/Load';
 
 export const LoadExample = () => {
   const clickHandler = () => {
-    fillTemplates();
+    Load('Peter Parker');
   }
+
   return (
     <>
       <div className='load__example'

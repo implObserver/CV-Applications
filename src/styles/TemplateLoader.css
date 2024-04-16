@@ -1,7 +1,7 @@
 .template__loader {
   display: grid;
   align-items: center;
-  border-radius: min(20px, 2vw);
+  border-radius: min(10px, 1vw);
   gap: min(10px, 1vw);
   background-color: #ffffff;
   padding: min(10px, 1vw);

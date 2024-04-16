@@ -5,22 +5,22 @@ import { FormHandlers } from "../../../../../../handlerFabric/formHandlers/FormH
 
 export const FormAddButton = () => {
   const props = usePropsContext();
+  const list = props.dropdownLists[`${props.id}__places`];
+  const placeshandler = DropdownListsHandlers.placesHandlers[`${props.id}__places`];
+  const fieldshandler = FormHandlers.fieldsHandlers[`${props.id}__form`];
 
   const hundleClick = async () => {
-    props.dropdownLists[`${props.id}__places`].objects.activeElement = 'new';
-    await DropdownListsHandlers.placesHandlers[`${props.id}__places`].switchVisible(false);
-    props.dropdownLists[`${props.id}__places`].states.containerRef.switchClass();
-    props.states.buttonRef.switchClass();
-    props.forms[`${props.id}__form`].states.formStyle.switchClass();
-    FormHandlers.fieldsHandlers[`${props.id}__form`].switchVisible(true);
+    props.activeElement = 'form';
+    list.objects.activeElement = 'new';
+    await placeshandler.switchVisible(false);
+    list.states.containerStyle.switchState();
+    props.states.buttonStyle.switchState();
+    fieldshandler.switchVisible(true);
   }
 
   return (
     <>
-      <button
-        className={`add__button`}
-        onClick={hundleClick}
-      >
+      <button className={`add__button`} onClick={hundleClick}>
         <span>+ {capitalizeFirstLetter(props.id)}</span>
       </button>
     </>

@@ -3,7 +3,7 @@
   background-color: white;
   justify-content: center;
   justify-items: center;
-  border-radius: min(20px, 2vw);
+  border-radius: min(10px, 1vw);
   padding: min(10px, 1vw);
   font-size: min(16px, 3vw);
   position: sticky;
@@ -34,6 +34,5 @@
 @media screen and (max-aspect-ratio: 0.9/1) {
   .sidebar {
     grid-template-columns: 1fr 1fr;
-    border: 1px green solid;
   }
 }

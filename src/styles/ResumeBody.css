@@ -2,7 +2,7 @@
     display: grid;
     padding: min(10px, 1vw);
     grid-area: body;
-    width: 100%;
+    
 }
 
 .right__layout__areas>.resume__body {
@@ -22,6 +22,7 @@
 .resume__sections {
     display: grid;
     gap: min(10px, 1vw);
+    
 }
 
 .resume__section__head {

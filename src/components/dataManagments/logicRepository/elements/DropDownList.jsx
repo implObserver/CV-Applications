@@ -1,5 +1,4 @@
 import { Prototype } from "../base/Prototype";
-
 export const getDropDownList = (id, defaultStyle = '') => {
     const list = {
         id: id,
@@ -7,6 +6,7 @@ export const getDropDownList = (id, defaultStyle = '') => {
         states: {
             elementsStyle: {},
             containerRef: {},
+            containerStyle: {},
         },
         objects: {
             activeElement: 'new',

@@ -6,9 +6,11 @@ import { ImaginaryLabel } from './label/imaginaryLabel/ImaginaryLabel';
 export const Field = () => {
   const props = usePropsContext();
   const parameters = useFieldContext();
+  console.log('fuuucksss')
   return (
     <>
-      <li ref={props.forms[parameters.formId].objects.fieldsRefs[parameters.field.id].getRef()}>
+      <li
+        className={`${props.forms[parameters.formId].objects.fieldsStyles[parameters.field.id].getState()}`}>
         <ImaginaryLabel></ImaginaryLabel>
         <ImaginaryInput></ImaginaryInput>
         <span className='error' aria-live='polite'></span>

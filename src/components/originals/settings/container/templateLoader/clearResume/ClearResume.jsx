@@ -1,11 +1,11 @@
 import { Wrapper } from '../../../../../prototypes/details/wrapper/Wrapper';
 import trashIcon from '../../../../../../assets/trash.svg';
 import '../../../../../../styles/ClearResume.css';
-import { removeSections } from '../../../../../dataManagments/dataRemove/RemoveSections';
+import { Clear } from '../../../../../dataManagments/clearResume/Clear';
 
 export const ClearResume = () => {
   const clickHandler = () => {
-    removeSections();
+    Clear();
   }
 
   return (
