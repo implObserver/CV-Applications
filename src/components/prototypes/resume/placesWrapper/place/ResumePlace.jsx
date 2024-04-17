@@ -8,6 +8,7 @@ import { RightSection } from "./rightSection/RightSection"
 export const ResumePlace = () => {
     const props = usePropsContext();
     const section = useFieldContext();
+    
     Object.assign(
         appModel.resume.updater[props.id],
         { [section.getKey()]: {} }

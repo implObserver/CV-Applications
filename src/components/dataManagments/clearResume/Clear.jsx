@@ -1,20 +1,27 @@
 import { appModel } from "../../../main";
+import { ClosePattern } from "../../prototypes/form/handlers/formHandler/FormHandler";
 import { DropdownListsHandlers } from "../../prototypes/handlerFabric/dropdownListsHandlers/DropdownListsHandlers";
 import { deletePlace } from "../../prototypes/settings/container/contentSection/section/handlers/PlaceHandler";
 
 export const Clear = () => {
     const sections = ['education', 'experience'];
-    appModel.resume.updater.update.switchState();
 
     sections.forEach(async (id) => {
         clearHead();
         await DropdownListsHandlers.placesHandlers[`${id}__places`].switchVisible(false);
         deletePlaces(id);
-    }) 
+        if (appModel.settings.container.sections[id].activeElement === 'form') {
+            ClosePattern(id);
+        }
+        appModel.settings.container.sections[id].dropdownLists[`${id}__places`].objects.activeElement = 'new';
+        console.log(appModel)
+    })
+
+    appModel.resume.updater.update.switchState();
 }
 
 const deletePlaces = (id) => {
-    const placesKeys = Object.keys(appModel.settings.container.sections[id].dropdownLists[`${id}__places`].objects.elementsRefs);
+    const placesKeys = Object.keys(appModel.settings.container.sections[id].dropdownLists[`${id}__places`].objects.elementsStyles);
     placesKeys.forEach(key => {
         deletePlace(appModel.settings.container.sections[id], key);
     })

@@ -6,7 +6,7 @@ import { ImaginaryLabel } from './label/imaginaryLabel/ImaginaryLabel';
 export const Field = () => {
   const props = usePropsContext();
   const parameters = useFieldContext();
-  console.log('fuuucksss')
+
   return (
     <>
       <li

@@ -17,6 +17,7 @@
 
 .visible__section {
   opacity: 1;
+  max-height: 100vh;
 }
 
 .unvisible__section {

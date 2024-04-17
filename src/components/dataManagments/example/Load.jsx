@@ -2,13 +2,13 @@ import { appModel } from "../../../main";
 import defaultPlaces from '../JSON/DefaultPlaces.json'
 import { IdealPlace } from "../../prototypes/settings/container/contentSection/section/placesWrapper/place/IdealPlace";
 import { DropdownListsHandlers } from "../../prototypes/handlerFabric/dropdownListsHandlers/DropdownListsHandlers";
-import { fillForm } from "../../prototypes/form/handlers/formHandler/FormHandler";
+import { FillForm, FillResumeSection } from "../../prototypes/form/handlers/formHandler/FormHandler";
 
 export const Load = (id) => {
     personalDetails(id);
     education(id);
     experience(id);
-    
+
     try {
         appModel.resume.updater.update.switchState();
     } catch (error) {
@@ -30,11 +30,8 @@ const personalDetails = (id) => {
     }
 
     try {
-        fillForm(form, values);
-        const fields = Object.values(appModel.resume.updater[section.id][section.dropdownLists[`${section.id}__places`].objects.activeElement.getKey()]);
-        for (let i = 0; i < fields.length; i++) {
-            fields[i].setState(values[i]);
-        }
+        FillForm(form, values);
+        FillResumeSection(section, values);
     } catch (error) {
         console.log(error)
     }

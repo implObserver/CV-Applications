@@ -6,4 +6,10 @@
   background-color: rgb(226, 226, 226);
   border-radius: min(10px, 1vw);
   font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 6px #959da5;
+}
+
+.load__example:hover {
+  transform: translateY(-1px);
 }

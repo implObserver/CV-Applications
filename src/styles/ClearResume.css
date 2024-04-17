@@ -5,4 +5,14 @@
   align-items: center;
   color: rgb(179, 0, 0);
   font-weight: 500;
+  cursor: pointer;
+}
+
+.clear__resume>.span__wrapper {
+  border-radius: min(10px, 1vw);
+  box-shadow: 0 2px 6px #959da5;
+}
+
+.clear__resume:hover>.span__wrapper {
+  transform: translateY(-1px);
 }

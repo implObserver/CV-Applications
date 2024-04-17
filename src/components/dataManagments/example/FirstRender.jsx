@@ -1,5 +1,5 @@
 import { appModel } from "../../../main";
-import { fillForm } from "../../prototypes/form/handlers/formHandler/FormHandler";
+import { FillForm } from "../../prototypes/form/handlers/formHandler/FormHandler";
 import { FormHandlers } from "../../prototypes/handlerFabric/formHandlers/FormHandlers";
 import defaultPlaces from '../JSON/DefaultPlaces.json'
 
@@ -10,7 +10,7 @@ export const FirstRender = (() => {
         const values = defaultPlaces.personalDetails.PeterParker;
         section.activeElement = 'form';
         FormHandlers.fieldsHandlers[`personalDetails__form`].switchVisible(true);
-        fillForm(form, values);
+        FillForm(form, values);
     }
 
     return { detailsForm };

@@ -56,9 +56,10 @@
     max-height: inherit;
 }
 
+.color__input__wrapper:hover,
 .layout__type__wrapper>div:hover,
 .fonts__body>button:hover {
-    box-shadow: 0 2px 6px #959da5;
+    transform: translateY(-1px);
 }
 
 .layout__type__wrapper {
@@ -76,7 +77,7 @@
     height: min(65px, 8vw);
     width: min(65px, 8vw);
     border-radius: min(10px, 1vw);
-    border: 1px black solid;
+    box-shadow: 0 2px 6px #959da5;
     overflow: hidden;
     max-height: inherit;
 }
@@ -135,7 +136,6 @@
     display: grid;
     appearance: none;
     background-color: white;
-    border: 1px black solid;
     grid-template-rows: repeat(2, min-content);
     height: min(65px, 8vw);
     width: min(65px, 8vw);
@@ -143,6 +143,7 @@
     align-content: center;
     font-size: min(1rem, 3vw);
     max-height: inherit !important;
+    box-shadow: 0 2px 6px #959da5;
 }
 
 .fonts__body>button:focus {
@@ -192,4 +193,5 @@
     border: 0;
     height: min(60px, 7.5vw);
     width: min(60px, 7.5vw);
+    cursor: pointer;
 }

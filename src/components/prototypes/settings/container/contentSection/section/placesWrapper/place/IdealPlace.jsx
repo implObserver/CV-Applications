@@ -9,7 +9,7 @@ export const IdealPlace = (list, form, defaultPlace = '') => {
     if (formId === 'personalDetails__form') {
         key = 'personalDetails__form-1';
     }
-    
+
     const setValues = (inputs) => {
         const values = [];
         inputs.forEach(input => {
