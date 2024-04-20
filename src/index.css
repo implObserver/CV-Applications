@@ -16,7 +16,7 @@
 
   color-scheme: light dark;
   background-color: #242424;
-  color: black !important;
+  color: black;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
