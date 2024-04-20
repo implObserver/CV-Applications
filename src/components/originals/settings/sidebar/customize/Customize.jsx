@@ -11,7 +11,7 @@ export const Customize = () => {
 
   return (
     <>
-      <div className='customize' onClick={clickHandler}>
+      <div tabIndex="0" className='customize' onClick={clickHandler}>
         <Wrapper name='svg__wrapper'>
           <img src={settingsIcon} className='settings__icon' alt='' />
         </Wrapper>

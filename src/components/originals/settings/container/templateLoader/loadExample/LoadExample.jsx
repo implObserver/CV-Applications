@@ -9,7 +9,9 @@ export const LoadExample = () => {
 
   return (
     <>
-      <div className='load__example'
+      <div
+        tabIndex="0"
+        className='load__example'
         onClick={clickHandler}>
         <Wrapper name='span__wrapper'>
           <span>Load Example</span>

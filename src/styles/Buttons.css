@@ -27,7 +27,7 @@
     justify-self: center;
     align-self: self-end;
     border-radius: min(10px, 1vw);
-    font-size: 1rem;
+    font-size: min(1rem, 3vw);
     max-height: 10vh;
     transition: all 0.1s ease-in-out;
 }

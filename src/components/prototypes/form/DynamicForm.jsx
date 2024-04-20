@@ -8,7 +8,6 @@ import { FormHandlers } from '../handlerFabric/formHandlers/FormHandlers';
 export const DynamicForm = ({ formId, fields }) => {
     const props = usePropsContext();
     FormHandlers.functions.addFieldsHandler(formId, props.forms[formId]);
-   
     const fill = () => {
         return fields.map((field) => {
             return (

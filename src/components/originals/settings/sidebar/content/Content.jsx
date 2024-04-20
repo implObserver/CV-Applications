@@ -11,7 +11,7 @@ export const Content = () => {
 
   return (
     <>
-      <div className='content' onClick={clickHandler}>
+      <div className='content' onClick={clickHandler} tabIndex="0">
 
         <Wrapper name='svg__wrapper'>
           <img src={contentIcon} className='content__icon' alt='' />

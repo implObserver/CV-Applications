@@ -10,7 +10,9 @@ export const ClearResume = () => {
 
   return (
     <>
-      <div className='clear__resume'
+      <div
+        tabIndex="0"
+        className='clear__resume'
         onClick={clickHandler}>
         <Wrapper name='svg__wrapper'>
           <img src={trashIcon} className='trash__icon' alt='' />

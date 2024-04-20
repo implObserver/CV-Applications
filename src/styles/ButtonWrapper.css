@@ -5,7 +5,7 @@
   border-radius: 0 0 min(10px, 1vw) min(10px, 1vw);
 }
 
-.unvisible__button-wrapper {
+.unvisible__button-wrapper[aria-hidden='true'] {
   max-height: 0;
   padding: 0;
 }
