@@ -22,7 +22,7 @@ export const PersonalInfo = () => {
             <div
                 className="personal__info"
                 style={{
-                    color: `color-contrast(${color.getState()} vs #fff, #000)`
+                    color: `color-contrast(${appModel.resume.styles.colors.head.getState()} vs #fff, #000)`
                 }}>
                     
                 <Context.Provider value={context}>
