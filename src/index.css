@@ -59,6 +59,10 @@ form {
   color: black !important;
 }
 
+input {
+  color: black !important;
+}
+
 button:hover {}
 
 button:focus,
