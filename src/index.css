@@ -16,7 +16,7 @@
 
   color-scheme: light dark;
   background-color: #242424;
-  color: black;
+  color: black!important;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -50,8 +50,13 @@ button {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
+  color: black;
   transition: border-color 0.25s;
   background-color: #f9f9f9 !important;
+}
+
+form {
+  color: black;
 }
 
 button:hover {}

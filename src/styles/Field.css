@@ -29,7 +29,10 @@ li>label>span {
   padding: min(20px, 2vw) min(20px, 2vw) 0 min(20px, 2vw);
 }
 
-#personalDetails__form>ul>li:last-child,
+#personalDetails__form>ul>li:last-child {
+  padding-bottom: min(20px, 2vw);
+}
+
 #education__form>ul>li:last-child,
 #experience__form>ul>li:last-child {
   padding: 0 min(20px, 2vw) min(20px, 2vw) min(20px, 2vw);
