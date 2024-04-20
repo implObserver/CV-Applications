@@ -17,8 +17,6 @@ export const PersonalInfo = () => {
         updater: appModel.resume.updater[props.id][key],
     }
 
-    console.log(activePlace.getValues())
-
     return (
         <>
             <div

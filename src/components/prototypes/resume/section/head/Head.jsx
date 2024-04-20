@@ -13,7 +13,7 @@ export const ResumeSectionHead = () => {
         <>
             <div className="resume__section__head"
                 style={{
-                    color: `${color.getState()}!important`,
+                    color: color.getState(),
                     backgroundColor: `color-contrast(${appModel.resume.styles.colors.head.getState()} vs #4a607d, #e8f2ff)`
                 }}>
                 <span>{name}</span>
