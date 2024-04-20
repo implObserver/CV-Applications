@@ -5,7 +5,7 @@ import { appModel } from "../../../../main";
 
 export const ResumeHead = () => {
     const props = appModel.settings.container.sections.personalDetails;
-    const backgroundColor = State('#ffa500');
+    const backgroundColor = State('#ffffff');
 
     Object.assign(appModel.resume.updater, { [props.id]: {} });
     Object.assign(appModel.resume.styles.colors, { head: backgroundColor });

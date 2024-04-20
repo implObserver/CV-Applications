@@ -22,7 +22,6 @@
 .resume__sections {
     display: grid;
     gap: min(10px, 1vw);
-    
 }
 
 .resume__section__head {
@@ -36,6 +35,7 @@
     grid-template-columns: 1fr 2fr;
     column-gap: min(30px, 3vw);
     padding: min(10px, 1vw);
+    transition: all 1s ease-in-out;
 }
 
 .resume__place__left-section,
