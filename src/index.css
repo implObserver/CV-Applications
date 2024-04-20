@@ -56,11 +56,11 @@ button {
 }
 
 form {
-  color: black !important;
+  color: black;
 }
 
 input {
-  color: black !important;
+  color: black;
 }
 
 button:hover {}
