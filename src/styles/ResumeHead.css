@@ -24,6 +24,7 @@
     align-items: center;
     width: 100%;
     padding: min(20px, 2vw) min(30px, 3vw) min(20px, 2vw) min(30px, 3vw);
+    color: black;
 }
 
 .full__name>h1 {
