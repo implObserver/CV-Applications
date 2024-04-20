@@ -25,7 +25,7 @@ li {
 }
 
 label {
-  font-size: min(1.5rem, 4.5vw);
+  font-size: min(1.2rem, 3vw);
 }
 
 input,
@@ -35,7 +35,8 @@ textarea {
   padding: min(10px, 1vw);
   border-radius: min(10px, 1vw);
   appearance: none;
-  font-size: min(1rem, 3vw);
+  font-size: min(1rem, 2.5vw);
+  width: 100%;
 }
 
 textarea {
@@ -45,7 +46,7 @@ textarea {
 .recommended__text,
 .optional__text {
   padding-left: min(10px, 1vw);
-  font-size: 0.8rem;
+  font-size: min(0.8rem, 2vw);
   color: rgb(142, 164, 190);
 }
 
