@@ -8,7 +8,7 @@ export const PersonalInfo = () => {
     const places = props.dropdownLists[`${props.id}__places`];
     const activePlace = places.objects.activeElement;
     const key = activePlace.getKey();
-    const color = appModel.resume.styles.colors.head;
+    const color = appModel.settings.container.parameters.styles.colors.color;
 
     Object.assign(appModel.resume.updater[props.id], { [key]: {} });
 
@@ -22,9 +22,9 @@ export const PersonalInfo = () => {
             <div
                 className="personal__info"
                 style={{
-                    color: `color-contrast(${appModel.resume.styles.colors.head.getState()} vs #fff, #000)`
+                    color: `color-contrast(${color.getState()} vs #fff, #000)`
                 }}>
-                    
+
                 <Context.Provider value={context}>
                     <FullName></FullName>
                     <ContactInfo></ContactInfo>
