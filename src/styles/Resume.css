@@ -16,7 +16,7 @@
     'head'
     'body';
   align-content: start;
-  min-width: 350px;
+  min-width: 330px;
 }
 
 .left__layout__areas {
@@ -39,6 +39,7 @@
 
 .font__family__serif {
   font-family: serif;
+  min-width: 310px;
 }
 
 .font__family__sans {

@@ -68,6 +68,8 @@
     justify-items: center;
     cursor: pointer;
     max-height: inherit;
+    gap: min(10px, 1vw);
+    font-size: min(1rem, 3vw);
 }
 
 .top__layout,
@@ -99,15 +101,15 @@
 }
 
 .top__layout>.color__side {
-    border-bottom: 1px black solid;
+    border-bottom: min(10px, 0.1vw) black solid;
 }
 
 .left__layout>.color__side {
-    border-right: 1px black solid;
+    border-right: min(10px, 0.1vw) black solid;
 }
 
 .right__layout>.color__side {
-    border-left: 1px black solid;
+    border-left: min(10px, 0.1vw) black solid;
 }
 
 .color__side {
@@ -130,6 +132,7 @@
     gap: min(20px, 2vw);
     flex-wrap: wrap;
     max-height: inherit;
+    padding-bottom: min(20px, 2vw);
 }
 
 .fonts__body>button {
@@ -141,7 +144,7 @@
     width: min(65px, 8vw);
     justify-content: center;
     align-content: center;
-    font-size: min(1rem, 3vw);
+    font-size: min(1rem, 2vw);
     max-height: inherit !important;
     box-shadow: 0 2px 6px #959da5;
 }
@@ -152,7 +155,7 @@
 }
 
 .fonts__body>button>span:first-child {
-    font-size: min(1.5rem, 5vw);
+    font-size: min(1.5rem, 4vw);
 }
 
 .serif {

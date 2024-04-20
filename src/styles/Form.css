@@ -4,7 +4,6 @@ form {
   overflow: hidden;
   padding: min(20px, 2vw);
   max-height: 100vh;
-  
   transition: max-height 0.6s ease-in-out;
   opacity: inherit;
 }
@@ -25,12 +24,18 @@ li {
   gap: min(10px, 1vw);
 }
 
+label {
+  font-size: min(1.5rem, 4.5vw);
+}
+
 input,
 textarea {
   display: grid;
   background-color: rgb(232, 242, 255);
   padding: min(10px, 1vw);
   border-radius: min(10px, 1vw);
+  appearance: none;
+  font-size: min(1rem, 3vw);
 }
 
 textarea {

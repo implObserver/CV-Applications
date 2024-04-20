@@ -33,7 +33,7 @@
   grid-template-columns: max-content min-content;
   align-items: center;
   justify-content: space-between;
-  font-size: 1rem;
+  font-size: min(1rem, 3vw);
 }
 
 .open__head {
