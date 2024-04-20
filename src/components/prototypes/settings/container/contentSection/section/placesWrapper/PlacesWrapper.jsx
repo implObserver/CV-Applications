@@ -2,7 +2,6 @@ import { Place } from "./place/Place";
 import { usePropsContext } from "../../../../../../dataManagments/context/PropsContext";
 import { DropdownListsHandlers } from "../../../../../handlerFabric/dropdownListsHandlers/DropdownListsHandlers";
 import { State } from "../../../../../state/State";
-import { Ref } from "../../../../../ref/Ref";
 
 export const PlacesWrapper = () => {
     const update = State();
@@ -10,7 +9,6 @@ export const PlacesWrapper = () => {
     const id = `${props.id}__places`;
     const list = props.dropdownLists[id];
     const style = State('unvisible__places-wrapper', 'visible__places-wrapper');
-    //const ref = Ref();
     const places = Object.entries(list.objects.elements);
 
     Object.assign(list.states.containerStyle, style);
