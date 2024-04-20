@@ -52,7 +52,7 @@ button {
   cursor: pointer;
   color: black;
   transition: border-color 0.25s;
-  background-color: #f9f9f9 !important;
+  background-color: #f9f9f9;
 }
 
 form {
