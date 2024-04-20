@@ -19,10 +19,12 @@
 
 .sidebar>.content {
   cursor: pointer;
+  border-radius: min(20px, 2vw);
 }
 
 .sidebar>.customize {
   cursor: pointer;
+  border-radius: min(20px, 2vw);
 }
 
 @media screen and (min-aspect-ratio: 0.9/1) {
