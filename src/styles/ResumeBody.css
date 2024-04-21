@@ -34,7 +34,6 @@
     column-gap: min(30px, 3vw);
     padding: min(10px, 1vw);
     transition: all 1s ease-in-out;
-    color: black;
 }
 
 .resume__place__left-section,
