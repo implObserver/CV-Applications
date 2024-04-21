@@ -45,7 +45,7 @@ li>label>span {
   max-height: 100vh;
   margin-top: min(10px, 1vw);
   transition: all 0.1s ease-in-out;
-  color:black;
+  
 }
 
 li>span {
