@@ -1,3 +1,4 @@
+import { invertColor } from "../../../../../helper/InvertColor";
 import { capitalizeFirstLetter } from "../../../../../helper/StringHelper"
 import { appModel } from "../../../../../main";
 
@@ -22,7 +23,7 @@ export const FontContainer = ({ className }) => {
                 onClick={clickHandler}
                 style={{
                     "--focusBackgroundColor": parametersColors.fontsContainerColor.getState(),
-                    "--focusFontColor": `color-contrast(${parametersColors.fontsContainerColor.getState()} vs #fff, #000 to AAA)`,
+                    "--focusFontColor": invertColor(parametersColors.fontsContainerColor.getState(), true),
                 }}
             >
                 <span>Aa</span>
