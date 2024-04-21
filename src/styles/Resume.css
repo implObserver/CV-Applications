@@ -9,6 +9,7 @@
   word-break: break-all;
   position: sticky;
   top: 0;
+  color: red;
 }
 
 .top__layout__areas {
@@ -23,10 +24,12 @@
   grid-template-areas:
     'head body';
 }
+
 .right__layout__areas>.resume__body,
 .left__layout__areas>.resume__body {
   min-width: 350px;
 }
+
 .right__layout__areas>.resume__head,
 .left__layout__areas>.resume__head {
   min-width: 300px;
