@@ -24,7 +24,7 @@
     gap: min(10px, 1vw);
 }
 
-.resume__section__head {
+.resume>.resume__body>.resume__sections>.resume__section__info>.resume__section__head {
     display: grid;
     justify-content: center;
     color: var(--color);
