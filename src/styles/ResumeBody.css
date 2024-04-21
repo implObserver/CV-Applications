@@ -26,6 +26,7 @@
 .resume__section__head {
     display: grid;
     justify-content: center;
+    background-color: white;
 }
 
 .resume__place {
