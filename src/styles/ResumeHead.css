@@ -2,8 +2,6 @@
     display: grid;
     min-width: inherit;
     grid-area: head;
-    background-color: var(--color);
-    color: var(--resume-head__color);
 }
 
 .top__layout__areas>.resume__head {

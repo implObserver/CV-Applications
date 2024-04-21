@@ -14,8 +14,8 @@ export const ResumeHead = () => {
             <section
                 className="resume__head"
                 style={{
-                    "--color": backgroundColor.getState(),
-                    "--resume-head__color": `color-contrast(var(--color) vs #ffffff, #000000)`
+                    backgroundColor: backgroundColor.getState(),
+                    color: `color-contrast(${backgroundColor.getState()} vs #ffffff, #000000)`
                 }}>
 
                 <PersonalInfo></PersonalInfo>

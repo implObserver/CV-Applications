@@ -26,8 +26,6 @@
 .resume__section__head {
     display: grid;
     justify-content: center;
-    color: var(--section-head__color);
-    background-color: var(--section-head__background-color);
 }
 
 .resume__place {
