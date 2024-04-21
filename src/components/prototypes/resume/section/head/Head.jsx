@@ -1,3 +1,4 @@
+import { invertColor } from '../../../../../helper/InvertColor';
 import { appModel } from '../../../../../main';
 import Sections from '../../../../dataManagments/JSON/Sections.json'
 import { usePropsContext } from '../../../../dataManagments/context/PropsContext';
@@ -14,7 +15,7 @@ export const ResumeSectionHead = () => {
             <div className="resume__section__head"
                 style={{
                     color: color.getState(),
-                    backgroundColor: `color-contrast(${color.getState()} vs #4a607d, #e8f2ff)!important`
+                    backgroundColor: `${invertColor(color.getState(), false, true)}`
                 }}>
                 <span>{name}</span>
             </div>

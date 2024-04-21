@@ -2,6 +2,7 @@ import { PersonalInfo } from "./personalInfo/PersonalInfo"
 import '../../../../styles/ResumeHead.css'
 import { State } from "../../../prototypes/state/State";
 import { appModel } from "../../../../main";
+import { invertColor } from "../../../../helper/InvertColor";
 
 export const ResumeHead = () => {
     const props = appModel.settings.container.sections.personalDetails;
@@ -15,7 +16,7 @@ export const ResumeHead = () => {
                 className="resume__head"
                 style={{
                     backgroundColor: backgroundColor.getState(),
-                    color: `color-contrast(${backgroundColor.getState()} vs #ffffff, #000000)`
+                    color: invertColor(backgroundColor.getState(), true),
                 }}>
 
                 <PersonalInfo></PersonalInfo>
