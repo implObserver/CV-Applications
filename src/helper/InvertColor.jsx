@@ -14,12 +14,12 @@ export function invertColor(hex, bw, cc) {
         b = parseInt(hex.slice(4, 6), 16);
     if (cc) {
         return (r * 0.299 + g * 0.587 + b * 0.114) > 156
-            ? '#000000'
+            ? '#5b6163'
             : '#e8f2ff';
     }
     if (bw) {
         // https://stackoverflow.com/a/3943023/112731
-        return (r * 0.299 + g * 0.587 + b * 0.114) > 186
+        return (r * 0.299 + g * 0.587 + b * 0.114) > 156 //186
             ? '#000000'
             : '#FFFFFF';
     }
