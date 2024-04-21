@@ -2,14 +2,12 @@
   display: grid;
   background-color: white;
   border-radius: min(10px, 1vw);
-  background-color: white;
   width: 100%;
   max-width: 800px;
   min-height: 1100px;
   word-break: break-all;
   position: sticky;
   top: 0;
-  color: red;
 }
 
 .top__layout__areas {
