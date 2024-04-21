@@ -29,7 +29,7 @@
     justify-content: center;
     color: var(--color);
     --background-color: color-contrast(var(--color) vs #4a607d, #e8f2ff);
-    background-color: var(--background-color) !important;
+    background-color: black;
 }
 
 .resume__place {
