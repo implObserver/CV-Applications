@@ -15,15 +15,14 @@ export const PersonalInfo = () => {
     const context = {
         label: activePlace.getValues(),
         updater: appModel.resume.updater[props.id][key],
+        color: color,
     }
 
     return (
         <>
             <div
                 className="personal__info"
-                style={{
-                    color: `color-contrast(${color} vs #fff, #000)`
-                }}>
+                >
 
                 <Context.Provider value={context}>
                     <FullName></FullName>

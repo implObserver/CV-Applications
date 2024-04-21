@@ -9,7 +9,12 @@ export const FullName = () => {
     return (
         <>
             <div className="full__name">
-                <h1>{update.getState()}</h1>
+                <h1
+                    style={{
+                        color: `color-contrast(${context.color} vs #fff, #000)`
+                    }}>
+                    {update.getState()}
+                </h1>
             </div>
         </>
     )
