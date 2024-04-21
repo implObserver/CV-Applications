@@ -7,14 +7,13 @@ export const ResumeSectionHead = () => {
     const props = usePropsContext();
     const color = State(appModel.resume.styles.colors.head.getState());
     const name = Sections[props.id].head;
-   
+
     Object.assign(appModel.resume.styles.colors, { [props.id]: color });
     return (
         <>
             <div className="resume__section__head"
                 style={{
-                    color: color.getState(),
-                    backgroundColor: `color-contrast(${appModel.resume.styles.colors.head.getState()} vs #4a607d, #e8f2ff)`
+                    "--color": color.getState(),
                 }}>
                 <span>{name}</span>
             </div>

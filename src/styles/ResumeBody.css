@@ -2,7 +2,7 @@
     display: grid;
     padding: min(10px, 1vw);
     grid-area: body;
-    
+    --color: #ffa500;
 }
 
 .right__layout__areas>.resume__body {
@@ -26,8 +26,9 @@
 
 .resume__section__head {
     display: grid;
-    background-color: aliceblue;
     justify-content: center;
+    color: var(--color);
+    background-color: color-contrast(var(--color) vs #4a607d, #e8f2ff)
 }
 
 .resume__place {

@@ -8,22 +8,18 @@ export const PersonalInfo = () => {
     const places = props.dropdownLists[`${props.id}__places`];
     const activePlace = places.objects.activeElement;
     const key = activePlace.getKey();
-    const color = appModel.resume.styles.colors.head.getState();
 
     Object.assign(appModel.resume.updater[props.id], { [key]: {} });
 
     const context = {
         label: activePlace.getValues(),
         updater: appModel.resume.updater[props.id][key],
-        color: color,
     }
 
     return (
         <>
             <div
-                className="personal__info"
-                >
-
+                className="personal__info">
                 <Context.Provider value={context}>
                     <FullName></FullName>
                     <ContactInfo></ContactInfo>
