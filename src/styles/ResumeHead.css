@@ -2,9 +2,8 @@
     display: grid;
     min-width: inherit;
     grid-area: head;
-    --color: #ffa500;
-    color: color-contrast(var(--color) vs #4a607d, #e8f2ff);
     background-color: var(--color);
+    color: var(--resume-head__color);
 }
 
 .top__layout__areas>.resume__head {

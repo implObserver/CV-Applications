@@ -19,6 +19,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --color: #ffa500;
+
+  --section-head__color: var(--color);
+  --background-color: color-contrast(var(--color) vs #4a607d, #e8f2ff);
+  --section-head__background-color: color-contrast(var(--color) vs #4a607d, #e8f2ff);
+  --resume-head__color: color-contrast(var(--color) vs #ffffff, #000000);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

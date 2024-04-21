@@ -19,7 +19,8 @@ export const PersonalInfo = () => {
     return (
         <>
             <div
-                className="personal__info">
+                className="personal__info"
+                >
                 <Context.Provider value={context}>
                     <FullName></FullName>
                     <ContactInfo></ContactInfo>

@@ -2,7 +2,6 @@
     display: grid;
     padding: min(10px, 1vw);
     grid-area: body;
-    --color: #ffa500;
 }
 
 .right__layout__areas>.resume__body {
@@ -24,12 +23,11 @@
     gap: min(10px, 1vw);
 }
 
-.resume>.resume__body>.resume__sections>.resume__section__info>.resume__section__head {
+.resume__section__head {
     display: grid;
     justify-content: center;
-    color: var(--color);
-    --background-color: color-contrast(wheat vs tan, sienna, #d2691e);
-    background-color: var(--background-color);
+    color: var(--section-head__color);
+    background-color: var(--section-head__background-color);
 }
 
 .resume__place {
