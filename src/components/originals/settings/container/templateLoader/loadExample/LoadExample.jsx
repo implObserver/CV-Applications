@@ -1,10 +1,15 @@
 import { Wrapper } from '../../../../../prototypes/details/wrapper/Wrapper';
 import '../../../../../../styles/LoadExample.css';
 import { Load } from '../../../../../dataManagments/example/Load';
+import { Clear } from '../../../../../dataManagments/clearResume/Clear';
 
 export const LoadExample = () => {
   const clickHandler = () => {
-    Load('Peter Parker');
+    Clear();
+    setTimeout(() => {
+      Load('Peter Parker');
+    }, 1);
+
   }
 
   return (

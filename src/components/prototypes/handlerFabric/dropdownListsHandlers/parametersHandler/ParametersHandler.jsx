@@ -8,7 +8,7 @@ export const getParametersHandler = () => {
         const elementsStyles = Object.entries(props.objects.elementsStyles);
         const addedElements = props.objects.addedElements;
         prototype.updateParameters(elementsStyles, addedElements)
-        return await prototype.changeVisibleElements(key);
+        prototype.changeVisibleElements(key);
     }
     return { switchVisible };
 }
